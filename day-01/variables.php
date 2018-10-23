@@ -10,7 +10,8 @@ $f = new stdClass();
 $g = function() { 
     return "Hello, World!"; 
 };
-
 var_dump($a,$b,$c,$d,$e,$f,$g);
-?> 
-</pre> 
+
+define('CONSTANT', 13); 
+var_dump(CONSTANT); // Note that constants don't need $
+define('CONSTANT', 13); 
