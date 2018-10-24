@@ -4,7 +4,7 @@ if($_POST['user']) {
     print $_POST['user']; 
     print "!"; 
 } else { 
-    print <<<_HTML_ 
+    print <<< _HTML_ 
     <form method="post" action="$_SERVER[PHP_SELF]"> 
     <label for="user">Your Name: <input type="text" name="user" id="user"></label>
     <br /> 
