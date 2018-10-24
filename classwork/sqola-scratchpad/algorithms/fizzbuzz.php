@@ -21,11 +21,6 @@ function fizzBuzz($input){
     for($i=$first;$i>0;$i--){ 
         $fb = ""; 
 
-        echo "FIZZ TEST: $i\n\n"; 
-        echo "$i contains $second: ".strpos((string)$i,(string)$second)."\n"; 
-        echo "$i contains $third: ".strpos((string)$i,(string)$third)."\n"; 
-
-
         if(numContains($i, $second) || numContains($i, $third)) { 
             $fb .= "FIZZ"; 
         }
