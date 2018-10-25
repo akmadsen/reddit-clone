@@ -2,7 +2,6 @@
 
 // Order these carefully - interpreted in sequence 
 include_once './Shop/Cake.php';
-include_once './Shop/Person.php';
 include_once './Shop/Staff.php';
 include_once './Shop/Shop.php'; 
 include_once './Shop/DeliveryTruck.php'; 
@@ -21,7 +20,7 @@ function printBreak() {
 
 function main() { 
     $cake = new Cake(); 
-    $bob = new Person("Bob", "Belcher", 45, "Burger Store Owner"); 
+    $bob = new Staff("Bob", "Belcher", 45, "Burger Store Owner"); 
     echo $bob->eat($cake); 
 
     printBreak(); 
