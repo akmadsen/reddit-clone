@@ -84,6 +84,22 @@ function main() {
 
     $twine = new Twine(); 
     echo $twine->sayHello(); 
+
+    printBreak(); 
+    printBreak(); 
+
+    $shop = new Shop("Bob's Burgers"); 
+    echo $shop->about(); 
+    printBreak(); 
+    echo $shop->describeDisplay(); 
+    printBreak(); 
+
+    $badCake = new Cake("dirt", "sludge");
+    $burger = new Cake("beef", "catsup");  
+    $shop->addToDisplay($hazelnutCake); 
+    $shop->addToDisplay($badCake); 
+    $shop->addToDisplay($burger); 
+    echo $shop->describeDisplay(); 
 }
 
 main(); 

@@ -21,7 +21,6 @@ class DeliveryTruck {
 
         foreach ($this->contents as $item) { 
             $result .= "{$item->about()}</br>"; 
-            // $result .= "Something is loaded.</br>"; 
         }
 
         return $result; 
