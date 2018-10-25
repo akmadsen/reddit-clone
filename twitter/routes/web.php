@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/test1', function () {
+    return view('test1');
+});
+
+Route::get('/test2', function () {
+    return view('test2');
+});
