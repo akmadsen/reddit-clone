@@ -10,18 +10,25 @@ include_once './Shop/HealthInspector.php';
 
 include_once './School/Student.php'; 
 
+include_once './TraitExperiments/HelloWorld.php'; 
+include_once './TraitExperiments/TheWorldIsNotEnough.php'; 
+
 // Alias - for namespaced identifier
 
 // Shop Aliases 
-use Shop\Cake as Cake; 
-use Shop\Staff as Staff; 
-use Shop\Shop as Shop; 
-use Shop\DeliveryTruck as DeliveryTruck; 
-use Shop\Oven as Oven; 
-use Shop\HealthInspector as HealthInspector; 
+use Shop\Cake; 
+use Shop\Staff; 
+use Shop\Shop; 
+use Shop\DeliveryTruck; 
+use Shop\Oven; 
+use Shop\HealthInspector; 
 
 // School Aliases 
 use School\Student as Student; 
+
+// Trait Aliases 
+use TraitExperiments\HelloWorld; 
+use TraitExperiments\TheWorldIsNotEnough as Twine; 
 
 function printBreak() { 
     echo "<br />"; 
@@ -66,8 +73,17 @@ function main() {
 
     printBreak(); 
     printBreak(); 
-
+    
     $cartman = new Student(); 
+
+    $hello = new HelloWorld(); 
+
+    echo $hello->sayHello(); 
+
+    printBreak(); 
+
+    $twine = new Twine(); 
+    echo $twine->sayHello(); 
 }
 
 main(); 
