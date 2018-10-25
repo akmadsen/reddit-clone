@@ -19,10 +19,14 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/test1', function () {
-    return view('test1');
+Route::get('/game-home', function () {
+    return view('game-home');
 });
 
-Route::get('/test2', function () {
-    return view('test2');
+Route::get('/russian-roulette', function () {
+    return view('russian-roulette');
+});
+
+Route::get('/grid-sandbox', function () {
+    return view('grid-sandbox');
 });

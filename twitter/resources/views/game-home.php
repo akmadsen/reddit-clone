@@ -7,13 +7,8 @@
     <link rel="stylesheet" href="css/app.css">
     <title>Document</title>
 </head>
-<body>    
-
-    <header>
-        <div class="container">
-            <h1>Hello, World!</h1>
-        </div>
-    </header>
-    <?= date('Y-m-d') ?>
+<body>
+    <h1>Game Home</h1>
+    <a href="/russian-roulette">Russian Roulette</a>
 </body>
 </html>
