@@ -40,6 +40,16 @@ function main() {
 
     $hazelnutCake = $ovenmaster9000->bake("hazelnut", "brown sugar"); 
     echo $hazelnutCake->about(); 
+
+    printBreak(); 
+
+    $fordRanger = new DeliveryTruck();
+    echo $fordRanger->whatIsLoaded(); 
+    
+    printBreak(); 
+
+    $fordRanger->load($hazelnutCake); 
+    echo $fordRanger->whatIsLoaded(); 
 }
 
 main(); 

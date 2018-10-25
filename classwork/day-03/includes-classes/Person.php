@@ -1,6 +1,8 @@
 <?php 
 
-class Person {
+include_once 'iDescribe.php';
+
+class Person implements iDescribe {
     protected $firstName; 
     protected $lastName; 
     protected $age; 

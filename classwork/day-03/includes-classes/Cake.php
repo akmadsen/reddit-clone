@@ -1,6 +1,8 @@
 <?php 
 
-class Cake 
+include_once 'iDescribe.php';
+
+class Cake implements iDescribe 
 {
     private $flavour; 
     private $secretIngredient; 
