@@ -1,5 +1,7 @@
 <?php 
 
+namespace Shop; 
+
 include_once 'Equipment.php'; 
 
 class Oven extends Equipment { 

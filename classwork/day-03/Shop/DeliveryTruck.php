@@ -1,5 +1,7 @@
 <?php 
 
+namespace Shop; 
+
 include_once 'iDescribe.php'; 
 include_once 'Cake.php'; 
 

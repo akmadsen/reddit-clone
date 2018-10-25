@@ -1,5 +1,7 @@
 <?php 
 
+namespace Shop; 
+
 include_once 'iDescribe.php';
 
 class Person implements iDescribe {

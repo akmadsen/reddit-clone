@@ -11,6 +11,16 @@ include_once './Shop/HealthInspector.php';
 include_once './School/Student.php'; 
 
 // Alias - for namespaced identifier
+
+// Shop Aliases 
+use Shop\Cake as Cake; 
+use Shop\Staff as Staff; 
+use Shop\Shop as Shop; 
+use Shop\DeliveryTruck as DeliveryTruck; 
+use Shop\Oven as Oven; 
+use Shop\HealthInspector as HealthInspector; 
+
+// School Aliases 
 use School\Student as Student; 
 
 function printBreak() { 
