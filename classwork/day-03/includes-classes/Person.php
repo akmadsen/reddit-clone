@@ -14,7 +14,12 @@ class Person {
     }
 
     public function eat($cake) { 
-        return 'Yum.'; 
+        $cakeInfo = strtolower($cake->about()); 
+
+        $result = "Yum. ";
+        $result .= "Teddy, you should try some of this cake. ";
+        $result .= "It is $cakeInfo.";
+        return $result; 
     }
 
     public function about() { 
