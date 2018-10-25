@@ -1,14 +1,18 @@
 <?php 
 
 // Order these carefully - interpreted in sequence 
-include_once './includes-classes/Cake.php';
-include_once './includes-classes/Person.php';
-include_once './includes-classes/Equipment.php';  
-include_once './includes-classes/Staff.php';
-include_once './includes-classes/Shop.php'; 
-include_once './includes-classes/DeliveryTruck.php'; 
-include_once './includes-classes/Oven.php'; 
-include_once './includes-classes/HealthInspector.php'; 
+include_once './Shop/Cake.php';
+include_once './Shop/Person.php';
+include_once './Shop/Staff.php';
+include_once './Shop/Shop.php'; 
+include_once './Shop/DeliveryTruck.php'; 
+include_once './Shop/Oven.php'; 
+include_once './Shop/HealthInspector.php'; 
+
+include_once './School/Student.php'; 
+
+// Alias - for namespaced identifier
+use School\Student as Student; 
 
 function printBreak() { 
     echo "<br />"; 
@@ -50,6 +54,11 @@ function main() {
 
     $fordRanger->load($hazelnutCake); 
     echo $fordRanger->whatIsLoaded(); 
+
+    printBreak(); 
+    printBreak(); 
+
+    $cartman = new Student(); 
 }
 
 main(); 
