@@ -17,8 +17,6 @@
                     <div class="left-section height-100p flex flex-h flex-1 flex-a-center">
                         <div class="nav-item"><i class="fas fa-home"></i>Home</div>
                         <div class="nav-item"><i class="fas fa-bolt"></i>Moments</div>
-                        <div class="nav-item"><i class="far fa-bell"></i>Notifications</div>
-                        <div class="nav-item"><i class="far fa-envelope"></i>Messages</div>
                     </div>
                     
                     <div class="center-section height-100p flex-1 flex flex-h flex-j-center flex-a-center">
@@ -27,8 +25,7 @@
                     
                     <div class="right-section height-100p flex-1 flex flex-h flex-j-end flex-a-center">
                         <div class="search-box">Search for Stuff</div>
-                        <div class="profile-icon">Profile Image</div>
-                        <div class="tweet-button">Tweet</div>
+                        <div class="login-cta">Have an account? <span>Log In</span></div>
                     </div>
                 </nav>
             </div>
@@ -40,49 +37,58 @@
         </div>
 
         <div class="stats bg-white">
-            <div class="flex flex-h ml-200">
-                <div class="stat">
-                    <div class="label fw-bold">
-                        Tweets
-                    </div>
-                    <div class="value text-center">
-                        1,966
-                    </div>
-                </div>
+            <div class="container">
+                <div class="flex flex-h">
 
-                <div class="stat">
-                    <div class="label fw-bold">
-                        Following
+                    <div class="user-image-spacer height-100p">
+                        <div class="user-image">
+                            <img src="https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg" alt="" height="200px" width="200px">
+                        </div>
                     </div>
-                    <div class="value text-center">
-                        71
-                    </div>
-                </div>
 
-                <div class="stat">
-                    <div class="label fw-bold">
-                        Followers
+                    <div class="stat">
+                        <div class="label fw-bold">
+                            Tweets
+                        </div>
+                        <div class="value text-center">
+                            1,966
+                        </div>
                     </div>
-                    <div class="value text-center">
-                        100K
+                    
+                    <div class="stat">
+                        <div class="label fw-bold">
+                            Following
+                        </div>
+                        <div class="value text-center">
+                            71
+                        </div>
                     </div>
-                </div>
-
-                <div class="stat">
-                    <div class="label fw-bold">
-                        Likes
+                    
+                    <div class="stat">
+                        <div class="label fw-bold">
+                            Followers
+                        </div>
+                        <div class="value text-center">
+                            100K
+                        </div>
                     </div>
-                    <div class="value text-center">
-                        39
+                    
+                    <div class="stat">
+                        <div class="label fw-bold">
+                            Likes
+                        </div>
+                        <div class="value text-center">
+                            39
+                        </div>
                     </div>
-                </div>
-
-                <div class="stat">
-                    <div class="label fw-bold">
-                        Moments
-                    </div>
-                    <div class="value text-center">
-                        2
+                    
+                    <div class="stat">
+                        <div class="label fw-bold">
+                            Moments
+                        </div>
+                        <div class="value text-center">
+                            2
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,15 +96,37 @@
     </header>
 
     <main class="flex full-page">
-        <div class="user-details flex-1">
-            User Details
+        <div class="container flex flex-h">
+            <div class="user-details flex-1">
+                <div class="user-header-card">
+
+                    <div class="fz-4 fw-bold">
+                        <?= $name ?>
+                    </div>
+                    <div class="c-3">
+                        <?= $handle ?>
+                    </div>
+                    <div>
+                        Official Meat Loaf Twitter Page
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>Los Angeles and NY
+                    </div>
+                    <div>
+                        <i class="fas fa-link"></i><a href="#">meatloaf.net</a>
+                    </div>
+                    <div class="c-3">
+                        <i class="far fa-calendar-alt"></i>Joined May 2009
+                    </div>
+                </div>
+            </div>
+            <div class="tweets flex-2 bg-white">
+                Tweets
+            </div>
+            <div class="suggestions flex-1">
+                Suggestions
+            </div>
         </div>
-        <div class="tweets flex-1 bg-white">
-            Tweets
-        </div>
-        <div class="suggestions flex-1">
-            Suggestions
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
 </html>

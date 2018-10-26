@@ -10490,6 +10490,10 @@ body {
   background-color: #777;
 }
 
+.c-3 {
+  color: #777;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10512,8 +10516,20 @@ body {
 
 .flex-1 {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.flex-2 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.flex-3 {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 
 .flex-j-center {
@@ -10540,6 +10556,10 @@ body {
 
 .ml-200 {
   margin-left: 200px;
+}
+
+.p-10 {
+  padding: 10px;
 }
 
 .fw-bold {
@@ -10594,5 +10614,32 @@ body {
 i {
   font-size: 21px;
   margin-right: 3px;
+}
+
+.fz-4 {
+  font-size: 20px;
+}
+
+.user-image-spacer {
+  position: relative;
+  width: 215px;
+}
+
+.user-image {
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  border: 4px solid white;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.user-header-card {
+  margin: 35px 0 16px;
+  padding: 0 15px;
+}
+
+.user-header-card i {
+  font-size: 18px;
 }
 

@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $viewData = [
+        'name' => 'Meat Loaf', 
+        'handle' => '@RealMeatLoaf' 
+    ];
+
+    return view('welcome', $viewData);
 });
