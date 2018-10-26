@@ -43,7 +43,7 @@ Route::get('/', function () {
                 'icon' => 'https://pbs.twimg.com/profile_images/697624194205544449/PaabF10k_bigger.jpg'
             ],
             [
-                'name' => 'Al Yancovic', 
+                'name' => 'Al Yankovic', 
                 'handle' => '@alyankovic', 
                 'icon' => 'https://pbs.twimg.com/profile_images/246073324/IL2_bigger.jpg'
             ],
@@ -57,6 +57,10 @@ Route::get('/', function () {
                 'handle' => '@DefLeppard', 
                 'icon' => 'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg'
             ]
+            ],
+
+        'tweets' => [
+
         ]
     ];
 

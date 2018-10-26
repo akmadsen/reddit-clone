@@ -123,7 +123,43 @@
                 </div>
             </div>
             <div class="tweets flex-2 bg-white">
-                Tweets
+                <div class="tweet-tabs flex flex-h p-10">
+                    <div class="flex-1 text-center fw-bold fz-4 c-select">Tweets</div>
+                    <div class="flex-1 text-center fw-bold fz-4 c-brand">Tweets & Replies</div>
+                    <div class="flex-1 text-center fw-bold fz-4 c-brand">Media</div>
+                </div>
+                <div class="tweet-container">
+                    <div class="tweet p-tweet flex flex-h">
+                        <div class="tweet-img mr-10">
+                            <img class="circular" src="https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg" alt="">
+                        </div>
+                        <div class="tweet-content">
+                            <div class="tweet-header flex flex-h">
+                                <div class="tweet-name">Meat Loaf</div>
+                                <div class="tweet-handle">@RealMeatLoaf</div>
+                                <div class="tweet-handle">Oct 21</div>
+                                <div class="more-button">More</div>
+                            </div>
+                            <div class="tweet-body">
+                            "I would do anything for love, but I won't do that..."
+                            </div>
+                            <div class="tweet-footer flex flex-h">
+                                <div class="comments">
+                                    <div class="comment-icon">Comments</div>
+                                    <div class="comment-count">123</div>
+                                </div>
+                                <div class="retweets">
+                                    <div class="retweet-icon">Retweet</div>
+                                    <div class="retweet-count">67</div>
+                                </div>
+                                <div class="likes">
+                                    <div class="like-icon">Like</div>
+                                    <div class="like-count">9001</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="suggestions flex-1">
                 <div class="suggestion-card p-10">
@@ -139,7 +175,7 @@
                                 <span><?= $suggestion['handle'] ?></span>
                             </div>
                         </div>
-                        <?php endforeach ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

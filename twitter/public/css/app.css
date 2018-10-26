@@ -10494,6 +10494,14 @@ body {
   color: #777;
 }
 
+.c-brand {
+  color: #1DA1F2;
+}
+
+.c-deselect {
+  color: #666;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10680,5 +10688,26 @@ i {
 
 .circular {
   border-radius: 50%;
+}
+
+.tweets {
+  margin: 10px;
+}
+
+.tweet-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+.tweet-img img {
+  height: 48px;
+  width: 48px;
+}
+
+.p-tweet {
+  padding: 9px 12px;
+}
+
+.mr-10 {
+  margin-right: 10px;
 }
 
