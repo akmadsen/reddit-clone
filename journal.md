@@ -70,3 +70,21 @@ When writing these journal entries, we need to answer Cameron's questions three.
     - Messing around thoroughly with the guts of the modern AMP stack (and ultimately breaking it... twice)
     - Acknowledging that I'm not much of a System Administrator.... Looking into ways to increase that knowledge base
         - Note: Even failed experimentation is upping that knowledge base, Alex!!! 
+
+
+## Day 03 - October 25, 2018 
+
+1) Challenges & Overcoming Them 
+
+- Learned new syntax, and how PHP handles Object Oriented Design 
+- Surfed docs, ran experiments in class (how inheritance / interfaces handled in PHP, trait classes) 
+
+2) Pushing Yourself 
+
+- Learning the theoretical background of how PHP works, and trying out new things in class 
+- Surfing the PHP / Laravel docs & applying knowledge in class
+
+3) Outside Class 
+
+N/A for today - npm was broken on machine at home, need to debug why - spent most of evening on addressing 
+    household challenges
