@@ -32,7 +32,7 @@
         </div>
         <div class="hero-row bg-2">
             <div class="hero-img">
-                <img src="{{ $heroImgURL }}" alt="" width="100%">
+                <img src="{{ $user['heroImgURL'] }}" alt="" width="100%">
             </div>
         </div>
 
@@ -42,7 +42,7 @@
 
                     <div class="user-image-spacer height-100p">
                         <div class="user-image">
-                            <img src="{{ $profileImgURL }}" alt="" height="200px" width="200px">
+                            <img src="{{ $user['profileImgURL'] }}" alt="" height="200px" width="200px">
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                             Tweets
                         </div>
                         <div class="value text-center">
-                            {{ number_format($tweetCount) }}
+                            {{ number_format($user['tweetCount']) }}
                         </div>
                     </div>
                     
@@ -60,7 +60,7 @@
                             Following
                         </div>
                         <div class="value text-center">
-                            {{ number_format($followingCount) }}
+                            {{ number_format($user['followingCount']) }}
                         </div>
                     </div>
                     
@@ -69,7 +69,7 @@
                             Followers
                         </div>
                         <div class="value text-center">
-                            {{ $followerCount }}
+                            {{ $user['followerCount'] }}
                         </div>
                     </div>
                     
@@ -78,7 +78,7 @@
                             Likes
                         </div>
                         <div class="value text-center">
-                            {{ number_format($likesCount) }}
+                            {{ number_format($user['likesCount']) }}
                         </div>
                     </div>
                     
@@ -87,7 +87,7 @@
                             Moments
                         </div>
                         <div class="value text-center">
-                            {{ number_format($momentsCount) }}
+                            {{ number_format($user['momentsCount']) }}
                         </div>
                     </div>
                 </div>
@@ -101,22 +101,22 @@
                 <div class="user-header-card">
 
                     <div class="fz-4 fw-bold">
-                        {{ $name }}
+                        {{ $user['name'] }}
                     </div>
                     <div class="c-3">
-                        {{ $handle }}
+                        {{ $user['handle'] }}
                     </div>
                     <div>
-                        {{ $description }}
+                        {{ $user['description']}}
                     </div>
                     <div>
-                        <i class="fas fa-map-marker-alt"></i>{{ $location }}
+                        <i class="fas fa-map-marker-alt"></i>{{ $user['location']}}
                     </div>
                     <div>
-                        <i class="fas fa-link"></i><a href="{{ $websiteURL }}">{{ $websiteTitle }}</a>
+                        <i class="fas fa-link"></i><a href="{{ $user['websiteURL'] }}">{{ $user['websiteTitle'] }}</a>
                     </div>
                     <div class="c-3">
-                        <i class="far fa-calendar-alt"></i>{{ $joinDate }}
+                        <i class="far fa-calendar-alt"></i>{{ $user['joinDate'] }}
                     </div>
                 </div>
             </div>

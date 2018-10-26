@@ -17,23 +17,26 @@ Route::get('/', function () {
     $faker = Factory::create(); 
 
     $viewData = [
-        'name' => 'Meat Loaf', 
-        'handle' => '@RealMeatLoaf', 
-        'description' => 'Official Meat Loaf Twitter Page', 
-        'location' => 'Los Angeles and NY', 
-        'websiteURL' => 'https://www.meatloaf.net', 
-        'websiteTitle' => 'meatloaf.net', 
-        'joinDate' => 'Joined May 2009', 
+        'user' => [
 
-        'tweetCount' => 1966, 
-        'followingCount' => 71, 
-        'followerCount' => '100K', 
-        'likesCount' => 39, 
-        'momentsCount' => 2, 
-
-        'profileImgURL' => 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg', 
-        'heroImgURL' => 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500',
-    
+            'name' => 'Meat Loaf', 
+            'handle' => '@RealMeatLoaf', 
+            'description' => 'Official Meat Loaf Twitter Page', 
+            'location' => 'Los Angeles and NY', 
+            'websiteURL' => 'https://www.meatloaf.net', 
+            'websiteTitle' => 'meatloaf.net', 
+            'joinDate' => 'Joined May 2009', 
+            
+            'tweetCount' => 1966, 
+            'followingCount' => 71, 
+            'followerCount' => '100K', 
+            'likesCount' => 39, 
+            'momentsCount' => 2, 
+            
+            'profileImgURL' => 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg', 
+            'heroImgURL' => 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500',
+            
+        ],
         'suggestionList' => [
             [
                 'name' => 'Bat Out of Hell', 
@@ -60,7 +63,7 @@ Route::get('/', function () {
                 'handle' => '@DefLeppard', 
                 'icon' => 'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg'
             ]
-            ],
+        ],
 
         'tweets' => [
             [
