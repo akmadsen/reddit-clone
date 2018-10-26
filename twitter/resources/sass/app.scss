@@ -52,6 +52,14 @@ body {
   flex-grow: 1; 
 }
 
+.flex-j-center { 
+  justify-content: center; 
+}
+
+.flex-j-end { 
+  justify-content: flex-end; 
+}
+
 .full-page { 
   height: 100vh;
 }
@@ -62,4 +70,12 @@ body {
 
 .fw-bold { 
   font-weight: bold; 
+}
+
+.stat { 
+  padding: 14px 15px 7px; 
+}
+
+.hero img { 
+  width: 100%
 }

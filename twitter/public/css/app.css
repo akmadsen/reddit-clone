@@ -10516,6 +10516,18 @@ body {
           flex-grow: 1;
 }
 
+.flex-j-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-j-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .full-page {
   height: 100vh;
 }
@@ -10526,5 +10538,13 @@ body {
 
 .fw-bold {
   font-weight: bold;
+}
+
+.stat {
+  padding: 14px 15px 7px;
+}
+
+.hero img {
+  width: 100%;
 }
 

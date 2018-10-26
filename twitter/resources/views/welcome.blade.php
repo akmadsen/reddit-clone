@@ -10,11 +10,31 @@
 <body>    
     <header class="flex flex-v">
         <div class="top-top bg-white">
-            Top Top
+            <nav class="flex flex-h">
+                <div class="left-section flex flex-h flex-1">
+                    <div class="home">Home</div>
+                    <div class="moments">Moments</div>
+                    <div class="notifications">Notifications</div>
+                    <div class="messages">Messages</div>
+                </div>
+
+                <div class="center-section flex-1 flex flex-h flex-j-center">
+                    <div class="twitter-bird">Twitter bird</div>
+                </div>
+
+                <div class="right-section flex-1 flex flex-h flex-j-end">
+                    <div class="search-box">Search for Stuff</div>
+                    <div class="profile-icon">Profile Image</div>
+                    <div class="tweet-button">Tweet</div>
+                </div>
+            </nav>
         </div>
         <div class="hero-row bg-2">
-            Hero
+            <div class="hero-img">
+                <img src="https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500" alt="" width="100%">
+            </div>
         </div>
+
         <div class="stats bg-white">
             <div class="flex flex-h ml-200">
                 <div class="stat">
@@ -22,7 +42,34 @@
                         Tweets
                     </div>
                     <div class="value">
-                        2,154
+                        1,966
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="label fw-bold">
+                        Following
+                    </div>
+                    <div class="value">
+                        71
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="label fw-bold">
+                        Followers
+                    </div>
+                    <div class="value">
+                        100K
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="label fw-bold">
+                        Likes
+                    </div>
+                    <div class="value">
+                        39
                     </div>
                 </div>
             </div>
