@@ -1,4 +1,5 @@
 <?php
+use Faker\Factory; 
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,8 @@
 */
 
 Route::get('/', function () {
+
+    $faker = Factory::create(); 
 
     $viewData = [
         'name' => 'Meat Loaf', 
@@ -60,7 +63,26 @@ Route::get('/', function () {
             ],
 
         'tweets' => [
-
+            [
+                'iconURL' => 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg',
+                'name' => 'Meat Loaf',
+                'handle' => '@RealMeatLoaf',
+                'date' => 'Oct 21',
+                'content' => $faker->paragraph,
+                'commentCount' => 123,
+                'retweetCount' => 67,
+                'likeCount' => 321
+            ],
+            [
+                'iconURL' => 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg',
+                'name' => 'Meat Loaf',
+                'handle' => '@RealMeatLoaf',
+                'date' => 'Sep 27',
+                'content' => $faker->paragraph,
+                'commentCount' => 70,
+                'retweetCount' => 53,
+                'likeCount' => 431
+            ]  
         ]
     ];
 

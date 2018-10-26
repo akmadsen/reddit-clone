@@ -12,6 +12,8 @@
 
 $bgColor: #e6ecf0; 
 $twitterColor: #1DA1F2; 
+$tweetGray: #8695A1; 
+$tweetFootGray: #657786; 
 
 body { 
   background-color: $bgColor; 
@@ -229,4 +231,62 @@ i {
 
 .mr-10 { 
   margin-right: 10px; 
+}
+
+.fz-18 { 
+  font-size: 18px; 
+}
+
+.fz-15  {
+  font-size: 16px; 
+}
+
+.fz-16 { 
+  font-size: 16px;
+}
+
+.th-name { 
+  margin-right: 5px;  
+  font-size: 14px; 
+  font-weight: bold; 
+}
+
+.th-handle { 
+  margin-right: 5px;  
+  font-size: 14px; 
+}
+
+.th-date { 
+  margin-left: 5px; 
+}
+
+.th-handle, .th-middot, .th-date, .th-button { 
+  color: $tweetGray; 
+}
+
+.th-button { 
+  margin-left: auto; 
+}
+
+.w-100p { 
+  width: 100%; 
+}
+
+.tf-item { 
+  margin-right: 40px; 
+  color: $tweetFootGray; 
+  min-width: 50px; 
+}
+
+.mt-10 { 
+  margin-top: 10px; 
+}
+
+.tweet { 
+  border-bottom: 1px solid #ddd; 
+}
+
+.like-count, .comment-count, .retweet-count { 
+  font-weight: bold; 
+  font-size: 12px; 
 }

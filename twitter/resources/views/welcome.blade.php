@@ -32,7 +32,7 @@
         </div>
         <div class="hero-row bg-2">
             <div class="hero-img">
-                <img src="<?= $heroImgURL ?>" alt="" width="100%">
+                <img src="{{ $heroImgURL }}" alt="" width="100%">
             </div>
         </div>
 
@@ -42,7 +42,7 @@
 
                     <div class="user-image-spacer height-100p">
                         <div class="user-image">
-                            <img src="<?= $profileImgURL ?>" alt="" height="200px" width="200px">
+                            <img src="{{ $profileImgURL }}" alt="" height="200px" width="200px">
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                             Tweets
                         </div>
                         <div class="value text-center">
-                            <?= number_format($tweetCount) ?>
+                            {{ number_format($tweetCount) }}
                         </div>
                     </div>
                     
@@ -60,7 +60,7 @@
                             Following
                         </div>
                         <div class="value text-center">
-                            <?= number_format($followingCount) ?>
+                            {{ number_format($followingCount) }}
                         </div>
                     </div>
                     
@@ -69,9 +69,7 @@
                             Followers
                         </div>
                         <div class="value text-center">
-                            <?= $followerCount 
-                            // FIXME: Need a formatting function 
-                            ?>
+                            {{ $followerCount }}
                         </div>
                     </div>
                     
@@ -80,7 +78,7 @@
                             Likes
                         </div>
                         <div class="value text-center">
-                            <?= number_format($likesCount) ?>
+                            {{ number_format($likesCount) }}
                         </div>
                     </div>
                     
@@ -89,7 +87,7 @@
                             Moments
                         </div>
                         <div class="value text-center">
-                            <?= number_format($momentsCount) ?>
+                            {{ number_format($momentsCount) }}
                         </div>
                     </div>
                 </div>
@@ -103,22 +101,22 @@
                 <div class="user-header-card">
 
                     <div class="fz-4 fw-bold">
-                        <?= $name ?>
+                        {{ $name }}
                     </div>
                     <div class="c-3">
-                        <?= $handle ?>
+                        {{ $handle }}
                     </div>
                     <div>
-                        <?= $description ?>
+                        {{ $description }}
                     </div>
                     <div>
-                        <i class="fas fa-map-marker-alt"></i><?= $location ?>
+                        <i class="fas fa-map-marker-alt"></i>{{ $location }}
                     </div>
                     <div>
-                        <i class="fas fa-link"></i><a href="<?= $websiteURL ?>"><?= $websiteTitle ?></a>
+                        <i class="fas fa-link"></i><a href="{{ $websiteURL }}">{{ $websiteTitle }}</a>
                     </div>
                     <div class="c-3">
-                        <i class="far fa-calendar-alt"></i><?= $joinDate ?>
+                        <i class="far fa-calendar-alt"></i>{{ $joinDate }}
                     </div>
                 </div>
             </div>
@@ -129,36 +127,39 @@
                     <div class="flex-1 text-center fw-bold fz-4 c-brand">Media</div>
                 </div>
                 <div class="tweet-container">
+                    <?php foreach($tweets as $tweet): ?>
                     <div class="tweet p-tweet flex flex-h">
                         <div class="tweet-img mr-10">
-                            <img class="circular" src="https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg" alt="">
+                            <img class="circular" src="{{ $tweet['iconURL'] }}" alt="">
                         </div>
-                        <div class="tweet-content">
-                            <div class="tweet-header flex flex-h">
-                                <div class="tweet-name">Meat Loaf</div>
-                                <div class="tweet-handle">@RealMeatLoaf</div>
-                                <div class="tweet-handle">Oct 21</div>
-                                <div class="more-button">More</div>
+                        <div class="tweet-content flex-1">
+                            <div class="tweet-header flex flex-h flex-a-center">
+                                <div class="th-name">{{ $tweet['name'] }}</div>
+                                <div class="th-handle">{{ $tweet['handle'] }}</div>
+                                <div class="th-middot">&middot;</div>
+                                <div class="th-date">{{ $tweet['date'] }}</div>
+                                <div class="th-button"><i class="fas fa-chevron-down fz-15"></i></div>
                             </div>
                             <div class="tweet-body">
-                            "I would do anything for love, but I won't do that..."
+                            {{ $tweet['content'] }}
                             </div>
-                            <div class="tweet-footer flex flex-h">
-                                <div class="comments">
-                                    <div class="comment-icon">Comments</div>
-                                    <div class="comment-count">123</div>
+                            <div class="tweet-footer flex flex-h mt-10">
+                                <div class="tf-item flex flex-h flex-a-center">
+                                    <div class="comment-icon"><i class="far fa-comment-alt fz-18"></i></div>
+                                    <div class="comment-count fz-16">{{ $tweet['commentCount'] }}</div>
                                 </div>
-                                <div class="retweets">
-                                    <div class="retweet-icon">Retweet</div>
-                                    <div class="retweet-count">67</div>
+                                <div class="tf-item flex flex-h flex-a-center">
+                                    <div class="retweet-icon"><i class="fas fa-retweet fz-18"></i></div>
+                                    <div class="retweet-count fz-16">{{ $tweet['retweetCount'] }}</div>
                                 </div>
-                                <div class="likes">
-                                    <div class="like-icon">Like</div>
-                                    <div class="like-count">9001</div>
+                                <div class="tf-item flex flex-h flex-a-center">
+                                    <div class="like-icon"><i class="far fa-heart fz-18"></i></div>
+                                    <div class="like-count fz-16">{{ $tweet['likeCount'] }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="suggestions flex-1">
@@ -169,10 +170,10 @@
                     <div class="suggestion-list">
                         <?php foreach($suggestionList as $suggestion): ?>
                         <div class="suggestion-item">
-                            <img src="<?= $suggestion['icon'] ?>" alt="" class="circular">
+                            <img src="{{ $suggestion['icon'] }}" alt="" class="circular">
                             <div>
-                                <span class="fw-bold"><?= $suggestion['name'] ?></span><br>
-                                <span><?= $suggestion['handle'] ?></span>
+                                <span class="fw-bold">{{ $suggestion['name'] }}</span><br>
+                                <span>{{ $suggestion['handle'] }}</span>
                             </div>
                         </div>
                         <?php endforeach; ?>
