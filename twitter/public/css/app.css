@@ -10522,6 +10522,12 @@ body {
           justify-content: center;
 }
 
+.flex-a-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .flex-j-end {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -10546,5 +10552,47 @@ body {
 
 .hero img {
   width: 100%;
+}
+
+.height-50 {
+  height: 46px;
+}
+
+.height-100p {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.value {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: darkgray;
+}
+
+.nav-item {
+  padding: 0 14px 0 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.twitter-bird {
+  color: #1DA1F2;
+}
+
+i {
+  font-size: 21px;
+  margin-right: 3px;
 }
 
