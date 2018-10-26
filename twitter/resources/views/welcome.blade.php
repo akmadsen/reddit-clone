@@ -32,7 +32,7 @@
         </div>
         <div class="hero-row bg-2">
             <div class="hero-img">
-                <img src="https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500" alt="" width="100%">
+                <img src="<?= $heroImgURL ?>" alt="" width="100%">
             </div>
         </div>
 
@@ -42,7 +42,7 @@
 
                     <div class="user-image-spacer height-100p">
                         <div class="user-image">
-                            <img src="https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg" alt="" height="200px" width="200px">
+                            <img src="<?= $profileImgURL ?>" alt="" height="200px" width="200px">
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                             Tweets
                         </div>
                         <div class="value text-center">
-                            1,966
+                            <?= number_format($tweetCount) ?>
                         </div>
                     </div>
                     
@@ -60,7 +60,7 @@
                             Following
                         </div>
                         <div class="value text-center">
-                            71
+                            <?= number_format($followingCount) ?>
                         </div>
                     </div>
                     
@@ -69,7 +69,9 @@
                             Followers
                         </div>
                         <div class="value text-center">
-                            100K
+                            <?= $followerCount 
+                            // FIXME: Need a formatting function 
+                            ?>
                         </div>
                     </div>
                     
@@ -78,7 +80,7 @@
                             Likes
                         </div>
                         <div class="value text-center">
-                            39
+                            <?= number_format($likesCount) ?>
                         </div>
                     </div>
                     
@@ -87,7 +89,7 @@
                             Moments
                         </div>
                         <div class="value text-center">
-                            2
+                            <?= number_format($momentsCount) ?>
                         </div>
                     </div>
                 </div>
@@ -107,16 +109,16 @@
                         <?= $handle ?>
                     </div>
                     <div>
-                        Official Meat Loaf Twitter Page
+                        <?= $description ?>
                     </div>
                     <div>
-                        <i class="fas fa-map-marker-alt"></i>Los Angeles and NY
+                        <i class="fas fa-map-marker-alt"></i><?= $location ?>
                     </div>
                     <div>
-                        <i class="fas fa-link"></i><a href="#">meatloaf.net</a>
+                        <i class="fas fa-link"></i><a href="<?= $websiteURL ?>"><?= $websiteTitle ?></a>
                     </div>
                     <div class="c-3">
-                        <i class="far fa-calendar-alt"></i>Joined May 2009
+                        <i class="far fa-calendar-alt"></i><?= $joinDate ?>
                     </div>
                 </div>
             </div>
