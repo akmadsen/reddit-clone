@@ -10643,3 +10643,42 @@ i {
   font-size: 18px;
 }
 
+.suggestion-card {
+  background-color: white;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.suggestion-card .suggestion-head {
+  display: block;
+}
+
+.suggestion-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.suggestion-card a {
+  font-size: 0.8rem;
+  margin-left: 3px;
+}
+
+.suggestion-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.suggestion-item img {
+  height: 48px;
+  width: 48px;
+  margin-right: 10px;
+}
+
+.circular {
+  border-radius: 50%;
+}
+

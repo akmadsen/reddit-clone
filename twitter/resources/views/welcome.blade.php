@@ -126,7 +126,22 @@
                 Tweets
             </div>
             <div class="suggestions flex-1">
-                Suggestions
+                <div class="suggestion-card p-10">
+                    <div class="suggestion-head">
+                        <h3>You may also like</h3>&middot;<a href="#">Refresh</a>
+                    </div>
+                    <div class="suggestion-list">
+                        <?php foreach($suggestionList as $suggestion): ?>
+                        <div class="suggestion-item">
+                            <img src="<?= $suggestion['icon'] ?>" alt="" class="circular">
+                            <div>
+                                <span class="fw-bold"><?= $suggestion['name'] ?></span><br>
+                                <span><?= $suggestion['handle'] ?></span>
+                            </div>
+                        </div>
+                        <?php endforeach ?>
+                    </div>
+                </div>
             </div>
         </div>
         </main>
