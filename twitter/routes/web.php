@@ -14,19 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/game-home', function () {
-    return view('game-home');
-});
-
-Route::get('/russian-roulette', function () {
-    return view('russian-roulette');
-});
-
-Route::get('/grid-sandbox', function () {
-    return view('grid-sandbox');
-});

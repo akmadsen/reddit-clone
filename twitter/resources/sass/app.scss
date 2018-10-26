@@ -6,12 +6,60 @@
 @import 'variables';
 
 // Components 
-@import 'components/header.scss'; 
-@import 'components/game-links.scss'; 
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+$bgColor: #e6ecf0; 
+
 body { 
-  background-color: orange; 
+  background-color: $bgColor; 
+}
+
+.bg-white { 
+  background-color: white;
+}
+
+.bg-0 { 
+  background-color: #eee; 
+}
+
+.bg-1 { 
+  background-color: #ccc; 
+}
+
+.bg-2 { 
+  background-color: #aaa; 
+}
+
+.bg-3 { 
+  background-color: #777; 
+}
+
+.flex { 
+  display: flex; 
+}
+
+.flex-h {
+  flex-direction: row;
+}
+
+.flex-v { 
+  flex-direction: column; 
+}
+
+.flex-1 {
+  flex-grow: 1; 
+}
+
+.full-page { 
+  height: 100vh;
+}
+
+.ml-200 { 
+  margin-left: 200px; 
+}
+
+.fw-bold { 
+  font-weight: bold; 
 }
