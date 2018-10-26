@@ -32,7 +32,7 @@
         </div>
         <div class="hero-row bg-2">
             <div class="hero-img">
-                <img src="{{ $user['heroImgURL'] }}" alt="" width="100%">
+                <img src="{{ $user->heroImgURL }}" alt="" width="100%">
             </div>
         </div>
 
@@ -42,7 +42,7 @@
 
                     <div class="user-image-spacer height-100p">
                         <div class="user-image">
-                            <img src="{{ $user['profileImgURL'] }}" alt="" height="200px" width="200px">
+                            <img src="{{ $user->profileImgURL }}" alt="" height="200px" width="200px">
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                             Tweets
                         </div>
                         <div class="value text-center">
-                            {{ number_format($user['tweetCount']) }}
+                            {{ number_format($user->tweetCount) }}
                         </div>
                     </div>
                     
@@ -60,7 +60,7 @@
                             Following
                         </div>
                         <div class="value text-center">
-                            {{ number_format($user['followingCount']) }}
+                            {{ number_format($user->followingCount) }}
                         </div>
                     </div>
                     
@@ -69,7 +69,7 @@
                             Followers
                         </div>
                         <div class="value text-center">
-                            {{ $user['followerCount'] }}
+                            {{ $user->followerCount }}
                         </div>
                     </div>
                     
@@ -78,7 +78,7 @@
                             Likes
                         </div>
                         <div class="value text-center">
-                            {{ number_format($user['likesCount']) }}
+                            {{ number_format($user->likesCount) }}
                         </div>
                     </div>
                     
@@ -87,7 +87,7 @@
                             Moments
                         </div>
                         <div class="value text-center">
-                            {{ number_format($user['momentsCount']) }}
+                            {{ number_format($user->momentsCount) }}
                         </div>
                     </div>
                 </div>
@@ -101,22 +101,22 @@
                 <div class="user-header-card">
 
                     <div class="fz-4 fw-bold">
-                        {{ $user['name'] }}
+                        {{ $user->name }}
                     </div>
                     <div class="c-3">
-                        {{ $user['handle'] }}
+                        {{ $user->handle }}
                     </div>
                     <div>
-                        {{ $user['description']}}
+                        {{ $user->description}}
                     </div>
                     <div>
-                        <i class="fas fa-map-marker-alt"></i>{{ $user['location']}}
+                        <i class="fas fa-map-marker-alt"></i>{{ $user->location }}
                     </div>
                     <div>
-                        <i class="fas fa-link"></i><a href="{{ $user['websiteURL'] }}">{{ $user['websiteTitle'] }}</a>
+                        <i class="fas fa-link"></i><a href="{{ $user->websiteURL }}">{{ $user->websiteTitle }}</a>
                     </div>
                     <div class="c-3">
-                        <i class="far fa-calendar-alt"></i>{{ $user['joinDate'] }}
+                        <i class="far fa-calendar-alt"></i>{{ $user->joinDate }}
                     </div>
                 </div>
             </div>
@@ -130,31 +130,31 @@
                     <?php foreach($tweets as $tweet): ?>
                     <div class="tweet p-tweet flex flex-h">
                         <div class="tweet-img mr-10">
-                            <img class="circular" src="{{ $tweet['iconURL'] }}" alt="">
+                            <img class="circular" src="{{ $tweet->user->icon }}" alt="">
                         </div>
                         <div class="tweet-content flex-1">
                             <div class="tweet-header flex flex-h flex-a-center">
-                                <div class="th-name">{{ $tweet['name'] }}</div>
-                                <div class="th-handle">{{ $tweet['handle'] }}</div>
+                                <div class="th-name">{{ $tweet->user->name }}</div>
+                                <div class="th-handle">{{ $tweet->user->handle }}</div>
                                 <div class="th-middot">&middot;</div>
-                                <div class="th-date">{{ $tweet['date'] }}</div>
+                                <div class="th-date">{{ $tweet->date }}</div>
                                 <div class="th-button"><i class="fas fa-chevron-down fz-15"></i></div>
                             </div>
                             <div class="tweet-body">
-                            {{ $tweet['content'] }}
+                            {{ $tweet->content }}
                             </div>
                             <div class="tweet-footer flex flex-h mt-10">
                                 <div class="tf-item flex flex-h flex-a-center">
                                     <div class="comment-icon"><i class="far fa-comment-alt fz-18"></i></div>
-                                    <div class="comment-count fz-16">{{ $tweet['commentCount'] }}</div>
+                                    <div class="comment-count fz-16">{{ $tweet->commentCount }}</div>
                                 </div>
                                 <div class="tf-item flex flex-h flex-a-center">
                                     <div class="retweet-icon"><i class="fas fa-retweet fz-18"></i></div>
-                                    <div class="retweet-count fz-16">{{ $tweet['retweetCount'] }}</div>
+                                    <div class="retweet-count fz-16">{{ $tweet->retweetCount }}</div>
                                 </div>
                                 <div class="tf-item flex flex-h flex-a-center">
                                     <div class="like-icon"><i class="far fa-heart fz-18"></i></div>
-                                    <div class="like-count fz-16">{{ $tweet['likeCount'] }}</div>
+                                    <div class="like-count fz-16">{{ $tweet->likeCount }}</div>
                                 </div>
                             </div>
                         </div>
@@ -170,10 +170,10 @@
                     <div class="suggestion-list">
                         <?php foreach($suggestionList as $suggestion): ?>
                         <div class="suggestion-item">
-                            <img src="{{ $suggestion['icon'] }}" alt="" class="circular">
+                            <img src="{{ $suggestion->icon }}" alt="" class="circular">
                             <div>
-                                <span class="fw-bold">{{ $suggestion['name'] }}</span><br>
-                                <span>{{ $suggestion['handle'] }}</span>
+                                <span class="fw-bold">{{ $suggestion->name }}</span><br>
+                                <span>{{ $suggestion->handle }}</span>
                             </div>
                         </div>
                         <?php endforeach; ?>
