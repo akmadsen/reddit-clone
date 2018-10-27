@@ -18,14 +18,18 @@
             <span>reddit</span>
           </div>
           <div class="th-filter">
-            <i class="fas fa-chart-line"></i>
+            <i class="fas fa-chart-line trend-line"></i>
             <span>Popular</span>
-            <i class="fas fa-sort-down"></i>
+            <i class="fas fa-sort-down open-list"></i>
           </div>
         </div>
         <div class="th-mid">
           <div class="search-bar">
-            Search Bar
+            <i class="fas fa-search"></i>
+            <span>Search Reddit</span>
+            <i class="fas fa-chart-bar"></i>
+            <i class="fas fa-chart-line"></i>
+            <i class="fas fa-archive"></i>
           </div>
         </div>
         <div class="th-right">

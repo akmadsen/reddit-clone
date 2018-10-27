@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round);/*!
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round|Encode+Sans+Condensed);/*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10473,7 +10473,7 @@ body {
 }
 
 .top-header {
-  background-color: green;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10517,6 +10517,31 @@ body {
 .th-filter {
   height: 36px;
   width: 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.th-filter span {
+  display: inline-block;
+  width: 100%;
+  padding: 0 56px 0 40px;
+}
+
+.th-filter .trend-line {
+  position: absolute;
+  left: 10;
+  font-size: 22px;
+  color: #0079d3;
+}
+
+.th-filter .open-list {
+  position: absolute;
+  right: 8px;
 }
 
 .bottom-header {

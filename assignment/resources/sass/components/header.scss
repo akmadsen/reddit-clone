@@ -1,5 +1,5 @@
 .top-header { 
-    background-color: green; 
+    background-color: $bg-item; 
 
     display: flex; 
     align-items: center; 
@@ -33,6 +33,29 @@
 .th-filter { 
     height: 36px; 
     width: 270px; 
+
+    display: flex; 
+    align-items: center; 
+
+    position: relative; 
+
+    span { 
+        display: inline-block; 
+        width: 100%; 
+        padding: 0 56px 0 40px; 
+    }
+
+    .trend-line { 
+        position: absolute; 
+        left: 10;
+        font-size: 22px; 
+        color: $brand-blue; 
+    }
+
+    .open-list { 
+        position: absolute; 
+        right: 8px; 
+    }
 }
 
 .bottom-header { 
