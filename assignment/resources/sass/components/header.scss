@@ -1,0 +1,41 @@
+.top-header { 
+    background-color: green; 
+
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+
+    padding: 0 20px; 
+}
+
+.th-left { 
+    display: flex; 
+    align-items: center; 
+}
+
+.company { 
+    display: flex; 
+    align-items: center; 
+    width: 117px; 
+    span { 
+        font-size: 20px; 
+        font-family: $font-family-logo; 
+    }
+}
+
+.logo {
+    font-size: 32px;
+    color: $brand-red; 
+
+    padding: 8px 8px 8px 0; 
+}
+
+.th-filter { 
+    height: 36px; 
+    width: 270px; 
+}
+
+.bottom-header { 
+    background-color: yellowgreen; 
+}
+
