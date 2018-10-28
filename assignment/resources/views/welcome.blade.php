@@ -51,15 +51,21 @@
       
       <div class="bottom-header">
         <div class="view-options">
-          View
-          Large
-          Medium
-          Compact
+          <span>View</span>
+          <i class="fas fa-th"></i>
+          <i class="fas fa-th-large"></i>
+          <i class="fas fa-th-list"></i>
         </div>
         <div class="sort-options">
-          Sort 
-          Hot v
-          Canada v
+          <span>Sort</span>  
+          <div class="bh-filter-type">
+            <span>Hot</span>
+            <i class="fas fa-sort-down"></i>
+          </div>
+          <div class="bg-filter-location">
+            <span>Canada</span>
+            <i class="fas fa-sort-down"></i>
+          </div>
         </div>
       </div>
     </header>
