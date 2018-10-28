@@ -42,10 +42,10 @@
           <div class="old-reddit-link">
             <a href="#"><i class="fas fa-external-link-alt"></i>Visit Old Reddit</a>
           </div>
-          <div class="user-options">
-            <i class="fas fa-user-alt"></i>
-            <i class="fas fa-sort-down"></i>
-          </div>
+          <button class="user-options">
+            <i class="fas fa-user-alt usr-img"></i>
+            <i class="fas fa-sort-down usr-open"></i>
+          </button>
         </div>
       </div>
       

@@ -112,6 +112,7 @@
 .th-right { 
     display: flex; 
     justify-content: flex-end; 
+    align-items: center; 
 }
 
 %button-shared { 
@@ -141,7 +142,48 @@
 }
 
 .old-reddit-link { 
-    background-color: red; 
+    margin-left: 16px; 
+    height: 20px;
+    display: flex;
+    vertical-align: baseline; 
+    a { 
+        color: $brand-blue;
+        font-size: 12px; 
+        line-height: 16px; 
+        width: 120px; 
+
+        i {
+            font-size: 16px; 
+            margin-right: 8px; 
+        }
+
+        &:hover {
+            text-decoration: none; 
+            color: $brand-blue; 
+        }
+    }
+}
+
+.user-options { 
+    width: 70px; 
+    height: 30px; 
+    margin-left: 8px; 
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent; 
+    border-radius: 4px; 
+    background-color: $bg-item; 
+    justify-content: space-around;
+}
+
+.usr-img { 
+    color: $search-text-dark; 
+    font-size: 0.85rem; 
+    margin-right: 5px; 
+}
+
+.usr-open { 
+    font-size: 0.95rem; 
 }
 
 .bottom-header { 

@@ -10609,6 +10609,9 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-button,
@@ -10634,7 +10637,56 @@ body {
 }
 
 .old-reddit-link {
-  background-color: red;
+  margin-left: 16px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: baseline;
+}
+
+.old-reddit-link a {
+  color: #0079d3;
+  font-size: 12px;
+  line-height: 16px;
+  width: 120px;
+}
+
+.old-reddit-link a i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.old-reddit-link a:hover {
+  text-decoration: none;
+  color: #0079d3;
+}
+
+.user-options {
+  width: 70px;
+  height: 30px;
+  margin-left: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #fff;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.usr-img {
+  color: #878a8c;
+  font-size: 0.85rem;
+  margin-right: 5px;
+}
+
+.usr-open {
+  font-size: 0.95rem;
 }
 
 .bottom-header {
