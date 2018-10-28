@@ -10482,6 +10482,7 @@ body {
           align-items: center;
   position: relative;
   padding: 0 20px;
+  border-bottom: 1px solid #edeff1;
 }
 
 .th-left {
@@ -10690,6 +10691,117 @@ body {
 }
 
 .bottom-header {
-  background-color: yellowgreen;
+  background-color: #fff;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 40px;
+}
+
+.bottom-header .container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottom-header .option-title {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  line-height: 12px;
+  margin-top: 1px;
+  color: #7c7c7c;
+}
+
+.bottom-header .view-options {
+  padding: 10px 16px 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 1px solid #edeff1;
+}
+
+.bottom-header .view-options .view-opt-icons {
+  margin-left: 12px;
+  width: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bottom-header .view-options .selected {
+  color: #0079d3;
+}
+
+.bottom-header .view-options .deselected {
+  color: rgba(0, 121, 211, 0.2);
+}
+
+.bottom-header .view-options i {
+  font-size: 20px;
+}
+
+.bottom-header .sort-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 16px;
+  height: 100%;
+}
+
+.bottom-header .sort-options .bh-filter-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 16px;
+  color: #0079d3;
+  position: relative;
+  height: 100%;
+}
+
+.bottom-header .sort-options .bh-filter-type {
+  width: 84px;
+}
+
+.bottom-header .sort-options .bh-filter-location {
+  width: 88px;
+}
+
+.bottom-header .sort-options .list-arrow {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.bottom-header .sort-options .flame {
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.bottom-header .sort-options span {
+  letter-spacing: 0.5px;
+}
+
+.bottom-header .sort-options .sort-option {
+  font-size: 12px;
+  margin-left: 4px;
 }
 
