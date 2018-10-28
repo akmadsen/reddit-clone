@@ -68,7 +68,7 @@
     color: $search-text-dark; 
     background-color: $bg-search;
     border: 1px solid $border-search;  
-    border-radius: 3px; 
+    border-radius: 4px; 
     height: 36px;
 
     padding: 0 16px 0 40px; 
@@ -107,6 +107,41 @@
             margin-left: 0; 
         }
     }
+}
+
+.th-right { 
+    display: flex; 
+    justify-content: flex-end; 
+}
+
+%button-shared { 
+    border: 1px solid $brand-blue; 
+    background-color: $bg-item; 
+    color: $brand-blue; 
+    border-radius: 4px; 
+    font-weight: bold;
+    padding: 3px 16px; 
+    width: 120px; 
+    font-size: 12px;  
+    font-family: $font-family-button; 
+    font-weight: 700; 
+    line-height: 24px; 
+    letter-spacing: 0.5px; 
+}
+
+.login-button { 
+    @extend %button-shared; 
+}
+
+.signin-button { 
+    @extend %button-shared; 
+    background-color: $brand-blue; 
+    color: $bg-item; 
+    margin-left: 16px; 
+}
+
+.old-reddit-link { 
+    background-color: red; 
 }
 
 .bottom-header { 

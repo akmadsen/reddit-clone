@@ -36,12 +36,15 @@
         </div>
         <div class="th-right">
           <div class="login-buttons">
-            Log In
-            Sign Up
+            <button class="login-button">LOG IN</button>
+            <button class="signin-button">SIGN UP</button>
+          </div>
+          <div class="old-reddit-link">
+            <a href="#"><i class="fas fa-external-link-alt"></i>Visit Old Reddit</a>
           </div>
           <div class="user-options">
-            Visit Old Reddit
-            Options Icon
+            <i class="fas fa-user-alt"></i>
+            <i class="fas fa-sort-down"></i>
           </div>
         </div>
       </div>
