@@ -76,32 +76,37 @@
     </header>
 
     <main>
-      <div class="main-feed">
-        <div class="sign-up-cta">
-          Sign up plz!
+      <div class="container">
+        <div class="main-feed">
+          <div class="sign-up-cta post">
+            <h1>Join the discussion</h1>  
+            <span>Comment and be a part of what the internet is talking about.</span>
+            <button class="cta-button">Become a Redditor</button>
+            <button><i class="fas fa-times"></i></button>
+          </div>
+          <div class="post">
+            Hello, I'm a Post!
+          </div>
         </div>
-        <div class="post">
-          Hello, I'm a Post!
-        </div>
-      </div>
-      <div class="auxilliary-feed">
-        <div class="subreddit">
-          Subreddit Info Here Plz. 
-        </div>
-        <div class="advertisement">
-          Advertisement Here Plz.
-        </div>
-        <div class="reddit-premium">
-          Reddit Premium Stuff Here Plz. 
-        </div>
-        <div class="trending-communities">
-          Trending Communities Here Plz. 
-        </div>
-        <div class="advertisement">
-          Another, Separate Ad Here Plz. 
-        </div>
-        <div class="footer">
-          Reddit Footer Info Here Plz. 
+        <div class="auxilliary-feed">
+          <div class="subreddit post">
+            Subreddit Info Here Plz. 
+          </div>
+          <div class="advertisement post">
+            Advertisement Here Plz.
+          </div>
+          <div class="reddit-premium post">
+            Reddit Premium Stuff Here Plz. 
+          </div>
+          <div class="trending-communities post">
+            Trending Communities Here Plz. 
+          </div>
+          <div class="advertisement post">
+            Another, Separate Ad Here Plz. 
+          </div>
+          <div class="footer post">
+            Reddit Footer Info Here Plz. 
+          </div>
         </div>
       </div>
     </main>

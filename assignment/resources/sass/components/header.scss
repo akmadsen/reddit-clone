@@ -120,8 +120,8 @@
 
 %button-shared { 
     border: 1px solid $brand-blue; 
-    background-color: $bg-item; 
-    color: $brand-blue; 
+    background-color: $brand-blue; 
+    color: $bg-item; 
     border-radius: 4px; 
     font-weight: bold;
     padding: 3px 16px; 
@@ -135,12 +135,12 @@
 
 .login-button { 
     @extend %button-shared; 
+    background-color: $bg-item; 
+    color: $brand-blue; 
 }
 
 .signin-button { 
     @extend %button-shared; 
-    background-color: $brand-blue; 
-    color: $bg-item; 
     margin-left: 16px; 
 }
 
@@ -284,4 +284,9 @@
             margin-left: 4px; 
         }
     }
+}
+
+// FIXME: Need to pull out the buttons into their own class. 
+.cta-button { 
+    @extend %button-shared; 
 }
