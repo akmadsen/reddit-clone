@@ -58,6 +58,38 @@
     }
 }
 
+.th-mid { 
+    background-color: red;
+    margin: 0 16px; 
+    display: flex; 
+
+    flex: 1; 
+}
+
+.search-bar { 
+    color: $search-text-dark; 
+    background-color: $bg-search;
+    border: 1px solid $border-search;  
+    border-radius: 3px; 
+    height: 36px;
+
+    padding: 0 16px 0 40px; 
+
+    flex: 1; 
+
+    position: relative; 
+
+    display: flex; 
+    align-items: center; 
+}
+
+.search-glass { 
+    font-size: 18px; 
+
+    position: absolute; 
+    left: 16px; 
+}
+
 .bottom-header { 
     background-color: yellowgreen; 
 }

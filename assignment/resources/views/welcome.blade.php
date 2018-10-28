@@ -25,11 +25,13 @@
         </div>
         <div class="th-mid">
           <div class="search-bar">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search search-glass"></i>
             <span>Search Reddit</span>
-            <i class="fas fa-chart-bar"></i>
-            <i class="fas fa-chart-line"></i>
-            <i class="fas fa-archive"></i>
+          </div>
+          <div class="search-filters">
+            <i class="fas fa-chart-bar search-filter-icon"></i>
+            <i class="fas fa-chart-line search-filter-icon"></i>
+            <i class="fas fa-archive search-filter-icon"></i>
           </div>
         </div>
         <div class="th-right">
