@@ -10545,8 +10545,6 @@ body {
 }
 
 .th-mid {
-  background-color: red;
-  margin: 0 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10556,6 +10554,7 @@ body {
 }
 
 .search-bar {
+  margin: 0 16px;
   color: #878a8c;
   background-color: #f6f7f8;
   border: 1px solid #edeff1;
@@ -10578,6 +10577,29 @@ body {
   font-size: 18px;
   position: absolute;
   left: 16px;
+}
+
+.search-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid #f6f7f8;
+  color: #1a1a1b;
+}
+
+.search-filters i {
+  font-size: 16px;
+  padding: 8px;
+  margin-left: 8px;
+}
+
+.search-filters i:first-child {
+  margin-left: 0;
 }
 
 .bottom-header {

@@ -59,14 +59,12 @@
 }
 
 .th-mid { 
-    background-color: red;
-    margin: 0 16px; 
     display: flex; 
-
     flex: 1; 
 }
 
 .search-bar { 
+    margin: 0 16px; 
     color: $search-text-dark; 
     background-color: $bg-search;
     border: 1px solid $border-search;  
@@ -88,6 +86,27 @@
 
     position: absolute; 
     left: 16px; 
+}
+
+.search-filters { 
+    display: flex; 
+    align-items: center; 
+
+    padding-right: 8px; 
+    margin-right: 8px; 
+
+    border-right: 1px solid $bg-search; 
+
+    color: $search-icon-black; 
+
+    i { 
+        font-size: 16px; 
+        padding: 8px; 
+        margin-left: 8px; 
+        &:first-child { 
+            margin-left: 0; 
+        }
+    }
 }
 
 .bottom-header { 
