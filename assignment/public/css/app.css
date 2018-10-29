@@ -10475,7 +10475,8 @@ body {
 .login-button,
 .signin-button,
 .cta-button,
-.sr-button {
+.sr-button,
+.rp-button {
   border: 1px solid #0079d3;
   background-color: #0079d3;
   color: #fff;
@@ -10521,6 +10522,14 @@ body {
 .sr-button {
   margin-top: 12px;
   height: 34px;
+}
+
+.rp-button {
+  width: 112px;
+  height: 28px;
+  padding: 0;
+  background-color: #fc4823;
+  border-color: #fc4823;
 }
 
 .sign-up-cta,
@@ -10802,6 +10811,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 8px 12px;
+}
+
+.rp-shield {
+  font-size: 22px;
+  color: #fc4823;
+  margin-right: 12px;
 }
 
 .rp-text {
@@ -10812,6 +10828,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-right: auto;
+}
+
+.rp-text span {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.rp-title {
+  font-weight: bold;
 }
 
 .top-header {

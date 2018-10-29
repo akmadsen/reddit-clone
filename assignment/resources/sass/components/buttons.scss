@@ -52,3 +52,14 @@
     margin-top: 12px;
     height: 34px;
 }
+
+.rp-button { 
+    @extend %button-shared; 
+
+    width: 112px; 
+    height: 28px;
+    padding: 0; 
+
+    background-color: $brand-red; 
+    border-color: $brand-red; 
+}
