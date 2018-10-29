@@ -88,3 +88,44 @@ When writing these journal entries, we need to answer Cameron's questions three.
 
 N/A for today - npm was broken on machine at home, need to debug why - spent most of evening on addressing 
     household challenges
+
+## Day 04 - October 26, 2018 
+
+N/A - Forgot to Record during the day, Family Obligations in Evening
+
+## Weekend (a) - October 27. 2018
+
+1) Obstacles & Overcoming Them
+
+- Needed to fix and set up new OS at home (chose to install Fedora 28, hoping it would be easier than Ubuntu) 
+    - Success, turns out composer is in the Fedora repos
+    - Set up LAMP server (XAMPP plays poorly with fedora), set up composer, laravel projects 
+	- Performance issues on Fedora 28 at home, fixed by switching desktop environments 
+- Chose to replicate Reddit for midterm assignment 
+
+2) Pushing Yourself 
+
+- Took the time to refresh myself on SASS and try to understand how Reddit composed their webpages 
+- Hours spent trying to make the site look awesome 
+
+3) Outside Class 
+
+- Hours and effort put into making the midterm assignment look awesome 
+
+## Weekend (b) - October 28, 2018
+
+1) Obstacles & Overcoming Them 
+
+- Learning the ropes of the i3 desktop environment (really window manager) for faster development time 
+    - (Mostly, though, so I can use my 10 year old computer... I really can't afford a new one) 
+
+2) Pushing Yourself 
+
+- Besides housekeeping, today was mostly dedicated to putting in the hours and trying to get my reddit 
+    imitation site looking just-so, taking pixel measurements, or adapting the site's style sheets 
+- Looking into CSS attributes I didn't fully understand, like the effects of line-height 
+
+3) Outside Class 
+
+- Most of this was, again, an hour dump. Learning i3 was a good challenge on it's own  
+
