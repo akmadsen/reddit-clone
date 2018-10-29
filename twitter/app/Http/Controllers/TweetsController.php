@@ -15,46 +15,14 @@ class TweetsController extends Controller
 
         $meatLoaf = $this->getMeatLoaf(); 
 
-        $batMusical = new User(); 
-        $batMusical->name = 'Bat Out of Hell';
-        $batMusical->handle = '@BatTheMusical';
-        $batMusical->icon = 'https://pbs.twimg.com/profile_images/1016606849284616194/Iwz5QTnQ_bigger.jpg';
+        $batMusical = $this->getBatMusical(); 
+        $geneSimmons = $this->getGeneSimmons(); 
+        $weirdAl = $this->getWeirdAl(); 
+        $ozzy = $this->getOzzy(); 
+        $defLeppard = $this->getDefLeppard(); 
 
-        $geneSimmons = new User(); 
-        $geneSimmons->name = 'Gene Simmons';
-        $geneSimmons->handle = '@genesimmons';
-        $geneSimmons->icon = 'https://pbs.twimg.com/profile_images/697624194205544449/PaabF10k_bigger.jpg';
-        
-        $weirdAl = new User(); 
-        $weirdAl->name = 'Al Yankovic';
-        $weirdAl->handle = '@alyankovic'; 
-        $weirdAl->icon = 'https://pbs.twimg.com/profile_images/246073324/IL2_bigger.jpg';
-
-        $ozzy = new User(); 
-        $ozzy->name = 'Ozzy Osbourne';
-        $ozzy->handle = '@OzzyOsbourne'; 
-        $ozzy->icon = 'https://pbs.twimg.com/profile_images/961022056631447552/Ywh6u5UM_bigger.jpg';
-
-        $defLeppard = new User(); 
-        $defLeppard->name = 'Def Leppard';
-        $defLeppard->handle = '@DefLeppard'; 
-        $defLeppard->icon = 'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg';
-
-        $tweet1 = new Tweet(); 
-        $tweet1->user = $meatLoaf; 
-        $tweet1->date = 'Oct 21';
-        $tweet1->content = $faker->paragraph;
-        $tweet1->commentCount = 123;
-        $tweet1->retweetCount = 67;
-        $tweet1->likeCount = 321;
-
-        $tweet2 = new Tweet(); 
-        $tweet2->user = $meatLoaf; 
-        $tweet2->date = 'Sep 27';
-        $tweet2->content = $faker->paragraph;
-        $tweet2->commentCount = 70;
-        $tweet2->retweetCount = 53;
-        $tweet2->likeCount = 431;
+        $tweet1 = $this->getTweet1($meatLoaf); 
+        $tweet2 = $this->getTweet2($meatLoaf); 
 
         $viewData = [
             'user' => $meatLoaf, 
@@ -77,6 +45,7 @@ class TweetsController extends Controller
 
     private function getMeatLoaf() { 
         $meatLoaf = new User(); 
+
         $meatLoaf->name = 'Meat Loaf';
         $meatLoaf->handle = '@RealMeatLoaf';
         $meatLoaf->description = 'Official Meat Loaf Twitter Page';
@@ -94,5 +63,83 @@ class TweetsController extends Controller
         $meatLoaf->heroImgURL = 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500';
 
         return $meatLoaf; 
+    }
+
+    private function getBatMusical() { 
+        $batMusical = new User(); 
+
+        $batMusical->name = 'Bat Out of Hell';
+        $batMusical->handle = '@BatTheMusical';
+        $batMusical->icon = 'https://pbs.twimg.com/profile_images/1016606849284616194/Iwz5QTnQ_bigger.jpg';
+
+        return $batMusical; 
+    }
+
+    private function getGeneSimmons() { 
+        $geneSimmons = new User(); 
+
+        $geneSimmons->name = 'Gene Simmons';
+        $geneSimmons->handle = '@genesimmons';
+        $geneSimmons->icon = 'https://pbs.twimg.com/profile_images/697624194205544449/PaabF10k_bigger.jpg';
+
+        return $geneSimmons; 
+    }
+
+    private function getWeirdAl() { 
+        $weirdAl = new User(); 
+
+        $weirdAl->name = 'Al Yankovic';
+        $weirdAl->handle = '@alyankovic'; 
+        $weirdAl->icon = 'https://pbs.twimg.com/profile_images/246073324/IL2_bigger.jpg';
+
+        return $weirdAl; 
+    }
+
+    private function getOzzy() { 
+        $ozzy = new User(); 
+
+        $ozzy->name = 'Ozzy Osbourne';
+        $ozzy->handle = '@OzzyOsbourne'; 
+        $ozzy->icon = 'https://pbs.twimg.com/profile_images/961022056631447552/Ywh6u5UM_bigger.jpg';
+
+        return $ozzy;
+    }
+
+    private function getDefLeppard() {
+        $defLeppard = new User(); 
+
+        $defLeppard->name = 'Def Leppard';
+        $defLeppard->handle = '@DefLeppard'; 
+        $defLeppard->icon = 'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg';
+
+        return $defLeppard; 
+    }
+
+    private function getTweet1($user) {
+        $faker = Factory::create(); 
+        $tweet1 = new Tweet(); 
+
+        $tweet1->user = $user; 
+        $tweet1->date = 'Oct 21';
+        $tweet1->content = $faker->paragraph;
+        $tweet1->commentCount = 123;
+        $tweet1->retweetCount = 67;
+        $tweet1->likeCount = 321;
+
+        return $tweet1; 
+    }
+
+    private function getTweet2($user) { 
+        $faker = Factory::create(); 
+        $tweet2 = new Tweet(); 
+
+        $tweet2->user = $meatLoaf; 
+        $tweet2->date = 'Sep 27';
+        $tweet2->content = $faker->paragraph;
+        $tweet2->commentCount = 70;
+        $tweet2->retweetCount = 53;
+        $tweet2->likeCount = 431;
+
+        return $tweet2; 
     }
 }

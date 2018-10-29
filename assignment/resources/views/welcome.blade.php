@@ -157,7 +157,15 @@
           <button class="rp-button">Get Premium</button>
         </div>
         <div class="trending-communities post">
-          Trending Communities Here Plz.
+          <div class="tc-title">Trending Communities</div>
+          <div class="tc-card">
+            <div class="tc-img">IMG</div>
+            <div class="tc-card-text">
+              <div class="tc-subreddit">r/birdwitharms</div>
+              <div class="tc-subcount">9,001 subscribers</div>
+            </div>
+            <button class="tc-subs-button">Subscribe</button>
+          </div>
         </div>
         <div class="advertisement-post">
           <span>Advertisement</span>
