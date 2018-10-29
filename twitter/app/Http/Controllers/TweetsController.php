@@ -13,22 +13,7 @@ class TweetsController extends Controller
     public function index() { 
         $faker = Factory::create(); 
 
-        $meatLoaf = new User(); 
-        $meatLoaf->name = 'Meat Loaf';
-        $meatLoaf->handle = '@RealMeatLoaf';
-        $meatLoaf->description = 'Official Meat Loaf Twitter Page';
-        $meatLoaf->location = 'Los Angeles and NY';
-        $meatLoaf->websiteURL = 'https://www.meatloaf.net';
-        $meatLoaf->websiteTitle = 'meatloaf.net';
-        $meatLoaf->joinDate = 'Joined May 2009';
-        $meatLoaf->tweetCount = 1966;
-        $meatLoaf->followingCount = 71;
-        $meatLoaf->followerCount = '100K';
-        $meatLoaf->likesCount = 39;
-        $meatLoaf->momentsCount = 2;
-        $meatLoaf->profileImgURL = 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg';
-        $meatLoaf->icon = 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg';
-        $meatLoaf->heroImgURL = 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500';
+        $meatLoaf = $this->getMeatLoaf(); 
 
         $batMusical = new User(); 
         $batMusical->name = 'Bat Out of Hell';
@@ -88,5 +73,26 @@ class TweetsController extends Controller
         ];
 
         return view('welcome', $viewData);
+    }
+
+    private function getMeatLoaf() { 
+        $meatLoaf = new User(); 
+        $meatLoaf->name = 'Meat Loaf';
+        $meatLoaf->handle = '@RealMeatLoaf';
+        $meatLoaf->description = 'Official Meat Loaf Twitter Page';
+        $meatLoaf->location = 'Los Angeles and NY';
+        $meatLoaf->websiteURL = 'https://www.meatloaf.net';
+        $meatLoaf->websiteTitle = 'meatloaf.net';
+        $meatLoaf->joinDate = 'Joined May 2009';
+        $meatLoaf->tweetCount = 1966;
+        $meatLoaf->followingCount = 71;
+        $meatLoaf->followerCount = '100K';
+        $meatLoaf->likesCount = 39;
+        $meatLoaf->momentsCount = 2;
+        $meatLoaf->profileImgURL = 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg';
+        $meatLoaf->icon = 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg';
+        $meatLoaf->heroImgURL = 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500';
+
+        return $meatLoaf; 
     }
 }

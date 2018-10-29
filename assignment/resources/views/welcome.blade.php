@@ -148,8 +148,13 @@
           <span>Advertisement</span>
           <div class="ad"></div>
         </div>
-        <div class="reddit-premium post">
-          Reddit Premium Stuff Here Plz.
+        <div class="reddit-premium-post">
+          <i class="fas fa-shield-alt"></i>
+          <div class="rp-text">
+            <span>Reddit Premium</span>
+            <span>Ads-free browsing</span>
+          </div>
+          <button class="rp-button">Get Premium</button>
         </div>
         <div class="trending-communities post">
           Trending Communities Here Plz.
