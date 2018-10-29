@@ -102,22 +102,25 @@
                 </div>
               </div>
               <div class="post-body">
-                <div class="post-title">
+                <h2 class="post-title">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </div>
+                </h2>
                 <div class="post-text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore voluptatibus, provident, maiores recusandae, cupiditate fugit totam aperiam pariatur ut est eos enim? Ex, autem ducimus? Id atque quas repellat.
                 </div>
               </div>
               <div class="post-footer">
                 <div class="comment-count">
-                  <i class="fas fa-comment-alt"></i>27.4k
+                  <i class="fas fa-comment-alt"></i>
+                  <span>27.4k Comments</span>
                 </div>
                 <div class="share-button">
-                  <i class="fas fa-share"></i>Share
+                  <i class="fas fa-share"></i>
+                  <span>Share</span>
                 </div>
                 <div class="save-button">
-                  <i class="fas fa-bookmark"></i>Save
+                  <i class="fas fa-bookmark"></i>
+                  <span>Save</span>
                 </div>
                 <div class="more-button">
                   <i class="fas fa-ellipsis-h"></i>

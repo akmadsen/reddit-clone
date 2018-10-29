@@ -81,6 +81,7 @@
 
 .post-header { 
     display: flex; 
+    margin-bottom: 8px; 
 }
 
 .post-subreddit-icon {
@@ -124,12 +125,46 @@
 }
 
 .post-username, .post-time {
-    
     &:hover { 
         color: $post-header-gray; 
     }
 }
 
+.post-title { 
+    color: $post-title-black; 
+    font-size: 18px; 
+    line-height: 22px; 
+    font-weight: bold;
+    padding-right: 5px; 
+    margin-bottom: 0; 
+}
+
+.post-text { 
+    margin: 8px 0; 
+    font-size: 16px; 
+}
+
 .post-footer { 
     display: flex;
+
+    color: $post-header-gray;
+
+    padding: 0 8px 0 4px; 
+    i { 
+        font-size: 16px; 
+        padding-right: 4px; 
+    }
+
+    span { 
+        font-size: 12px; 
+        font-weight: bold; 
+        font-family: $font-family-button; 
+    }
+}
+
+.comment-count, .share-button, .save-button, .more-button { 
+    display: flex; 
+    align-items: center; 
+    padding: 4px; 
+    margin-right: 4px; 
 }
