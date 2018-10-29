@@ -14,5 +14,10 @@ use Faker\Factory;
 */
 
 Route::get('/', function () {
+
+    $faker = Factory::create(); 
+
+    
+
     return view('welcome');
 });

@@ -78,14 +78,52 @@
     <main>
       <div class="container">
         <div class="main-feed">
-          <div class="sign-up-cta post">
+          <div class="sign-up-cta">
             <h1>Join the discussion</h1>  
             <span>Comment and be a part of what the internet is talking about.</span>
             <button class="cta-button">Become a Redditor</button>
             <button class="cta-close-button"><i class="fas fa-times"></i></button>
           </div>
           <div class="post">
-            Hello, I'm a Post!
+            <div class="post-votes">
+              <i class="fas fa-arrow-up upvote-arrow"></i>
+              <span class="vote-count">36.9k</span>
+              <i class="fas fa-arrow-down downvote-arrow"></i>
+            </div>
+            <div class="post-content">
+              <div class="post-header">
+                <div class="post-subreddit-icon"><img src="https://a.thumbs.redditmedia.com/ZaSYxoONdAREm1_u_sid_fjcgvBTNeFQV--8tz6fZC0.png" alt="" height="20px" width="20px"></div>
+                <div class="subreddit-link"><a href="#">r/birdswitharms</a></div>
+                <span class="ph-middot">.</span>
+                <div class="post-info">
+                  <div class="post-credit">Posted by</div>
+                  <a class="post-username" href="#">u/username</a>
+                  <a class="post-time" href="#">3 hours ago</a>
+                </div>
+              </div>
+              <div class="post-body">
+                <div class="post-title">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>
+                <div class="post-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore voluptatibus, provident, maiores recusandae, cupiditate fugit totam aperiam pariatur ut est eos enim? Ex, autem ducimus? Id atque quas repellat.
+                </div>
+              </div>
+              <div class="post-footer">
+                <div class="comment-count">
+                  <i class="fas fa-comment-alt"></i>27.4k
+                </div>
+                <div class="share-button">
+                  <i class="fas fa-share"></i>Share
+                </div>
+                <div class="save-button">
+                  <i class="fas fa-bookmark"></i>Save
+                </div>
+                <div class="more-button">
+                  <i class="fas fa-ellipsis-h"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="auxilliary-feed">
