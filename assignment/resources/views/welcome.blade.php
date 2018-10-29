@@ -13,199 +13,26 @@
 </head>
 
 <body>
-  <header>
-    <div class="top-header">
-      <div class="th-left">
-        <div class="company">
-          <i class="fab fa-reddit logo"></i>
-          <span>reddit</span>
-        </div>
-        <div class="th-filter">
-          <i class="fas fa-chart-line trend-line"></i>
-          <span>Popular</span>
-          <i class="fas fa-sort-down open-list"></i>
-        </div>
-      </div>
-      <div class="th-mid">
-        <div class="search-bar">
-          <i class="fas fa-search search-glass"></i>
-          <span>Search Reddit</span>
-        </div>
-        <div class="search-filters">
-          <i class="fas fa-chart-bar search-filter-icon"></i>
-          <i class="fas fa-chart-line search-filter-icon"></i>
-          <i class="fas fa-archive search-filter-icon"></i>
-        </div>
-      </div>
-      <div class="th-right">
-        <div class="login-buttons">
-          <button class="login-button">LOG IN</button>
-          <button class="signin-button">SIGN UP</button>
-        </div>
-        <div class="old-reddit-link">
-          <a href="#"><i class="fas fa-external-link-alt"></i>Visit Old Reddit</a>
-        </div>
-        <button class="user-options">
-            <i class="fas fa-user-alt usr-img"></i>
-            <i class="fas fa-sort-down usr-open"></i>
-          </button>
-      </div>
-    </div>
-
-    <div class="bottom-header">
-      <div class="container">
-        <div class="view-options">
-          <span class="option-title">View</span>
-          <div class="view-opt-icons">
-            <i class="fas fa-th selected"></i>
-            <i class="fas fa-th-large deselected"></i>
-            <i class="fas fa-th-list deselected"></i>
-          </div>
-        </div>
-        <div class="sort-options">
-          <span class="option-title">Sort</span>
-          <div class="bh-filter-type bh-filter-list">
-            <i class="fas fa-fire flame"></i>
-            <span class="sort-option">Hot</span>
-            <i class="fas fa-sort-down list-arrow"></i>
-          </div>
-          <div class="bh-filter-location bh-filter-list">
-            <span class="sort-option">Canada</span>
-            <i class="fas fa-sort-down list-arrow"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
+  @include('header')
   <main>
     <div class="container">
       <div class="main-feed">
-        <div class="sign-up-cta">
-          <h1>Join the discussion</h1>
-          <span>Comment and be a part of what the internet is talking about.</span>
-          <button class="cta-button">Become a Redditor</button>
-          <button class="cta-close-button"><i class="fas fa-times"></i></button>
-        </div>
+
+        @include('sign-up-cta')
         <?php foreach($posts as $post): ?>
-        <div class="post">
-          <div class="post-votes">
-            <i class="fas fa-arrow-up upvote-arrow"></i>
-            <span class="vote-count"><?= $post->voteCount ?></span>
-            <i class="fas fa-arrow-down downvote-arrow"></i>
-          </div>
-          <div class="post-content">
-            <div class="post-header">
-              <img class="post-subreddit-icon" src="<?= $post->imgUrl ?>" alt="" height="20px" width="20px">
-              <div class="subreddit-link"><a href="#">r/<?= $post->subreddit ?></a></div>
-              <span class="ph-middot">.</span>
-              <div class="post-info">
-                <div class="post-credit">Posted by</div>
-                <a class="post-username" href="#">u/<?= $post->username ?></a>
-                <a class="post-time" href="#"><?= $post->timepast ?></a>
-              </div>
-            </div>
-            <div class="post-body">
-              <h2 class="post-title">
-                <?= $post->title ?>
-              </h2>
-              <div class="post-text">
-                <?= $post->content ?>
-              </div>
-            </div>
-            <div class="post-footer">
-              <div class="comment-count">
-                <i class="fas fa-comment-alt"></i>
-                <span><?= $post->commentCount ?> Comments</span>
-              </div>
-              <div class="share-button">
-                <i class="fas fa-share"></i>
-                <span>Share</span>
-              </div>
-              <div class="save-button">
-                <i class="fas fa-bookmark"></i>
-                <span>Save</span>
-              </div>
-              <div class="more-button">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+          @include('main-feed-post')
         <?php endforeach; ?>
+
       </div>
       <div class="auxilliary-feed">
-        <div class="subreddit-post">
-          <div class="sr-header">
-            <div class="sr-top-img"></div>
-            <div class="sr-title"><img class="sr-alien" src="https://www.redditstatic.com/desktop2x/img/id-cards/snoo-home@2x.png" alt=""><span>r/popular</span></div>
-          </div>
-          <div class="sr-content">The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the most
-            shared, upvoted, and commented content on the internet.</div>
-          <button class="sr-button">Create Post</button>
-        </div>
-        <div class="advertisement-post">
-          <span>Advertisement</span>
-          <div class="ad"></div>
-        </div>
-        <div class="reddit-premium-post">
-          <i class="fas fa-shield-alt rp-shield"></i>
-          <div class="rp-text">
-            <span class="rp-title">Reddit Premium</span>
-            <span class="rp-text">Ads-free browsing</span>
-          </div>
-          <button class="rp-button">Get Premium</button>
-        </div>
-        <div class="trending-communities-post">
-          <div class="tc-title">Trending Communities</div>
-          <div class="tc-card-container">
-            <?php foreach($suggestions as $suggestion): ?>
-            <div class="tc-card">
-              <img class="tc-img" src="{{ $suggestion->img }}" alt="">
-              <div class="tc-card-text">
-                <div class="tc-subreddit">r/{{ $suggestion->name }}</div>
-                <div class="tc-subcount">{{ number_format($suggestion->count) }} subscribers</div>
-              </div>
-              <button class="tc-subs-button">Subscribe</button>
-            </div>
-          <?php endforeach; ?>
-          </div>
-        </div>
-        <div class="advertisement-post">
-          <span>Advertisement</span>
-          <div class="ad"></div>
-        </div>
-        <div class="footer-post">
-          <div class="fp-top">
-            <div class="fpt-left">
-              <a href="#">About</a>
-              <a href="#">Careers</a>
-              <a href="#">Press</a>
-            </div>
-            <div class="fpt-center">
-              <a href="#">Advertise</a>
-              <a href="#">Blog</a>
-              <a href="#">Help</a>
-            </div>
-            <div class="fpt-right">
-              <a href="#">The Reddit App</a>
-              <a href="#">Reddit Gold</a>
-              <a href="#">Reddit Premium</a>
-              <a href="#">Reddit Gifts</a>
-            </div>
-          </div>
-          <div class="fp-bottom">
-            <div class="link-row">
-              <a href="#">Content Policy</a><span>|</span><a href="#">Privacy Policy</a>
-            </div>
-            <div class="link-row">
-              <a href="#">User Agreement</a><span>|</span><a href="#">Mod Policy</a>
-            </div>
-            <div class="link-row">
-              <span>&copy; 2018 Reddit, Inc. All rights reserved</span>
-            </div>
-          </div>
-        </div>
+
+        @include('subreddit-post')
+        @include('advertisement-post')
+        @include('reddit-premium-post')
+        @include('trending-communities-post')
+        @include('advertisement-post')
+        @include('footer-post')
+        
       </div>
     </div>
   </main>
