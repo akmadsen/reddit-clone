@@ -19,5 +19,9 @@ body {
 @import 'base/utility-classes.scss'; 
 
 // Component Items
-@import 'components/header.scss'; 
+@import 'components/buttons.scss'; 
+
+// Section Items 
+@import 'components/top-header.scss'; 
+@import 'components/bottom-header.scss'; 
 @import 'components/main.scss'; 
