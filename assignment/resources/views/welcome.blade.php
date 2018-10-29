@@ -133,7 +133,10 @@
         </div>
         <div class="auxilliary-feed">
           <div class="subreddit post">
-            Subreddit Info Here Plz. 
+            <img class="sr-top-img" src="#" alt="">
+            <div class="sr-title"><img src="sr-alien" alt=""><span>r/popular</span></div>
+            <div class="sr-content">The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the most shared, upvoted, and commented content on the internet.</div>
+            <button>Create Post</button>
           </div>
           <div class="advertisement post">
             Advertisement Here Plz.
