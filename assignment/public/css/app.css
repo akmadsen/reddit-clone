@@ -10474,7 +10474,8 @@ body {
 
 .login-button,
 .signin-button,
-.cta-button {
+.cta-button,
+.sr-button {
   border: 1px solid #0079d3;
   background-color: #0079d3;
   color: #fff;
@@ -10517,9 +10518,15 @@ body {
   right: 10px;
 }
 
+.sr-button {
+  margin-top: 12px;
+  height: 34px;
+}
+
 .sign-up-cta,
 .post,
-.subreddit-post {
+.subreddit-post,
+.advertisement-post {
   margin-bottom: 10px;
   width: 100%;
   background-color: #fff;
@@ -10567,7 +10574,7 @@ body {
 
 .post-votes {
   border-left: 4px solid transparent;
-  width: 40px;
+  width: 40px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10755,6 +10762,36 @@ body {
   margin-top: 8px;
   font-size: 14px;
   line-height: 21px;
+}
+
+.advertisement-post {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 6px;
+}
+
+.advertisement-post span {
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  padding-bottom: 4px;
+  font-weight: bold;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #222222;
+}
+
+.advertisement-post .ad {
+  width: 100%;
+  height: 300px;
 }
 
 .top-header {
