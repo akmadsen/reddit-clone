@@ -24,8 +24,14 @@
                     </div>
                     
                     <div class="right-section height-100p flex-1 flex flex-h flex-j-end flex-a-center">
-                        <div class="search-box">Search for Stuff</div>
-                        <div class="login-cta">Have an account? <span>Log In</span></div>
+                        <div class="search-box">
+                            <span>Search Twitter</span>
+                            <i class="fas fa-search"></i>    
+                        </div>
+                        <div class="login-cta">
+                            <span>Have an account?</span>
+                            <span>Log In<i class="fas fa-caret-down"></i></span>
+                        </div>
                     </div>
                 </nav>
             </div>
