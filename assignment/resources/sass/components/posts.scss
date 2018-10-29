@@ -298,3 +298,62 @@
     font-weight: bold; 
 }
 
+.trending-communities-post { 
+    @extend %post-base; 
+
+    display: flex;
+    flex-direction: column; 
+}
+
+.tc-title { 
+    font-size: 10px;
+    line-height: 12px;  
+    font-family: $span-font; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    padding: 12px; 
+    color: $post-title-black2; 
+    letter-spacing: 0.5px; 
+    vertical-align: baseline; 
+}
+
+.tc-card-container { 
+    padding: 12px; 
+}
+
+.tc-card {
+    display: flex; 
+    align-items: center;
+
+    padding: 12px 0 4px 0; 
+
+    &:first-child() { 
+        padding-top: 0; 
+    }
+
+    &:last-child() { 
+        padding-bottom: 10px; 
+    }
+}
+
+.tc-card-text { 
+    margin-right: auto; 
+}
+
+.tc-img { 
+    height: 32px;
+    width: 32px; 
+    border-radius: 16px; 
+    margin-right: 8px; 
+}
+
+.tc-subreddit { 
+    font-size: 11px; 
+    line-height: 16px; 
+    font-weight: bold; 
+}
+
+.tc-subcount { 
+    font-size: 10px; 
+    line-height: 12px; 
+}

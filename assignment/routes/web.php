@@ -3,8 +3,20 @@
 use Faker\Factory; 
 
 class Post { }
+class Subreddit { }
 
 function getRandomSubreddit() { 
+    $faker = Factory::create(); 
+    $sub = new Subreddit(); 
+
+    $sub->name = getRandomSubName(); 
+    $sub->img = $faker->imageUrl(20, 20);
+    $sub->count = mt_rand(5000, 200000); 
+
+    return $sub; 
+}
+
+function getRandomSubName() { 
     $idx = mt_rand(0, 9);
     
     $result = ""; 
@@ -86,7 +98,7 @@ Route::get('/', function () {
 
         $post->imgUrl = $faker->imageUrl(20, 20); 
         $post->voteCount = number_format((mt_rand() / mt_getrandmax()) * 50, 1).'k';
-        $post->subreddit = getRandomSubreddit(); 
+        $post->subreddit = getRandomSubName(); 
         $post->username = $faker->userName(); 
         $post->timepast = getRandomTimestamp(); 
         $post->title = $faker->sentence(); 
@@ -96,8 +108,15 @@ Route::get('/', function () {
         array_push($posts, $post); 
     }
 
+    $suggestions = []; 
+
+    for($i = 0; $i < 5; $i++) { 
+        array_push($suggestions, getRandomSubreddit()); 
+    }
+
     $viewData = [
-        'posts' => $posts
+        'posts' => $posts,
+        'suggestions' => $suggestions 
     ]; 
 
     return view('welcome',$viewData);

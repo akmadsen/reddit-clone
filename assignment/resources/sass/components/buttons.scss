@@ -63,3 +63,9 @@
     background-color: $brand-red; 
     border-color: $brand-red; 
 }
+
+.tc-subs-button { 
+    @extend %button-shared; 
+
+    width: 100px; 
+}

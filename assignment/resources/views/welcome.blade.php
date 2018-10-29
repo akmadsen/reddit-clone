@@ -156,15 +156,19 @@
           </div>
           <button class="rp-button">Get Premium</button>
         </div>
-        <div class="trending-communities post">
+        <div class="trending-communities-post">
           <div class="tc-title">Trending Communities</div>
-          <div class="tc-card">
-            <div class="tc-img">IMG</div>
-            <div class="tc-card-text">
-              <div class="tc-subreddit">r/birdwitharms</div>
-              <div class="tc-subcount">9,001 subscribers</div>
+          <div class="tc-card-container">
+            <?php foreach($suggestions as $suggestion): ?>
+            <div class="tc-card">
+              <img class="tc-img" src="{{ $suggestion->img }}" alt="">
+              <div class="tc-card-text">
+                <div class="tc-subreddit">r/{{ $suggestion->name }}</div>
+                <div class="tc-subcount">{{ number_format($suggestion->count) }} subscribers</div>
+              </div>
+              <button class="tc-subs-button">Subscribe</button>
             </div>
-            <button class="tc-subs-button">Subscribe</button>
+          <?php endforeach; ?>
           </div>
         </div>
         <div class="advertisement-post">

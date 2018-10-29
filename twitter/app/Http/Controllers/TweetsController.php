@@ -16,7 +16,6 @@ class TweetsController extends Controller
         $meatLoaf = $this->getMeatLoaf(); 
 
         $suggestions = $this->getSuggestions(); 
-
         $tweets = $this->getTweets($meatLoaf); 
 
         $viewData = [

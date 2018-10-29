@@ -10476,7 +10476,8 @@ body {
 .signin-button,
 .cta-button,
 .sr-button,
-.rp-button {
+.rp-button,
+.tc-subs-button {
   border: 1px solid #0079d3;
   background-color: #0079d3;
   color: #fff;
@@ -10532,11 +10533,16 @@ body {
   border-color: #fc4823;
 }
 
+.tc-subs-button {
+  width: 100px;
+}
+
 .sign-up-cta,
 .post,
 .subreddit-post,
 .advertisement-post,
-.reddit-premium-post {
+.reddit-premium-post,
+.trending-communities-post {
   margin-bottom: 10px;
   width: 100%;
   background-color: #fff;
@@ -10839,6 +10845,72 @@ body {
 
 .rp-title {
   font-weight: bold;
+}
+
+.trending-communities-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tc-title {
+  font-size: 10px;
+  line-height: 12px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px;
+  color: #1a1a1b;
+  letter-spacing: 0.5px;
+  vertical-align: baseline;
+}
+
+.tc-card-container {
+  padding: 12px;
+}
+
+.tc-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 0 4px 0;
+}
+
+.tc-card:first-child {
+  padding-top: 0;
+}
+
+.tc-card:last-child {
+  padding-bottom: 10px;
+}
+
+.tc-card-text {
+  margin-right: auto;
+}
+
+.tc-img {
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  margin-right: 8px;
+}
+
+.tc-subreddit {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.tc-subcount {
+  font-size: 10px;
+  line-height: 12px;
 }
 
 .top-header {
