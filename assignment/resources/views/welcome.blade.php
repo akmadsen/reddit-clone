@@ -84,35 +84,36 @@
             <button class="cta-button">Become a Redditor</button>
             <button class="cta-close-button"><i class="fas fa-times"></i></button>
           </div>
+          <?php foreach($posts as $post): ?>
           <div class="post">
             <div class="post-votes">
               <i class="fas fa-arrow-up upvote-arrow"></i>
-              <span class="vote-count">36.9k</span>
+              <span class="vote-count"><?= $post->voteCount ?></span>
               <i class="fas fa-arrow-down downvote-arrow"></i>
             </div>
             <div class="post-content">
               <div class="post-header">
-                <div class="post-subreddit-icon"><img src="https://a.thumbs.redditmedia.com/ZaSYxoONdAREm1_u_sid_fjcgvBTNeFQV--8tz6fZC0.png" alt="" height="20px" width="20px"></div>
-                <div class="subreddit-link"><a href="#">r/birdswitharms</a></div>
+                <img class="post-subreddit-icon" src="<?= $post->imgUrl ?>" alt="" height="20px" width="20px">
+                <div class="subreddit-link"><a href="#">r/<?= $post->subreddit ?></a></div>
                 <span class="ph-middot">.</span>
                 <div class="post-info">
                   <div class="post-credit">Posted by</div>
-                  <a class="post-username" href="#">u/username</a>
-                  <a class="post-time" href="#">3 hours ago</a>
+                  <a class="post-username" href="#">u/<?= $post->username ?></a>
+                  <a class="post-time" href="#"><?= $post->timepast ?></a>
                 </div>
               </div>
               <div class="post-body">
                 <h2 class="post-title">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  <?= $post->title ?>
                 </h2>
                 <div class="post-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore voluptatibus, provident, maiores recusandae, cupiditate fugit totam aperiam pariatur ut est eos enim? Ex, autem ducimus? Id atque quas repellat.
+                  <?= $post->content ?>
                 </div>
               </div>
               <div class="post-footer">
                 <div class="comment-count">
                   <i class="fas fa-comment-alt"></i>
-                  <span>27.4k Comments</span>
+                  <span><?= $post->commentCount ?> Comments</span>
                 </div>
                 <div class="share-button">
                   <i class="fas fa-share"></i>
@@ -128,6 +129,7 @@
               </div>
             </div>
           </div>
+          <?php endforeach; ?>
         </div>
         <div class="auxilliary-feed">
           <div class="subreddit post">
