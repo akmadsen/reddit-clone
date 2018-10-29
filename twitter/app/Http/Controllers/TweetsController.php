@@ -15,29 +15,14 @@ class TweetsController extends Controller
 
         $meatLoaf = $this->getMeatLoaf(); 
 
-        $batMusical = $this->getBatMusical(); 
-        $geneSimmons = $this->getGeneSimmons(); 
-        $weirdAl = $this->getWeirdAl(); 
-        $ozzy = $this->getOzzy(); 
-        $defLeppard = $this->getDefLeppard(); 
+        $suggestions = $this->getSuggestions(); 
 
-        $tweet1 = $this->getTweet1($meatLoaf); 
-        $tweet2 = $this->getTweet2($meatLoaf); 
+        $tweets = $this->getTweets($meatLoaf); 
 
         $viewData = [
             'user' => $meatLoaf, 
-            'suggestionList' => [
-                $batMusical, 
-                $geneSimmons, 
-                $weirdAl, 
-                $ozzy, 
-                $defLeppard
-            ],
-
-            'tweets' => [
-                $tweet1, 
-                $tweet2
-            ]
+            'suggestionList' => $suggestions,
+            'tweets' => $tweets
         ];
 
         return view('welcome', $viewData);
@@ -65,81 +50,100 @@ class TweetsController extends Controller
         return $meatLoaf; 
     }
 
+    private function generateThinUser($name, $handle, $icon) {
+        $user = new User(); 
+
+        $user->name = $name;
+        $user->handle = $handle;
+        $user->icon = $icon;
+
+        return $user; 
+    }
+
     private function getBatMusical() { 
-        $batMusical = new User(); 
-
-        $batMusical->name = 'Bat Out of Hell';
-        $batMusical->handle = '@BatTheMusical';
-        $batMusical->icon = 'https://pbs.twimg.com/profile_images/1016606849284616194/Iwz5QTnQ_bigger.jpg';
-
-        return $batMusical; 
+        return $this->generateThinUser(
+            'Bat Out of Hell', 
+            '@BatTheMusical', 
+            'https://pbs.twimg.com/profile_images/1016606849284616194/Iwz5QTnQ_bigger.jpg'
+        ); 
     }
 
     private function getGeneSimmons() { 
-        $geneSimmons = new User(); 
-
-        $geneSimmons->name = 'Gene Simmons';
-        $geneSimmons->handle = '@genesimmons';
-        $geneSimmons->icon = 'https://pbs.twimg.com/profile_images/697624194205544449/PaabF10k_bigger.jpg';
-
-        return $geneSimmons; 
+        return $this->generateThinUser(
+            'Gene Simmons', 
+            '@genesimmons', 
+            'https://pbs.twimg.com/profile_images/697624194205544449/PaabF10k_bigger.jpg'
+        ); 
     }
 
     private function getWeirdAl() { 
-        $weirdAl = new User(); 
-
-        $weirdAl->name = 'Al Yankovic';
-        $weirdAl->handle = '@alyankovic'; 
-        $weirdAl->icon = 'https://pbs.twimg.com/profile_images/246073324/IL2_bigger.jpg';
-
-        return $weirdAl; 
+        return $this->generateThinUser(
+            'Al Yankovic',
+            '@alyankovic', 
+            'https://pbs.twimg.com/profile_images/246073324/IL2_bigger.jpg'
+        ); 
     }
 
     private function getOzzy() { 
-        $ozzy = new User(); 
-
-        $ozzy->name = 'Ozzy Osbourne';
-        $ozzy->handle = '@OzzyOsbourne'; 
-        $ozzy->icon = 'https://pbs.twimg.com/profile_images/961022056631447552/Ywh6u5UM_bigger.jpg';
-
-        return $ozzy;
+        return $this->generateThinUser(
+            'Ozzy Osbourne', 
+            '@OzzyOsbourne', 
+            'https://pbs.twimg.com/profile_images/961022056631447552/Ywh6u5UM_bigger.jpg'
+        ); 
     }
 
     private function getDefLeppard() {
-        $defLeppard = new User(); 
-
-        $defLeppard->name = 'Def Leppard';
-        $defLeppard->handle = '@DefLeppard'; 
-        $defLeppard->icon = 'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg';
-
-        return $defLeppard; 
+        return $this->generateThinUser(
+            'Def Leppard', 
+            '@DefLeppard', 
+            'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg'
+        ); 
     }
 
-    private function getTweet1($user) {
+    private function generateFakeTweet($user, $date, $comments, $retweets, $likes) {
         $faker = Factory::create(); 
-        $tweet1 = new Tweet(); 
+        $tweet = new Tweet(); 
+        
+        $tweet->user = $user; 
+        $tweet->date = $date;
+        $tweet->content = $faker->paragraph;
+        $tweet->commentCount = $comments;
+        $tweet->retweetCount = $retweets;
+        $tweet->likeCount = $likes;
 
-        $tweet1->user = $user; 
-        $tweet1->date = 'Oct 21';
-        $tweet1->content = $faker->paragraph;
-        $tweet1->commentCount = 123;
-        $tweet1->retweetCount = 67;
-        $tweet1->likeCount = 321;
+        return $tweet; 
+    } 
 
-        return $tweet1; 
+    private function getTweet1($user) {
+        return $this->generateFakeTweet(
+            $user, 
+            'Oct 21', 
+            123, 67, 321
+        ); 
     }
 
     private function getTweet2($user) { 
-        $faker = Factory::create(); 
-        $tweet2 = new Tweet(); 
+        return $this->generateFakeTweet(
+            $user, 
+            'Sep 27', 
+            70, 53, 431
+        ); 
+    }
 
-        $tweet2->user = $meatLoaf; 
-        $tweet2->date = 'Sep 27';
-        $tweet2->content = $faker->paragraph;
-        $tweet2->commentCount = 70;
-        $tweet2->retweetCount = 53;
-        $tweet2->likeCount = 431;
+    private function getSuggestions() { 
+        $batMusical = $this->getBatMusical(); 
+        $geneSimmons = $this->getGeneSimmons(); 
+        $weirdAl = $this->getWeirdAl(); 
+        $ozzy = $this->getOzzy(); 
+        $defLeppard = $this->getDefLeppard(); 
 
-        return $tweet2; 
+        return [$batMusical, $geneSimmons, $weirdAl, $ozzy, $defLeppard]; 
+    }
+
+    private function getTweets($user) { 
+        $tweet1 = $this->getTweet1($user); 
+        $tweet2 = $this->getTweet2($user); 
+
+        return [$tweet1, $tweet2]; 
     }
 }
