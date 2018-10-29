@@ -119,5 +119,5 @@ Route::get('/', function () {
         'suggestions' => $suggestions 
     ]; 
 
-    return view('welcome',$viewData);
+    return view('welcome', $viewData);
 });

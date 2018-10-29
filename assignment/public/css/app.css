@@ -10542,7 +10542,8 @@ body {
 .subreddit-post,
 .advertisement-post,
 .reddit-premium-post,
-.trending-communities-post {
+.trending-communities-post,
+.footer-post {
   margin-bottom: 10px;
   width: 100%;
   background-color: #fff;
@@ -10913,6 +10914,62 @@ body {
   line-height: 12px;
 }
 
+.footer-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 12px;
+  text-transform: capitalize;
+  line-height: 16px;
+  color: #1a1a1b;
+  margin-bottom: 0;
+}
+
+.fp-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.fp-top > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.fp-top > div a {
+  display: block;
+  color: #1a1a1b;
+}
+
+.fp-top > div a:hover {
+  text-decoration: none;
+}
+
+.fp-bottom {
+  padding-bottom: 12px;
+}
+
+.link-row {
+  display: block;
+  text-align: center;
+}
+
+.link-row a {
+  color: #1a1a1b;
+  margin: 0 4px;
+}
+
+.link-row a:hover {
+  text-decoration: none;
+}
+
 .top-header {
   background-color: #fff;
   display: -webkit-box;
@@ -11251,7 +11308,6 @@ main .container {
 }
 
 .auxilliary-feed {
-  background-color: lime;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

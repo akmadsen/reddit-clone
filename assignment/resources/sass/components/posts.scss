@@ -357,3 +357,54 @@
     font-size: 10px; 
     line-height: 12px; 
 }
+
+.footer-post { 
+    @extend %post-base; 
+
+    display: flex; 
+    flex-direction: column; 
+
+    font-size: 12px; 
+    text-transform: capitalize; 
+    line-height: 16px; 
+    color: $post-title-black2; 
+
+    margin-bottom: 0; 
+}
+
+.fp-top { 
+    display: flex; 
+    padding: 12px; 
+    margin-bottom: 16px; 
+    
+    & > div { 
+        flex: 1; 
+        
+        a { 
+            display: block; 
+            color: $post-title-black2; 
+
+            &:hover { 
+                text-decoration: none; 
+            }
+        }
+    }
+}
+
+.fp-bottom { 
+    padding-bottom: 12px; 
+}
+
+.link-row { 
+    display: block; 
+    text-align: center; 
+
+    a { 
+        color: $post-title-black2; 
+        margin: 0 4px; 
+
+        &:hover { 
+            text-decoration: none; 
+        }
+    }
+}
