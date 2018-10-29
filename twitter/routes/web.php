@@ -13,3 +13,4 @@
 
 // Says "At index, goto TweetsControler and execute 'index()' action 
 Route::get('/', 'TweetsController@index');
+Route::get('/contact', 'ContactController@index'); 
