@@ -22,15 +22,16 @@ class Util
 
 class PostFactory 
 {
-    private static function generatePost() 
+    private static function generatePost($subsList) 
     {
         $faker = Factory::create(); 
 
         $post = new Post(); 
 
-        $post->imgUrl = $faker->imageUrl(20, 20); 
+        $subIdx = mt_rand(0, count($subsList) - 1); 
+
+        $post->subreddit = $subsList[$subIdx]; 
         $post->voteCount = Util::generateCountThousands(50, 20);
-        $post->subreddit = Subreddit::getRandomSubName(); 
         $post->username = $faker->userName(); 
         $post->timepast = Post::getRandomTimestamp(); 
         $post->title = $faker->sentence(); 
@@ -40,12 +41,12 @@ class PostFactory
         return $post; 
     }
 
-    public static function generatePostList($quantity) 
+    public static function generatePostList($quantity, $subsList) 
     { 
         $posts = []; 
 
         for ($i = 0; $i < $quantity; $i++) { 
-            array_push($posts, PostFactory::generatePost()); 
+            array_push($posts, PostFactory::generatePost($subsList)); 
         }
 
         return $posts; 
@@ -97,11 +98,11 @@ class SubredditFactory
         return SubredditFactory::generateSub(Subreddit::getRandomSubName()); 
     }
 
-    public static function getSubredditList() 
+    public static function getSubredditList($count) 
     { 
         $suggestions = []; 
 
-        for($i = 0; $i < 5; $i++) { 
+        for($i = 0; $i < $count; $i++) { 
             array_push($suggestions, SubredditFactory::getRandomSubreddit()); 
         }
 
@@ -146,7 +147,9 @@ class Subreddit
         'XCOM2', 
         'metalgear', 
         'books', 
-        'fantasy'
+        'fantasy',
+        'lovecraft', 
+        'bojackhorseman'
     ];
 
     public static function getRandomSubName() 

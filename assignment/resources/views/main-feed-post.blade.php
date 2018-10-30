@@ -6,8 +6,8 @@
     </div>
     <div class="post-content">
         <div class="post-header">
-            <img class="post-subreddit-icon" src="<?= $post->imgUrl ?>" alt="" height="20px" width="20px">
-            <div class="subreddit-link"><a href="#">r/<?= $post->subreddit ?></a></div>
+            <img class="post-subreddit-icon" src="<?= $post->subreddit->img ?>" alt="" height="20px" width="20px">
+            <div class="subreddit-link"><a href="#">r/<?= $post->subreddit->name ?></a></div>
             <span class="ph-middot">.</span>
             <div class="post-info">
                 <div class="post-credit">Posted by</div>
