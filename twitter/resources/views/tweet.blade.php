@@ -1,6 +1,6 @@
 <div class="tweet p-tweet flex flex-h">
     <div class="tweet-img mr-10">
-        <img class="circular" src="{{ $tweet->user->icon }}" alt="">
+        <img class="circular" src="{{ $tweet->user->image }}" alt="">
     </div>
     <div class="tweet-content flex-1">
         <div class="tweet-header flex flex-h flex-a-center">

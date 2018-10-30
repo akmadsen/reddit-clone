@@ -108,36 +108,6 @@ class TweetsController extends Controller
         ); 
     }
 
-    private function generateFakeTweet($user, $date, $comments, $retweets, $likes) {
-        $faker = Factory::create(); 
-        $tweet = new Tweet(); 
-        
-        $tweet->user = $user; 
-        $tweet->date = $date;
-        $tweet->content = $faker->paragraph;
-        $tweet->commentCount = $comments;
-        $tweet->retweetCount = $retweets;
-        $tweet->likeCount = $likes;
-
-        return $tweet; 
-    } 
-
-    private function getTweet1($user) {
-        return $this->generateFakeTweet(
-            $user, 
-            'Oct 21', 
-            123, 67, 321
-        ); 
-    }
-
-    private function getTweet2($user) { 
-        return $this->generateFakeTweet(
-            $user, 
-            'Sep 27', 
-            70, 53, 431
-        ); 
-    }
-
     private function getSuggestions() { 
         $batMusical = $this->getBatMusical(); 
         $geneSimmons = $this->getGeneSimmons(); 
@@ -153,8 +123,7 @@ class TweetsController extends Controller
         
         $tweets = Tweet::all(); 
 
-        foreach($tweets as $tweet) { 
-            $tweet->user = $user; 
+        foreach($tweets as $tweet) {  
             $tweet->commentCount = mt_rand(100,300);
             $tweet->retweetCount = mt_rand(100,300);
             $tweet->likeCount = mt_rand(100,300);
