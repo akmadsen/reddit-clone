@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Faker\Factory; 
+use App\Models\Tweet; 
 
 class User { }
-class Tweet { }
 
 class TweetsController extends Controller
 {
+    public function demo() { 
+        $tweets = Tweet::all(); 
+
+        // Display DB stuff
+        echo '<pre>'; 
+        var_dump($tweets); 
+        return ''; 
+    }
+
     public function index() { 
         $faker = Factory::create(); 
 
