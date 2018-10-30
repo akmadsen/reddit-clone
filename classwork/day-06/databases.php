@@ -6,7 +6,10 @@ class Tweet { }
 // How to Connect with DB
 $db = new mysqli('127.0.0.1', 'root','', 'sait_twitter');
 
-$result = $db->query('SELECT * FROM tweets WHERE content != "Tweet2"'); 
+// sql injection attack 
+$id='1 or 1=1';   
+
+$result = $db->query('SELECT * FROM tweets WHERE id='.$id); 
 
 // To check errors: 
 // var_dump($db->error); 
