@@ -6,7 +6,7 @@ class Tweet { }
 // How to Connect with DB
 $db = new mysqli('127.0.0.1', 'root','', 'sait_twitter');
 
-$result = $db->query('SELECT * FROM tweets'); 
+$result = $db->query('SELECT * FROM tweets WHERE content != "Tweet2"'); 
 
 // To check errors: 
 // var_dump($db->error); 
