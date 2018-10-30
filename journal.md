@@ -129,3 +129,25 @@ N/A - Forgot to Record during the day, Family Obligations in Evening
 
 - Most of this was, again, an hour dump. Learning i3 was a good challenge on it's own  
 
+## Day 5 - October 29, 2018 
+
+1) Obstacles & Overcoming Them
+
+- Learned how layouts / partials worked in the Laravel Environment
+
+2) Pushing Yourself 
+
+- Got abstract factories up and running for the Subreddit and Post conceptual classes 
+	- (chose not to go further, as database knowledge will require a rewrite on that front) 
+- Using back-end software for rendering of views seems like a bad code smell
+	- browsing google, it seems like I'm not the only one who thinks this way
+	- other developers seem to think that Vue / React for the front-end, and laravel for 
+	    the back-end seems to be the consensus 
+
+3) Outside Class 
+
+- Got project to a comfortable location... more to do, but I feel it would be best to pursue 
+    projects of personal interest. 
+	- Spent time on Vim editor course (increasing text editing speed) 
+	- Spent time on Node.js / React.js course (learning frontend to pair with laravel) 
+- Worked with the first chapters of Laravel book 
