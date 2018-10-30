@@ -1,4 +1,9 @@
 <?php
+/**
+ * @author Alex Madsen
+ * 
+ * @date October 30, 2018
+ */
 
 namespace App\Http\Controllers;
 
@@ -6,10 +11,13 @@ use Faker\Factory;
 use Illuminate\Http\Request;
 
 /**
- * Utility class, for what doesn't fit in posts or subs
+ * Utulity Class for what conceptually stands on it's own 
  */
 class Util 
 {
+    /**
+     * Generate a thousands-scale count for comments, views, likes, and whatnot 
+     */
     public static function generateCountThousands($max, $min) 
     { 
         $ratio = mt_rand() / mt_getrandmax(); 
@@ -20,44 +28,14 @@ class Util
     }
 }
 
+/**
+ * Generates posts in bulk using static factory pattern
+ */
 class PostFactory 
 {
-    private static function generatePost($subsList) 
-    {
-        $faker = Factory::create(); 
-
-        $post = new Post(); 
-
-        $subIdx = mt_rand(0, count($subsList) - 1); 
-
-        $post->subreddit = $subsList[$subIdx]; 
-        $post->voteCount = Util::generateCountThousands(50, 20);
-        $post->username = $faker->userName(); 
-        $post->timepast = Post::getRandomTimestamp(); 
-        $post->title = $faker->sentence(); 
-        $post->content = $faker->paragraph(); 
-        $post->commentCount = Util::generateCountThousands(30,5);
-
-        return $post; 
-    }
-
-    public static function generatePostList($quantity, $subsList) 
-    { 
-        $posts = []; 
-
-        for ($i = 0; $i < $quantity; $i++) { 
-            array_push($posts, PostFactory::generatePost($subsList)); 
-        }
-
-        return $posts; 
-    }
-}
-
-/**
- * Class for Posts and Post-related Utilities 
- */
-class Post 
-{
+    /**
+     * Fake out a random timestamp in the form of 'XX <hours/minutes/days> ago' s
+     */
     public static function getRandomTimestamp() 
     { 
         $count = mt_rand(2,18); 
@@ -78,63 +56,50 @@ class Post
     
         return "$count $timeString ago"; 
     }
-}
 
-class SubredditFactory 
-{
-    private static function generateSub($name) { 
+    /**
+     * Generate individual post, private helper method
+     * 
+     * @param array A list of available subreddit objects to be paired with the post randomly 
+     */
+    private static function generatePost($subsList) 
+    {
         $faker = Factory::create(); 
-        $sub = new Subreddit(); 
-    
-        $sub->name = $name; 
-        $sub->img = $faker->imageUrl(20, 20);
-        $sub->count = mt_rand(5000, 200000); 
-    
-        return $sub; 
+
+        $post = new Post(); 
+
+        $subIdx = mt_rand(0, count($subsList) - 1); 
+
+        $post->subreddit = $subsList[$subIdx]; 
+        $post->voteCount = Util::generateCountThousands(50, 20);
+        $post->username = $faker->userName(); 
+        $post->timepast = PostFactory::getRandomTimestamp(); 
+        $post->title = $faker->sentence(); 
+        $post->content = $faker->paragraph(); 
+        $post->commentCount = Util::generateCountThousands(30,5);
+
+        return $post; 
     }
 
-    public static function getRandomSubreddit()
+    /**
+     * Generates a given number of posts, paired with any of a given subreddit list
+     */
+    public static function generatePostList($quantity, $subsList) 
     { 
-        return SubredditFactory::generateSub(Subreddit::getRandomSubName()); 
-    }
+        $posts = []; 
 
-    public static function getSubredditList($count) 
-    { 
-        $suggestions = []; 
-
-        for($i = 0; $i < $count; $i++) { 
-            array_push($suggestions, SubredditFactory::getRandomSubreddit()); 
+        for ($i = 0; $i < $quantity; $i++) { 
+            array_push($posts, PostFactory::generatePost($subsList)); 
         }
 
-        return $suggestions; 
-    }
-
-    public static function getFullSubList()
-    { 
-        $list = []; 
-        foreach(Subreddit::$names as $name) { 
-            array_push($list, SubredditFactory::generateSub($name)); 
-        }   
-        return $list; 
-    }
-
-    public static function getSubset($subs, $count) 
-    { 
-        $result = [];
-        $random_keys = array_rand($subs, $count); 
-
-        foreach($random_keys as $key) { 
-            array_push($result, $subs[$key]); 
-        }
-
-        return $result; 
+        return $posts; 
     }
 }
 
 /**
- * Class for Subreddits and Subreddit-Related Utilities
+ * Static subreddit factory 
  */
-class Subreddit
+class SubredditFactory 
 {
     public static $names = [
         'birdswitharms', 
@@ -152,12 +117,50 @@ class Subreddit
         'bojackhorseman'
     ];
 
-    public static function getRandomSubName() 
-    {
-        $idx = mt_rand(0, count(Subreddit::$names) - 1);
-        return Subreddit::$names[$idx]; 
+    /**
+     * Generate a single random subreddit, with a given subreddit name
+     */
+    private static function generateSub($name) { 
+        $faker = Factory::create(); 
+        $sub = new Subreddit(); 
+    
+        $sub->name = $name; 
+        $sub->img = $faker->imageUrl(20, 20);
+        $sub->count = mt_rand(5000, 200000); 
+    
+        return $sub; 
     }
- }
+
+    /**
+     * Get a list of all the subs
+     */
+    public static function getFullSubList()
+    { 
+        $list = []; 
+        foreach(SubredditFactory::$names as $name) { 
+            array_push($list, SubredditFactory::generateSub($name)); 
+        }   
+        return $list; 
+    }
+
+    /**
+     * Get a subset list of a given subreddit list
+     */
+    public static function getSubset($subs, $count) 
+    { 
+        $result = [];
+        $random_keys = array_rand($subs, $count); 
+
+        foreach($random_keys as $key) { 
+            array_push($result, $subs[$key]); 
+        }
+
+        return $result; 
+    }
+}
+
+class Subreddit { }
+class Post { }
 
 class FeedController extends Controller
 {

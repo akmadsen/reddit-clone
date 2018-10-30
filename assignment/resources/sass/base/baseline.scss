@@ -3,9 +3,8 @@
 // @date October 30, 2018
 //-----------------------------------------------
 
-.wrapper { 
-    width: 984px; 
-    margin: 0 auto; 
-
-    display: flex;
+body { 
+    background-color: $background-color; 
+    color: $text-black;
+    font-family: $font-family-sans-serif;  
 }
