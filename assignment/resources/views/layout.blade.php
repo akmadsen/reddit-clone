@@ -17,7 +17,7 @@
     @include('header')
 
     <main>
-        <div class="container">
+        <div class="wrapper">
             <div class="main-feed">
 
                 @yield('main-feed-content')

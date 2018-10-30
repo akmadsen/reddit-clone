@@ -38,7 +38,7 @@
     </div>
 
     <div class="bottom-header">
-        <div class="container">
+        <div class="wrapper">
             <div class="view-options">
                 <span class="option-title">View</span>
                 <div class="view-opt-icons">
