@@ -149,9 +149,17 @@ class TweetsController extends Controller
     }
 
     private function getTweets($user) { 
-        $tweet1 = $this->getTweet1($user); 
-        $tweet2 = $this->getTweet2($user); 
+        $faker = Factory::create(); 
+        
+        $tweets = Tweet::all(); 
 
-        return [$tweet1, $tweet2]; 
+        foreach($tweets as $tweet) { 
+            $tweet->user = $user; 
+            $tweet->commentCount = mt_rand(100,300);
+            $tweet->retweetCount = mt_rand(100,300);
+            $tweet->likeCount = mt_rand(100,300);
+        }
+
+        return $tweets; 
     }
 }
