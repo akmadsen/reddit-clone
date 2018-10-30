@@ -121,7 +121,7 @@ class TweetsController extends Controller
     private function getTweets($user) { 
         $faker = Factory::create(); 
         
-        $tweets = Tweet::all(); 
+        $tweets = Tweet::orderBy('date', 'desc')->get(); 
 
         foreach($tweets as $tweet) {  
             $tweet->commentCount = mt_rand(100,300);
