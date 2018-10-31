@@ -10479,7 +10479,7 @@ body {
 .wrapper {
   margin: 0 auto;
   height: 100%;
-  width: 1128px;
+  width: 1192px;
   padding: 0 32px;
 }
 
@@ -10493,5 +10493,35 @@ main .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.column-left,
+.column-center,
+.column-right {
+  margin-top: 24px;
+  background-color: white;
+}
+
+.column-center,
+.column-right {
+  margin-left: 24px;
+}
+
+.column-left {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.column-center {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.column-right {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 

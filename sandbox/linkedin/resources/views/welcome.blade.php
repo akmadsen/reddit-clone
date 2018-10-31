@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,20 @@
 
     <title>Fake LinkedIn</title>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
             LinkedIn Header
         </div>
     </header>
-    <section class="sub-header-ad">
-        <div class="wrapper">
-            Sub-Header Advertisement Here 
-        </div>
-    </section>
+
     <main>
+        <div class="sub-header">
+            <div class="wrapper">
+                Sub-Header Advertisement Here
+            </div>
+        </div>
         <div class="wrapper">
             <div class="column-left">
                 <div class="profile">
@@ -33,7 +36,7 @@
                 </div>
                 <div class="post-feed">
                     This is the post feed
-                    
+
                 </div>
             </div>
             <div class="column-right">
@@ -50,4 +53,5 @@
         </div>
     </main>
 </body>
+
 </html>
