@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->heroImgURL }}" alt="" width="100%">
+    <img src="{{ $user->hero_image }}" alt="" width="100%">
 </div>
 @endsection
 

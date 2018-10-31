@@ -46,9 +46,6 @@ class TweetsController extends Controller
         $primaryUser->likesCount = 39;
         $primaryUser->momentsCount = 2;
 
-        // FIXME: Does this belong here? Think about it... 
-        $primaryUser->heroImgURL = 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500';
-
         return $primaryUser; 
     }
 
