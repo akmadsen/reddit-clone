@@ -52,10 +52,6 @@ class TweetsController extends Controller
         $primaryUser = User::findOrFail($id); 
 
         // Generated values - We will find a way to get this from relationships
-        $primaryUser->tweetCount = 1966;
-        $primaryUser->followingCount = 71;
-        $primaryUser->followerCount = '100K';
-        $primaryUser->likesCount = 39;
         $primaryUser->momentsCount = 2;
 
         return $primaryUser; 
@@ -74,7 +70,6 @@ class TweetsController extends Controller
         foreach($tweets as $tweet) {  
             $tweet->commentCount = mt_rand(100,300);
             $tweet->retweetCount = mt_rand(100,300);
-            $tweet->likeCount = mt_rand(100,300);
         }
 
         return $tweets; 
