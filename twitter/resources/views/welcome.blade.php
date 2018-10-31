@@ -99,7 +99,7 @@
             <?php endif; ?>
             
             <div class="c-3">
-                <i class="far fa-calendar-alt"></i>{{ $user->joined->format('M Y') }}
+                <i class="far fa-calendar-alt"></i>{{ $user->created_at->format('M Y') }}
             </div>
 
         </div>

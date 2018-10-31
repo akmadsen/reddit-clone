@@ -64,7 +64,7 @@ class TweetsController extends Controller
     private function getTweets($user) { 
         $faker = Factory::create(); 
         
-        $tweets = Tweet::where('user_id', $user->id)->orderBy('date', 'desc')->get(); 
+        $tweets = Tweet::where('user_id', $user->id)->orderBy('created_at', 'desc')->get(); 
 
         // Mocking out comment / retweet / like values 
         foreach($tweets as $tweet) {  

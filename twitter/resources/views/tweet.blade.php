@@ -7,7 +7,7 @@
             <div class="th-name">{{ $tweet->user->name }}</div>
             <div class="th-handle">{{ $tweet->user->handle }}</div>
             <div class="th-middot">&middot;</div>
-            <div class="th-date">{{ $tweet->date->format('M j') }}</div>
+            <div class="th-date">{{ $tweet->created_at->format('M j') }}</div>
             <div class="th-button"><i class="fas fa-chevron-down fz-15"></i></div>
         </div>
         <div class="tweet-body">

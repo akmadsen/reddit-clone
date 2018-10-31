@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Factory::create(); 
 
-        for($i=0; $i < 100; $i++) 
+        for($i = 0; $i < 100; $i++) 
         {
             // $this->call(UsersTableSeeder::class);
             $user = new User(); 
