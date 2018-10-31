@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             $user->handle = $faker->word; 
             $user->description = $faker->name; 
             $user->website = $faker->url; 
-            $user->image = $faker->img(40,40);
+            $user->image = $faker->imageUrl(40,40);
+            $user->hero_image = $faker->imageUrl(1500,500);
             $user->save();  
 
             $count = mt_rand(0,20); 
