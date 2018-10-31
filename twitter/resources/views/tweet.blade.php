@@ -24,7 +24,7 @@
             </div>
             <div class="tf-item flex flex-h flex-a-center">
                 <div class="like-icon"><i class="far fa-heart fz-18"></i></div>
-                <div class="like-count fz-16">{{ $tweet->likeCount }}</div>
+                <div class="like-count fz-16">{{ $tweet->likes->count() }}</div>
             </div>
         </div>
     </div>

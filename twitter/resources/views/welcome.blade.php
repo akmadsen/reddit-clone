@@ -23,7 +23,7 @@
                 Tweets
             </div>
             <div class="value text-center">
-                {{ number_format($user->tweetCount) }}
+                {{ number_format($user->tweets->count()) }}
             </div>
         </div>
         
@@ -50,7 +50,7 @@
                 Likes
             </div>
             <div class="value text-center">
-                {{ number_format($user->likesCount) }}
+                {{ number_format($user->likedTweets->count()) }}
             </div>
         </div>
         

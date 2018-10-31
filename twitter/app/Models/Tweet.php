@@ -13,4 +13,12 @@ class Tweet extends Model
     {
         return $this->belongsTo('App\Models\User'); 
     }
+
+    public function likes()
+    {
+        return $this->belongsToMany('App\Models\User'); 
+       
+        // How to override the join table name 
+        // return $this->belongsToMany('App\Models\User', 'likes'); 
+    }
 }
