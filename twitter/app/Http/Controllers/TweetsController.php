@@ -56,7 +56,8 @@ class TweetsController extends Controller
         $user->name = $name;
         $user->handle = $handle;
         $user->icon = $icon;
-
+        $user->id = 2; // Stub in Bojack for now 
+        
         return $user; 
     }
 

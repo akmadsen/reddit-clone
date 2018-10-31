@@ -197,9 +197,15 @@ i {
   }
 }
 
-.suggestion-item { 
+.suggestion-item a { 
   display: flex; 
   margin-bottom: 5px; 
+
+  color: slategrey; 
+
+  &:hover { 
+      text-decoration: none; 
+  }
 
   img { 
     height: 48px; 
