@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->hero_image ?? "https://www.ryerson.ca/content/dam/brand/global/images/visual-guide/PMS-2995U-C.png" }}" alt="" width="100%">
+    <img src="{{ $user->hero_image ?? "assets/default-hero.png" }}" alt="" width="100%">
 </div>
 @endsection
 
