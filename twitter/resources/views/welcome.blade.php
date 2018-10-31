@@ -14,7 +14,7 @@
         
         <div class="user-image-spacer height-100p">
             <div class="user-image">
-                <img src="{{ $user->profileImgURL }}" alt="" height="200px" width="200px">
+                <img src="{{ $user->image }}" alt="" height="200px" width="200px">
             </div>
         </div>
         
@@ -84,10 +84,10 @@
                 <i class="fas fa-map-marker-alt"></i>{{ $user->location }}
             </div>
             <div>
-                <i class="fas fa-link"></i><a href="{{ $user->websiteURL }}">{{ $user->websiteTitle }}</a>
+                <i class="fas fa-link"></i><a href="https://www.{{ $user->website }}">{{ $user->website }}</a>
             </div>
             <div class="c-3">
-                <i class="far fa-calendar-alt"></i>{{ $user->joinDate }}
+                <i class="far fa-calendar-alt"></i>{{ $user->joined->format('M Y') }}
             </div>
         </div>
     </div>

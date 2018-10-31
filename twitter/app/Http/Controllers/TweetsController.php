@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Faker\Factory; 
 use App\Models\Tweet; 
-
-class User { }
+use App\Models\User; 
 
 class TweetsController extends Controller
 {
@@ -22,13 +21,14 @@ class TweetsController extends Controller
     public function index() { 
         $faker = Factory::create(); 
 
-        $meatLoaf = $this->getMeatLoaf(); 
+        $primaryUser = $this->getPrimaryUser
+(); 
 
         $suggestions = $this->getSuggestions(); 
-        $tweets = $this->getTweets($meatLoaf); 
+        $tweets = $this->getTweets($primaryUser); 
 
         $viewData = [
-            'user' => $meatLoaf, 
+            'user' => $primaryUser, 
             'suggestionList' => $suggestions,
             'tweets' => $tweets
         ];
@@ -36,26 +36,20 @@ class TweetsController extends Controller
         return view('welcome', $viewData);
     }
 
-    private function getMeatLoaf() { 
-        $meatLoaf = new User(); 
+    private function getPrimaryUser() { 
+        $primaryUser = User::find(1); 
 
-        $meatLoaf->name = 'Meat Loaf';
-        $meatLoaf->handle = '@RealMeatLoaf';
-        $meatLoaf->description = 'Official Meat Loaf Twitter Page';
-        $meatLoaf->location = 'Los Angeles and NY';
-        $meatLoaf->websiteURL = 'https://www.meatloaf.net';
-        $meatLoaf->websiteTitle = 'meatloaf.net';
-        $meatLoaf->joinDate = 'Joined May 2009';
-        $meatLoaf->tweetCount = 1966;
-        $meatLoaf->followingCount = 71;
-        $meatLoaf->followerCount = '100K';
-        $meatLoaf->likesCount = 39;
-        $meatLoaf->momentsCount = 2;
-        $meatLoaf->profileImgURL = 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_400x400.jpg';
-        $meatLoaf->icon = 'https://pbs.twimg.com/profile_images/812809838/IMG_7923_bw_bigger.jpg';
-        $meatLoaf->heroImgURL = 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500';
+        // Generated values - We will find a way to get this from relationships
+        $primaryUser->tweetCount = 1966;
+        $primaryUser->followingCount = 71;
+        $primaryUser->followerCount = '100K';
+        $primaryUser->likesCount = 39;
+        $primaryUser->momentsCount = 2;
 
-        return $meatLoaf; 
+        // FIXME: Does this belong here? Think about it... 
+        $primaryUser->heroImgURL = 'https://pbs.twimg.com/profile_banners/38344185/1473999703/1500x500';
+
+        return $primaryUser; 
     }
 
     private function generateThinUser($name, $handle, $icon) {
@@ -121,7 +115,7 @@ class TweetsController extends Controller
     private function getTweets($user) { 
         $faker = Factory::create(); 
         
-        $tweets = Tweet::orderBy('date', 'desc')->get(); 
+        $tweets = Tweet::where('user_id', $user->id)->orderBy('date', 'desc')->get(); 
 
         foreach($tweets as $tweet) {  
             $tweet->commentCount = mt_rand(100,300);
