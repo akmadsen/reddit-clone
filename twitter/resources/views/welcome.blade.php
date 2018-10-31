@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->hero_image ?? "assets/default-hero.png" }}" alt="" width="100%">
+    <img src="{{ $user->hero_image ?? $defaultHero }}" alt="" width="100%">
 </div>
 @endsection
 
@@ -14,7 +14,7 @@
         
         <div class="user-image-spacer height-100p">
             <div class="user-image">
-                <img src="{{ $user->image ?? "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" }}" alt="" height="200px" width="200px">
+                <img src="{{ $user->image ?? $defaultImage }}" alt="" height="200px" width="200px">
             </div>
         </div>
         
