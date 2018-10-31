@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->hero_image }}" alt="" width="100%">
+    <img src="{{ $user->hero_image ?? "https://www.ryerson.ca/content/dam/brand/global/images/visual-guide/PMS-2995U-C.png" }}" alt="" width="100%">
 </div>
 @endsection
 
@@ -14,7 +14,7 @@
         
         <div class="user-image-spacer height-100p">
             <div class="user-image">
-                <img src="{{ $user->image }}" alt="" height="200px" width="200px">
+                <img src="{{ $user->image ?? "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" }}" alt="" height="200px" width="200px">
             </div>
         </div>
         
@@ -71,26 +71,37 @@
 <div class="container flex flex-h">
     <div class="user-details flex-1">
         <div class="user-header-card">
+            
             <div class="fz-4 fw-bold">
                 {{ $user->name }}
             </div>
+            
             <div class="c-3">
                 {{ $user->handle }}
             </div>
+            
+            <?php if(!is_null($user->description)): ?>
             <div>
                 {{ $user->description}}
             </div>
+            <?php endif; ?>
+
             <?php if(!is_null($user->location)): ?>
             <div>
                 <i class="fas fa-map-marker-alt"></i>{{ $user->location }}
             </div>
             <?php endif; ?>
+            
+            <?php if(!is_null($user->website)): ?>
             <div>
                 <i class="fas fa-link"></i><a href="https://www.{{ $user->website }}">{{ $user->website }}</a>
             </div>
+            <?php endif; ?>
+            
             <div class="c-3">
                 <i class="far fa-calendar-alt"></i>{{ $user->joined->format('M Y') }}
             </div>
+
         </div>
     </div>
     <div class="tweets flex-2 bg-white">
