@@ -10472,3 +10472,26 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body {
+  background-color: #F5F5F5;
+}
+
+.wrapper {
+  margin: 0 auto;
+  height: 100%;
+  width: 1128px;
+  padding: 0 32px;
+}
+
+header {
+  height: 52px;
+  color: white;
+  background: #283E4A;
+}
+
+main .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
