@@ -12,6 +12,9 @@
 */
 
 // Says "At index, goto TweetsControler and execute 'index()' action 
+
+// In real world, of ten send to splash screen at '/' 
+// Route::get('/', 'TweetsController@splash'); 
 Route::get('/', 'TweetsController@index');
 Route::get('/demo', 'TweetsController@demo'); 
 Route::get('/contact', 'ContactController@index'); 

@@ -9,7 +9,8 @@ use App\Models\User;
 
 class TweetsController extends Controller
 {
-    public function demo() { 
+    public function demo() 
+    { 
         $tweets = Tweet::all(); 
 
         // Display DB stuff
@@ -18,14 +19,22 @@ class TweetsController extends Controller
         return ''; 
     }
 
-    public function index($id) { 
+    public function splash()
+    { 
+        return "Welcome to Twitter!"; 
+    }
+
+    // Not a 'real world solution' to default id to 1, but will work for our 
+    // classroom exercise
+    public function index($id = 1) 
+    { 
         // var_dump($id); die; // debug arguments
 
         $faker = Factory::create(); 
 
         $primaryUser = $this->getPrimaryUser($id); 
 
-        $suggestions = $this->getSuggestions(); 
+        $suggestions = $this->getSuggestions($primaryUser); 
         $tweets = $this->getTweets($primaryUser); 
 
         $viewData = [
@@ -50,65 +59,8 @@ class TweetsController extends Controller
         return $primaryUser; 
     }
 
-    private function generateThinUser($name, $handle, $icon) {
-        $user = new User(); 
-
-        $user->name = $name;
-        $user->handle = $handle;
-        $user->icon = $icon;
-        $user->id = 2; // Stub in Bojack for now 
-        
-        return $user; 
-    }
-
-    private function getBatMusical() { 
-        return $this->generateThinUser(
-            'Bat Out of Hell', 
-            '@BatTheMusical', 
-            'https://pbs.twimg.com/profile_images/1016606849284616194/Iwz5QTnQ_bigger.jpg'
-        ); 
-    }
-
-    private function getGeneSimmons() { 
-        return $this->generateThinUser(
-            'Gene Simmons', 
-            '@genesimmons', 
-            'https://pbs.twimg.com/profile_images/697624194205544449/PaabF10k_bigger.jpg'
-        ); 
-    }
-
-    private function getWeirdAl() { 
-        return $this->generateThinUser(
-            'Al Yankovic',
-            '@alyankovic', 
-            'https://pbs.twimg.com/profile_images/246073324/IL2_bigger.jpg'
-        ); 
-    }
-
-    private function getOzzy() { 
-        return $this->generateThinUser(
-            'Ozzy Osbourne', 
-            '@OzzyOsbourne', 
-            'https://pbs.twimg.com/profile_images/961022056631447552/Ywh6u5UM_bigger.jpg'
-        ); 
-    }
-
-    private function getDefLeppard() {
-        return $this->generateThinUser(
-            'Def Leppard', 
-            '@DefLeppard', 
-            'https://pbs.twimg.com/profile_images/954324976089419776/UPCqtSzf_bigger.jpg'
-        ); 
-    }
-
-    private function getSuggestions() { 
-        $batMusical = $this->getBatMusical(); 
-        $geneSimmons = $this->getGeneSimmons(); 
-        $weirdAl = $this->getWeirdAl(); 
-        $ozzy = $this->getOzzy(); 
-        $defLeppard = $this->getDefLeppard(); 
-
-        return [$batMusical, $geneSimmons, $weirdAl, $ozzy, $defLeppard]; 
+    private function getSuggestions($mainUser) { 
+        return User::where('id', '<>', $mainUser->id)->get(); 
     }
 
     private function getTweets($user) { 

@@ -80,9 +80,11 @@
             <div>
                 {{ $user->description}}
             </div>
+            <?php if(!is_null($user->location)): ?>
             <div>
                 <i class="fas fa-map-marker-alt"></i>{{ $user->location }}
             </div>
+            <?php endif; ?>
             <div>
                 <i class="fas fa-link"></i><a href="https://www.{{ $user->website }}">{{ $user->website }}</a>
             </div>
