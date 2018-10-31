@@ -117,6 +117,7 @@ class TweetsController extends Controller
         
         $tweets = Tweet::where('user_id', $user->id)->orderBy('date', 'desc')->get(); 
 
+        // Mocking out comment / retweet / like values 
         foreach($tweets as $tweet) {  
             $tweet->commentCount = mt_rand(100,300);
             $tweet->retweetCount = mt_rand(100,300);
