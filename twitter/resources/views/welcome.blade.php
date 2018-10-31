@@ -32,7 +32,7 @@
                 Following
             </div>
             <div class="value text-center">
-                {{ number_format($user->followingCount) }}
+                {{ number_format($user->following->count()) }}
             </div>
         </div>
         
@@ -41,7 +41,7 @@
                 Followers
             </div>
             <div class="value text-center">
-                {{ $user->followerCount }}
+                {{ $user->followers->count() }}
             </div>
         </div>
         
