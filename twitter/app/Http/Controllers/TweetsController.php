@@ -58,7 +58,7 @@ class TweetsController extends Controller
     }
 
     private function getSuggestions($mainUser) { 
-        return User::where('id', '<>', $mainUser->id)->get(); 
+        return User::where('id', '<>', $mainUser->id)->inRandomOrder()->limit(5)->get(); 
     }
 
     private function getTweets($user) { 
