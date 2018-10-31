@@ -18,11 +18,12 @@ class TweetsController extends Controller
         return ''; 
     }
 
-    public function index() { 
+    public function index($id) { 
+        // var_dump($id); die; // debug arguments
+
         $faker = Factory::create(); 
 
-        $primaryUser = $this->getPrimaryUser
-(); 
+        $primaryUser = $this->getPrimaryUser($id); 
 
         $suggestions = $this->getSuggestions(); 
         $tweets = $this->getTweets($primaryUser); 
@@ -36,8 +37,8 @@ class TweetsController extends Controller
         return view('welcome', $viewData);
     }
 
-    private function getPrimaryUser() { 
-        $primaryUser = User::find(1); 
+    private function getPrimaryUser($id) { 
+        $primaryUser = User::findOrFail($id); 
 
         // Generated values - We will find a way to get this from relationships
         $primaryUser->tweetCount = 1966;

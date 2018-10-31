@@ -15,3 +15,6 @@
 Route::get('/', 'TweetsController@index');
 Route::get('/demo', 'TweetsController@demo'); 
 Route::get('/contact', 'ContactController@index'); 
+
+// Put these lower, otherwise will overwrite (match to) __any__ other routes
+Route::get('/{id}', 'TweetsController@index'); 
