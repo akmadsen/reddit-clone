@@ -18,13 +18,12 @@
                 <div class="login-cta">
                     {{-- <span>Have an account?</span>
                     <span>Log In<i class="fas fa-caret-down"></i></span> --}}
-                    <span>Logged in:<?php 
-                        if (!Auth::check()) {
-                            echo " Nobody"; 
-                        } else { 
-                            echo request()->user()->name; 
-                        }
-                    ?></span>
+                    <?php if(Auth::check()) : ?>
+                        <span>Welcome, {{ request()->user()->name }}</span>
+                        @include('logout')
+                    <?php else: ?>
+                        <a href="/login">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>
