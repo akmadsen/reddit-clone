@@ -73,7 +73,7 @@
         <div class="user-header-card">
             
             <div class="fz-4 fw-bold">
-                {{ $user->profile->name }}
+                {{ $user->name }}
             </div>
             
             <div class="c-3">

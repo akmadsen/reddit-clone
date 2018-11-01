@@ -22,10 +22,9 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Models\User::class, function(Faker $faker) {
+$factory->define(App\Models\Profile::class, function(Faker $faker) {
     return [
         'handle' => $faker->word,
-        'name' => $faker->name,
         'description' => $faker->sentence, 
         'website' => $faker->url,
         'location' => "$faker->city, $faker->stateAbbr",

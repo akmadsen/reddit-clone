@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\User; 
+use App\Models\Profile; 
 
 class UserProfilesSeeder extends Seeder
 {
@@ -12,6 +12,6 @@ class UserProfilesSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory('App\Models\User', 100)->create();
+        $users = factory('App\Models\Profile', 100)->create();
     }
 }

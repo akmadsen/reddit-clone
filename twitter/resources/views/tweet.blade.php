@@ -4,7 +4,7 @@
     </div>
     <div class="tweet-content flex-1">
         <div class="tweet-header flex flex-h flex-a-center">
-            <div class="th-name">{{ $tweet->user->profile->name }}</div>
+            <div class="th-name">{{ $tweet->user->name }}</div>
             <div class="th-handle">&commat;{{ $tweet->user->profile->handle }}</div>
             <div class="th-middot">&middot;</div>
             <div class="th-date">{{ $tweet->created_at->format('M j') }}</div>

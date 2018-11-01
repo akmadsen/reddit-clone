@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function profile() 
     { 
-        return $this->hasOne('App\Models\User'); 
+        return $this->hasOne('App\Models\Profile'); 
     }
 
     public function tweets() 

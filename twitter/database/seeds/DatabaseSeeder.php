@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User; 
-use App\Models\User as Profile; 
+use App\Models\Profile; 
 use App\Models\Tweet;
 use Faker\Factory;  
 
@@ -16,28 +16,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create(); 
-
-        // $profiles = factory('App\Models\User',15)->create(); 
-
-        // Generate the tweets content 
-        for ($i = 0; $i < 15; $i++) {
-            $user = new User();
-            $user->email = $faker->email;
-            $user->name = $faker->name;
-            $user->password = bcrypt('12341234');
-            $user->save();
-
-            $profile = new Profile(); 
-            $profile->user_id = $user->id; 
-            $profile->handle = $faker->word; 
-            $profile->name = $faker->name;
-            $profile->description = $faker->sentence;
-            $profile->website = $faker->url;
-            $profile->location = "$faker->city, $faker->stateAbbr";
-            $profile->image = 'https://picsum.photos/400/?random'.rand(0,500);
-            $profile->hero_image = 'https://picsum.photos/1500/400/?random'.rand(0,500);
-            $profile->save(); 
-
+                
+        // Generate our users 
+        factory('App\User', 15)->create(); 
+        
+        // For each of them, generate a profile and a certain number of tweets 
+        User::all()->each(function($user) { 
+            $faker = Factory::create(); 
+            
+            factory(App\Models\Profile::class)->make(['user_id' => $user->id])->save(); 
 
             $count = mt_rand(0,15); 
             for($j=0; $j < $count; $j++) {
@@ -46,9 +33,10 @@ class DatabaseSeeder extends Seeder
                 $tweet->content = $faker->paragraph; 
                 $tweet->save(); 
             }
-        }   
+        }); 
+         
         
-        foreach(User::all() as $user) { 
+        User::all()->each(function($user) { 
             foreach(Tweet::where('user_id', '<>', $user->id)->get() as $tweet) {
                 $rand = rand(0,100); 
                 if($rand < 20) { 
@@ -62,6 +50,6 @@ class DatabaseSeeder extends Seeder
                     $user->following()->attach($following); 
                 }
             }
-        }
+        }); 
     }
 }
