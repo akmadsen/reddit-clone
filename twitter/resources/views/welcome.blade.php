@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->hero_image ?? $defaultHero }}" alt="" width="100%">
+    <img src="{{ $user->profile->hero_image ?? $defaultHero }}" alt="" width="100%">
 </div>
 @endsection
 
@@ -14,7 +14,7 @@
         
         <div class="user-image-spacer height-100p">
             <div class="user-image">
-                <img src="{{ $user->image ?? $defaultImage }}" alt="" height="200px" width="200px">
+                <img src="{{ $user->profile->image ?? $defaultImage }}" alt="" height="200px" width="200px">
             </div>
         </div>
         
@@ -73,28 +73,28 @@
         <div class="user-header-card">
             
             <div class="fz-4 fw-bold">
-                {{ $user->name }}
+                {{ $user->profile->name }}
             </div>
             
             <div class="c-3">
-               &commat;{{ $user->handle }}
+               &commat;{{ $user->profile->handle }}
             </div>
             
-            <?php if(!is_null($user->description)): ?>
+            <?php if(!is_null($user->profile->description)): ?>
             <div>
-                {{ $user->description}}
+                {{ $user->profile->description}}
             </div>
             <?php endif; ?>
 
-            <?php if(!is_null($user->location)): ?>
+            <?php if(!is_null($user->profile->location)): ?>
             <div>
-                <i class="fas fa-map-marker-alt"></i>{{ $user->location }}
+                <i class="fas fa-map-marker-alt"></i>{{ $user->profile->location }}
             </div>
             <?php endif; ?>
             
-            <?php if(!is_null($user->website)): ?>
+            <?php if(!is_null($user->profile->website)): ?>
             <div>
-                <i class="fas fa-link"></i><a href="https://www.{{ $user->website }}">{{ $user->website }}</a>
+                <i class="fas fa-link"></i><a href="{{ $user->profile->website }}">{{ $user->profile->website }}</a>
             </div>
             <?php endif; ?>
             

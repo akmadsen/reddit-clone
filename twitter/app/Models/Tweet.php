@@ -11,14 +11,11 @@ class Tweet extends Model
     // Establishes a relationship with the user model 
     public function user()
     {
-        return $this->belongsTo('App\Models\User'); 
+        return $this->belongsTo('App\User'); 
     }
 
     public function likes()
     {
-        return $this->belongsToMany('App\Models\User'); 
-       
-        // How to override the join table name 
-        // return $this->belongsToMany('App\Models\User', 'likes'); 
+        return $this->belongsToMany('App\User'); 
     }
 }

@@ -14,7 +14,7 @@ class CreateUserProfiles extends Migration
     public function up()
     {
         Schema::create('user_profiles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('user_id')->unique();;
             $table->string('name'); 
             $table->string('handle'); 
             $table->string('image'); 

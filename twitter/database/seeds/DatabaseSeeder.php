@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\User; 
+use App\User; 
+use App\Models\User as Profile; 
 use App\Models\Tweet;
 use Faker\Factory;  
 
@@ -16,17 +17,33 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Factory::create(); 
 
-        $users = factory('App\Models\User',10)->create(); 
+        // $profiles = factory('App\Models\User',15)->create(); 
 
         // Generate the tweets content 
-        foreach($users as $user)  
-        {
-            $count = mt_rand(0,10); 
+        for ($i = 0; $i < 15; $i++) {
+            $user = new User();
+            $user->email = $faker->email;
+            $user->name = $faker->name;
+            $user->password = bcrypt('12341234');
+            $user->save();
+
+            $profile = new Profile(); 
+            $profile->user_id = $user->id; 
+            $profile->handle = $faker->word; 
+            $profile->name = $faker->name;
+            $profile->description = $faker->sentence;
+            $profile->website = $faker->url;
+            $profile->location = "$faker->city, $faker->stateAbbr";
+            $profile->image = 'https://picsum.photos/400/?random'.rand(0,500);
+            $profile->hero_image = 'https://picsum.photos/1500/400/?random'.rand(0,500);
+            $profile->save(); 
+
+
+            $count = mt_rand(0,15); 
             for($j=0; $j < $count; $j++) {
-                $likes = User::where('id', '<>', $user->id)->inRandomOrder()->limit(mt_rand(0,40))->get(); 
                 $tweet = new Tweet(); 
-                $tweet->content = $faker->paragraph; 
                 $tweet->user_id = $user->id; 
+                $tweet->content = $faker->paragraph; 
                 $tweet->save(); 
             }
         }   
