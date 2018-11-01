@@ -16,8 +16,15 @@
                     <i class="fas fa-search"></i>
                 </div>
                 <div class="login-cta">
-                    <span>Have an account?</span>
-                    <span>Log In<i class="fas fa-caret-down"></i></span>
+                    {{-- <span>Have an account?</span>
+                    <span>Log In<i class="fas fa-caret-down"></i></span> --}}
+                    <span>Logged in:<?php 
+                        if (!Auth::check()) {
+                            echo " Nobody"; 
+                        } else { 
+                            echo request()->user()->name; 
+                        }
+                    ?></span>
                 </div>
             </div>
         </nav>

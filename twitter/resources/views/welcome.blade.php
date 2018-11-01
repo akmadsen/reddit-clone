@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->heroImgURL }}" alt="" width="100%">
+    <img src="{{ $user->hero_image ?? $defaultHero }}" alt="" width="100%">
 </div>
 @endsection
 
@@ -14,7 +14,7 @@
         
         <div class="user-image-spacer height-100p">
             <div class="user-image">
-                <img src="{{ $user->profileImgURL }}" alt="" height="200px" width="200px">
+                <img src="{{ $user->image ?? $defaultImage }}" alt="" height="200px" width="200px">
             </div>
         </div>
         
@@ -23,7 +23,7 @@
                 Tweets
             </div>
             <div class="value text-center">
-                {{ number_format($user->tweetCount) }}
+                {{ number_format($user->tweets->count()) }}
             </div>
         </div>
         
@@ -32,7 +32,7 @@
                 Following
             </div>
             <div class="value text-center">
-                {{ number_format($user->followingCount) }}
+                {{ number_format($user->following->count()) }}
             </div>
         </div>
         
@@ -41,7 +41,7 @@
                 Followers
             </div>
             <div class="value text-center">
-                {{ $user->followerCount }}
+                {{ $user->followers->count() }}
             </div>
         </div>
         
@@ -50,7 +50,7 @@
                 Likes
             </div>
             <div class="value text-center">
-                {{ number_format($user->likesCount) }}
+                {{ number_format($user->likedTweets->count()) }}
             </div>
         </div>
         
@@ -71,24 +71,37 @@
 <div class="container flex flex-h">
     <div class="user-details flex-1">
         <div class="user-header-card">
+            
             <div class="fz-4 fw-bold">
                 {{ $user->name }}
             </div>
+            
             <div class="c-3">
-                {{ $user->handle }}
+               &commat;{{ $user->handle }}
             </div>
+            
+            <?php if(!is_null($user->description)): ?>
             <div>
                 {{ $user->description}}
             </div>
+            <?php endif; ?>
+
+            <?php if(!is_null($user->location)): ?>
             <div>
                 <i class="fas fa-map-marker-alt"></i>{{ $user->location }}
             </div>
+            <?php endif; ?>
+            
+            <?php if(!is_null($user->website)): ?>
             <div>
-                <i class="fas fa-link"></i><a href="{{ $user->websiteURL }}">{{ $user->websiteTitle }}</a>
+                <i class="fas fa-link"></i><a href="https://www.{{ $user->website }}">{{ $user->website }}</a>
             </div>
+            <?php endif; ?>
+            
             <div class="c-3">
-                <i class="far fa-calendar-alt"></i>{{ $user->joinDate }}
+                <i class="far fa-calendar-alt"></i>{{ $user->created_at->format('M Y') }}
             </div>
+
         </div>
     </div>
     <div class="tweets flex-2 bg-white">

@@ -107,7 +107,12 @@ body {
 }
 
 .hero img { 
-  width: 100%
+  width: 100%;
+}
+
+.hero-img { 
+    height: 350px;
+    overflow: hidden; 
 }
 
 .height-50 { 
@@ -197,9 +202,15 @@ i {
   }
 }
 
-.suggestion-item { 
+.suggestion-item a { 
   display: flex; 
   margin-bottom: 5px; 
+
+  color: slategrey; 
+
+  &:hover { 
+      text-decoration: none; 
+  }
 
   img { 
     height: 48px; 

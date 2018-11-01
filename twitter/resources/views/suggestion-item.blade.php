@@ -1,7 +1,9 @@
 <div class="suggestion-item">
-    <img src="{{ $suggestion->icon }}" alt="" class="circular">
-    <div>
-        <span class="fw-bold">{{ $suggestion->name }}</span><br>
-        <span>{{ $suggestion->handle }}</span>
-    </div>
+    <a href="{{ $suggestion->id }}">
+        <img src="{{ $suggestion->image ?? $defaultImage }}" alt="" class="circular">
+        <div>
+            <span class="fw-bold">{{ $suggestion->name }}</span><br>
+            <span>&commat;{{ $suggestion->handle }}</span>
+        </div>
+    </a>
 </div>

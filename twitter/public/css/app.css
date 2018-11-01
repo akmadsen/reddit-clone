@@ -10582,6 +10582,11 @@ body {
   width: 100%;
 }
 
+.hero-img {
+  height: 350px;
+  overflow: hidden;
+}
+
 .height-50 {
   height: 46px;
 }
@@ -10673,14 +10678,19 @@ i {
   margin-left: 3px;
 }
 
-.suggestion-item {
+.suggestion-item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 5px;
+  color: slategrey;
 }
 
-.suggestion-item img {
+.suggestion-item a:hover {
+  text-decoration: none;
+}
+
+.suggestion-item a img {
   height: 48px;
   width: 48px;
   margin-right: 10px;
