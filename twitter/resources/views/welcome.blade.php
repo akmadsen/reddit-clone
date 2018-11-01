@@ -77,7 +77,7 @@
             </div>
             
             <div class="c-3">
-                {{ $user->handle }}
+               &commat;{{ $user->handle }}
             </div>
             
             <?php if(!is_null($user->description)): ?>

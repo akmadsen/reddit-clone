@@ -21,8 +21,10 @@ class DatabaseSeeder extends Seeder
             // $this->call(UsersTableSeeder::class);
             $user = new User(); 
             $user->handle = $faker->word; 
-            $user->description = $faker->name; 
+            $user->name = $faker->name; 
+            $user->description = $faker->sentence; 
             $user->website = $faker->url; 
+            $user->location = "$faker->city, $faker->stateAbbr"; 
             $user->image = $faker->imageUrl(40,40);
             $user->hero_image = $faker->imageUrl(1500,500);
             $user->save();  
