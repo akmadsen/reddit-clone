@@ -38,6 +38,13 @@ class DatabaseSeeder extends Seeder
                     $user->likedTweets()->attach($tweet); 
                 }
             }
+
+            foreach(User::where('id', '<>', $user->id)->get() as $following) { 
+                $rand = rand(0,100); 
+                if($rand < 50) { 
+                    $user->following()->attach($following); 
+                }
+            }
         }
     }
 }
