@@ -24,15 +24,14 @@ class DatabaseSeeder extends Seeder
         User::all()->each(function($user) { 
             $faker = Factory::create(); 
             
-            factory(App\Models\Profile::class)->make(['user_id' => $user->id])->save(); 
+            factory(Profile::class)->make(['user_id' => $user->id])->save(); 
 
-            $count = mt_rand(0,15); 
-            for($j=0; $j < $count; $j++) {
-                $tweet = new Tweet(); 
-                $tweet->user_id = $user->id; 
-                $tweet->content = $faker->paragraph; 
-                $tweet->save(); 
-            }
+            factory(Tweet::class, mt_rand(0,15))
+                ->make()
+                ->each(function($tweet) use ($user) {
+                    $tweet->user_id = $user->id; 
+                    $tweet->save(); 
+                });
         }); 
          
         

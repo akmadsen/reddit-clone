@@ -32,3 +32,9 @@ $factory->define(App\Models\Profile::class, function(Faker $faker) {
         'hero_image' => 'https://picsum.photos/1500/400/?random'.rand(0,500),
     ]; 
 }); 
+
+$factory->define(App\Models\Tweet::class, function(Faker $faker) { 
+    return [
+        'content' => $faker->paragraph,
+    ]; 
+});
