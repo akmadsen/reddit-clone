@@ -29,7 +29,7 @@ $factory->define(App\Models\User::class, function(Faker $faker) {
         'description' => $faker->sentence, 
         'website' => $faker->url,
         'location' => "$faker->city, $faker->stateAbbr",
-        'image' => $faker->imageUrl(40,40),
-        'hero_image' => $faker->imageUrl(1500,500)
+        'image' => 'https://picsum.photos/400/?random'.rand(0,500),
+        'hero_image' => 'https://picsum.photos/1500/400/?random'.rand(0,500),
     ]; 
 }); 

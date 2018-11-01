@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\User; 
 
-class UserProfilesSeeder extends Seeder
+class TweetTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,6 @@ class UserProfilesSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory('App\Models\User', 100)->create();
+        //
     }
 }
