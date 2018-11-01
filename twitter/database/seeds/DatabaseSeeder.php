@@ -33,22 +33,19 @@ class DatabaseSeeder extends Seeder
                     $tweet->save(); 
                 });
         }); 
-         
-        
+                 
         User::all()->each(function($user) { 
-            foreach(Tweet::where('user_id', '<>', $user->id)->get() as $tweet) {
-                $rand = rand(0,100); 
-                if($rand < 20) { 
+            Tweet::where('user_id', '<>', $user->id)->each(function($tweet) use ($user) {
+                if(rand(0,100) < 20) { 
                     $user->likedTweets()->attach($tweet); 
                 }
-            }
+            }); 
 
-            foreach(User::where('id', '<>', $user->id)->get() as $following) { 
-                $rand = rand(0,100); 
-                if($rand < 50) { 
+            User::where('id', '<>', $user->id)->each(function($following) use ($user) { 
+                if(rand(0,100) < 50) { 
                     $user->following()->attach($following); 
                 }
-            }
+            }); 
         }); 
     }
 }
