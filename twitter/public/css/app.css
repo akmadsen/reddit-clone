@@ -10582,6 +10582,17 @@ body {
   width: 100%;
 }
 
+.hero-img {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-img img {
+  position: absolute;
+  bottom: -75%;
+}
+
 .height-50 {
   height: 46px;
 }

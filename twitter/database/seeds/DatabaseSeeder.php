@@ -16,19 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Factory::create(); 
 
-        for($i = 0; $i < 100; $i++) 
-        {
-            // $this->call(UsersTableSeeder::class);
-            $user = new User(); 
-            $user->handle = $faker->word; 
-            $user->name = $faker->name; 
-            $user->description = $faker->sentence; 
-            $user->website = $faker->url; 
-            $user->location = "$faker->city, $faker->stateAbbr"; 
-            $user->image = $faker->imageUrl(40,40);
-            $user->hero_image = $faker->imageUrl(1500,500);
-            $user->save();  
+        $users = factory('App\Models\User', 100)->create();
 
+        // Generate the tweets content 
+        foreach($users as $user)  
+        {
             $count = mt_rand(0,20); 
             for($j=0; $j < $count; $j++) {
                 $tweet = new Tweet(); 
@@ -36,7 +28,6 @@ class DatabaseSeeder extends Seeder
                 $tweet->user_id = $user->id; 
                 $tweet->save(); 
             }
-        }
-        
+        }        
     }
 }

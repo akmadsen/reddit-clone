@@ -107,7 +107,19 @@ body {
 }
 
 .hero img { 
-  width: 100%
+  width: 100%;
+}
+
+.hero-img { 
+    height: 350px;
+    overflow: hidden; 
+
+    position: relative; 
+
+    img { 
+        position: absolute; 
+        bottom: -75%; // Fixme: Better way out there?  
+    }
 }
 
 .height-50 { 
