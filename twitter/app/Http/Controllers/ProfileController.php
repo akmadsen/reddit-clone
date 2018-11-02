@@ -4,21 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile; 
+// use App\Http\Requests\UpdateProfileRequest; 
 
 class ProfileController extends Controller
 {
     public function index() 
     { 
         $user = request()->user(); 
-        $profile = Profile::find($user->id); 
+        $profile = $user->profile; 
 
         $viewData = [
-            'handle' => $profile->handle, 
-            'description' => $profile->description, 
-            'website' => $profile->website, 
-            'image' => $profile->image, 
-            'hero_image' => $profile->hero_image, 
-            'location' => $profile->location, 
+            'user' => $user,
+            'profile' => $profile,
         ];
 
         return view('profile-form', $viewData); 
@@ -30,7 +27,7 @@ class ProfileController extends Controller
 
         $user = request()->user(); 
 
-        $profile = Profile::find($user->id);
+        $profile = $user->profile;
         
         $profile->handle = $formData['handle'];  
         $profile->description = $formData['description'];  
@@ -38,6 +35,7 @@ class ProfileController extends Controller
         $profile->image = $formData['image'];  
         $profile->hero_image = $formData['hero_image'];  
         $profile->location = $formData['location'];  
+
         $profile->save(); 
 
         return redirect('/profile'); 

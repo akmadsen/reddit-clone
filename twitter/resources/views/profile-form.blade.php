@@ -13,7 +13,7 @@
                 name="handle" 
                 id="handle" 
                 placeholder="Handle"
-                value="{{ $handle }}"
+                value="{{ $profile->handle }}"
             />
         </div>
 
@@ -24,7 +24,7 @@
                 type="text" 
                 name="hero_image"
                 id="hero"
-                value="{{ $hero_image }}"
+                value="{{ $profile->hero_image }}"
             />
         </div>
 
@@ -35,7 +35,7 @@
                 type="text" 
                 name="image" 
                 id="image"
-                value="{{ $image }}"
+                value="{{ $profile->image }}"
             />
         </div>
 
@@ -46,7 +46,7 @@
                 type="text" 
                 name="description" 
                 id="description"
-                value="{{ $description }}"
+                value="{{ $profile->description }}"
             />
         </div>
 
@@ -57,7 +57,7 @@
                 type="text"
                 name="location"
                 id="location"
-                value="{{ $location }}"
+                value="{{ $profile->location }}"
             />
         </div>
 
@@ -68,7 +68,7 @@
                 type="text" 
                 name="website"
                 id="website"
-                value="{{ $website }}"/>
+                value="{{ $profile->website }}"/>
         </div>
 
         <input

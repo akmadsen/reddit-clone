@@ -93,7 +93,7 @@ class RegisterController extends Controller
 
     protected function registered($request, $user) { 
         // TODO: Do more actual authentication stuff here 
-
+        $request->validate(); 
         return redirect('/profile'); 
     }
 }
