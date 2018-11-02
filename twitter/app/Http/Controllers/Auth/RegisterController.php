@@ -70,7 +70,23 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
         
-        factory(Profile::class)->make(['user_id' => $user->id])->save(); 
+        // You could use Profile::create(...), but then you need to add a
+        // fillable property to the profile model. 
+        //
+        // Profile::create([
+        //      'user_id' => $user->id, 
+        //      ... 
+        // ]); 
+
+        $profile = new Profile();
+        $profile->user_id = $user->id;  
+        $profile->handle = ''; 
+        $profile->description = ''; 
+        $profile->website = ''; 
+        $profile->image = ''; 
+        $profile->hero_image = ''; 
+        $profile->location = ''; 
+        $profile->save(); 
 
         return $user; 
     }

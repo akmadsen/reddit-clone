@@ -3,7 +3,7 @@
 
 @section('hero-image')
 <div class="hero-img">
-    <img src="{{ $user->profile->hero_image ?? $defaultHero }}" alt="" width="100%">
+    <img src="{{ $user->profile->hero_image ? $user->profile->hero_image : $defaultHero }}" alt="" width="100%">
 </div>
 @endsection
 
@@ -14,7 +14,7 @@
         
         <div class="user-image-spacer height-100p">
             <div class="user-image">
-                <img src="{{ $user->profile->image ?? $defaultImage }}" alt="" height="200px" width="200px">
+                <img src="{{ $user->profile->image ? $user->profile->image : $defaultImage }}" alt="" height="200px" width="200px">
             </div>
         </div>
         
