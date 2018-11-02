@@ -9,7 +9,7 @@ class Profile extends Model
     public $table = 'user_profiles';
     
     public $dates = ['joined'];
-
+    
     protected $primaryKey = 'user_id'; 
 
     public function owner() 

@@ -17,7 +17,7 @@ class ProfileController extends Controller
             'description' => $profile->description, 
             'website' => $profile->website, 
             'image' => $profile->image, 
-            'hero' => $profile->hero_image, 
+            'hero_image' => $profile->hero_image, 
             'location' => $profile->location, 
         ];
 
@@ -36,7 +36,7 @@ class ProfileController extends Controller
         $profile->description = $formData['description'];  
         $profile->website = $formData['website'];  
         $profile->image = $formData['image'];  
-        $profile->hero_image = $formData['hero'];  
+        $profile->hero_image = $formData['hero_image'];  
         $profile->location = $formData['location'];  
         $profile->save(); 
 

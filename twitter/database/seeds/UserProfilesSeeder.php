@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User; 
 use App\Models\Profile; 
 
 class UserProfilesSeeder extends Seeder
@@ -12,6 +13,8 @@ class UserProfilesSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory('App\Models\Profile', 100)->create();
+        User::all()->each(function($user) {             
+            factory(Profile::class)->make(['user_id' => $user->id])->save(); 
+        }); 
     }
 }
