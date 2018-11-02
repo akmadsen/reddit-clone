@@ -90,4 +90,8 @@ class RegisterController extends Controller
 
         return $user; 
     }
+
+    protected function registered($request, $user) { 
+        return redirect('/'.$user->id); 
+    }
 }
