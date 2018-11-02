@@ -25,6 +25,16 @@ class ProfileController extends Controller
     {
         $formData = request()->all(); 
 
+        // Bad way to do it 
+        // if(empty($formData['handle'])) { 
+        //     throw new \Exception("You need to enter a handle."); 
+        // }
+
+        // If we fail this validation, $errors gets injected into our view
+        request()->validate([
+            'handle' => 'required', 
+        ]); 
+
         $user = request()->user(); 
 
         $profile = $user->profile;
