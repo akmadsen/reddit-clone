@@ -10,6 +10,8 @@ class Profile extends Model
     
     public $dates = ['joined'];
 
+    protected $primaryKey = 'user_id'; 
+
     public function owner() 
     { 
         $this->belongsTo('App\User'); 

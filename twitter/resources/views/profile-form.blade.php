@@ -1,38 +1,81 @@
 @extends('layout') 
+
 @section('content')
 <div class="container">
-    <form action="#">
-        <div class="row">
-            <label class="col-3" for="handle">Handle: </label>
-            <input class="col-9" type="text" name="handle" id="handle">
+    <h1>Profile Form</h1>
+    <form action="/profile" method="POST">
+        {{ csrf_field() }}
+        <div class="form-group">
+            <label class="" for="handle">Handle: </label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="handle" 
+                id="handle" 
+                placeholder="Handle"
+                value="{{ $handle }}"
+            />
         </div>
 
-        <div class="row">
-            <label class="col-3" for="hero">Hero Image URL: </label>
-            <input class="col-9" type="text" name="hero" id="hero">
+        <div class="form-group">
+            <label class="" for="hero">Hero Image URL: </label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="hero"
+                id="hero"
+                value="{{ $hero }}"
+            />
         </div>
 
-        <div class="row">
-            <label class="col-3" for="image">Profile Image URL: </label>
-            <input class="col-9" type="text" name="image" id="image">
+        <div class="form-group">
+            <label class="" for="image">Profile Image URL: </label>
+            <input 
+                class="form-control"
+                type="text" 
+                name="image" 
+                id="image"
+                value="{{ $image }}"
+            />
         </div>
 
-        <div class="row">
-            <label class="col-3" for="description">Description: </label>
-            <input class="col-9" type="text" name="description" id="description">
+        <div class="form-group">
+            <label class="" for="description">Description: </label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="description" 
+                id="description"
+                value="{{ $description }}"
+            />
         </div>
 
-        <div class="row">
-            <label class="col-3" for="location">Location: </label>
-            <input class="col-9" type="text" name="location" id="location">
+        <div class="form-group">
+            <label class="" for="location">Location: </label>
+            <input 
+                class="form-control"
+                type="text"
+                name="location"
+                id="location"
+                value="{{ $location }}"
+            />
         </div>
 
-        <div class="row">
-            <label class="col-3" for="website">Website: </label>
-            <input class="col-9" type="text" name="website" id="website">
+        <div class="form-group">
+            <label class="" for="website">Website: </label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="website"
+                id="website"
+                value="{{ $website }}"/>
         </div>
 
-        <input class="col-12" type="submit" value="Submit">
+        <input
+            class="btn btn-primary" 
+            type="submit" 
+            value="Submit"
+        />
     </form>
 </div>
 @endsection

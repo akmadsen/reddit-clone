@@ -19,10 +19,12 @@ Route::get('/', 'TweetsController@index');
 Route::get('/demo', 'TweetsController@demo'); 
 Route::get('/contact', 'ContactController@index'); 
 
+Route::get('/profile', 'ProfileController@index'); 
+Route::post('/profile', 'ProfileController@update'); // Form Submission
+
 // Auth Routes
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'ProfileController@index'); 
 
 // Put these lower, otherwise will overwrite (match to) __any__ other routes
 Route::get('/{id}', 'TweetsController@index'); 
