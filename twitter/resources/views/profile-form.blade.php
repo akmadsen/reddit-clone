@@ -18,13 +18,13 @@
         </div>
 
         <div class="form-group">
-            <label class="" for="hero">Hero Image URL: </label>
+            <label class="" for="hero_image">Hero Image URL: </label>
             <input 
                 class="form-control" 
                 type="text" 
-                name="hero"
+                name="hero_image"
                 id="hero"
-                value="{{ $hero }}"
+                value="{{ $hero_image }}"
             />
         </div>
 
