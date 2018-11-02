@@ -92,6 +92,8 @@ class RegisterController extends Controller
     }
 
     protected function registered($request, $user) { 
-        return redirect('/'.$user->id); 
+        // TODO: Do more actual authentication stuff here 
+
+        return redirect('/profile'); 
     }
 }
