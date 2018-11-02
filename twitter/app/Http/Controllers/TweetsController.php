@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Faker\Factory; 
-use App\Models\Tweet; 
 use App\User; 
+use App\Models\Tweet; 
+use Illuminate\Http\Request;
 
 class TweetsController extends Controller
 {
@@ -13,11 +12,10 @@ class TweetsController extends Controller
     // classroom exercise
     public function index($id = 1) 
     { 
-        $faker = Factory::create(); 
-
         $primaryUser = $this->getPrimaryUser($id); 
 
         $suggestions = $this->getSuggestions($primaryUser); 
+        
         $tweets = $this->getTweets($primaryUser); 
 
         $viewData = [
@@ -31,7 +29,8 @@ class TweetsController extends Controller
         return view('welcome', $viewData);
     }
 
-    private function getPrimaryUser($id) { 
+    private function getPrimaryUser($id) 
+    { 
         $primaryUser = User::findOrFail($id); 
 
         // Generated values - We will find a way to get this from relationships
@@ -46,9 +45,7 @@ class TweetsController extends Controller
     }
 
     private function getTweets($user) 
-    { 
-        $faker = Factory::create(); 
-        
+    {         
         $tweets = Tweet::where('user_id', $user->id)->orderBy('created_at', 'desc')->get(); 
 
         // Mocking out comment / retweet / like values 
