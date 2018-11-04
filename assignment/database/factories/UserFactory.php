@@ -21,3 +21,13 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Models\Profile::class, function(Faker $faker) {
+    return [
+        'handle' => $faker->word, 
+        'icon' => 'https://picsum.photos/400/?random'.rand(0,500), 
+        'profile_image' => 'https://picsum.photos/500/200/?random'.rand(0,500), 
+        'description' => $faker->sentence, 
+    ];
+});
