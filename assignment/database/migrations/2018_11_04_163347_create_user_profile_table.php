@@ -14,7 +14,11 @@ class CreateUserProfileTable extends Migration
     public function up()
     {
         Schema::create('user_profile', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('user_id')->unique();
+            $table->string('handle'); 
+            $table->string('icon'); 
+            $table->string('profile_image'); 
+            $table->string('description'); 
             $table->timestamps();
         });
     }

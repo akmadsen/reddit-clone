@@ -15,6 +15,10 @@ class CreatePostTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id'); 
+            $table->unsignedInteger('subreddit_id'); 
+            $table->string('title'); 
+            $table->text('content');
             $table->timestamps();
         });
     }
