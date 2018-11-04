@@ -150,4 +150,33 @@ N/A - Forgot to Record during the day, Family Obligations in Evening
     projects of personal interest. 
 	- Spent time on Vim editor course (increasing text editing speed) 
 	- Spent time on Node.js / React.js course (learning frontend to pair with laravel) 
-- Worked with the first chapters of Laravel book 
+- Worked with the first chapters of Laravel book
+
+## Day 9 - November 2, 2018
+
+1) Obstalces & Overcoming Them 
+
+- Debugged database errors for myself and peers during class 
+- Learned how to use Factories and Seeders in the Laravel fashion 
+	- This also helped debug "What's taking so long?" for my seeders 
+
+2) Pushing Yourself 
+
+- Reading documentation on Authentication, and the like - learned about Gates and Policies 
+- Learned more about data _sanitization_, which is not covered in class
+	- Looks like 3rd party libraries are recommended 
+
+3) Outside of Class
+
+- Today was devoted to interviews, and interview-related homework 
+
+## Weekend 3 - November 3, 2018 
+
+- This weekend day was devoted to finishing off the interview-related homework 
+- Afterwards, I got Twitter up and running on my home machine, and began the second Assignment & related homework
+- Finished around midnight... need to start listening to podcasts and the like 
+	- Cameron, if you're reading this... What podcasts do you listen to? You seem like a very smart guy, and someone to emulate. Not just saying that. 
+
+## Weekend 4 - November 4, 2018
+
+- UNDERWAY  
