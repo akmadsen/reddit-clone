@@ -16,7 +16,7 @@
     
     @include('header')
 
-    <main>
+    <main class="reddit-main">
         <div class="wrapper">
             <div class="main-feed">
 

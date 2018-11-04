@@ -10486,6 +10486,7 @@ body {
 .sr-button,
 .rp-button,
 .tc-subs-button {
+  display: inline-block;
   border: 1px solid #0079d3;
   background-color: #0079d3;
   color: #fff;
@@ -10503,6 +10504,12 @@ body {
 .login-button,
 .signin-button {
   width: 120px;
+  text-align: center;
+}
+
+.login-button:hover,
+.signin-button:hover {
+  text-decoration: none;
 }
 
 .login-button {
@@ -10512,6 +10519,11 @@ body {
 
 .signin-button {
   margin-left: 16px;
+  color: #fff;
+}
+
+.signin-button:hover {
+  color: #fff;
 }
 
 .cta-button {
@@ -11289,11 +11301,11 @@ body {
   margin-left: 4px;
 }
 
-main {
+.reddit-main {
   padding: 20px 24px;
 }
 
-main .container {
+.reddit-main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

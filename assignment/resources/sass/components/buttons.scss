@@ -4,6 +4,7 @@
 //-----------------------------------------------
 
 %button-shared { 
+    display: inline-block; 
     border: 1px solid $brand-blue; 
     background-color: $brand-blue; 
     color: $bg-item; 
@@ -21,6 +22,12 @@
 %header-button-shared { 
     @extend %button-shared; 
     width: 120px; 
+
+    text-align: center; 
+
+    &:hover { 
+        text-decoration: none; 
+    }
 }
 
 .login-button { 
@@ -32,6 +39,11 @@
 .signin-button { 
     @extend %header-button-shared; 
     margin-left: 16px; 
+    color: $bg-item; 
+
+    &:hover { 
+        color: $bg-item; 
+    }
 }
 
 .cta-button { 

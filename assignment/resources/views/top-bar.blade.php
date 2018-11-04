@@ -23,8 +23,8 @@
     </div>
     <div class="th-right">
         <div class="login-buttons">
-            <button class="login-button">LOG IN</button>
-            <button class="signin-button">SIGN UP</button>
+            <a class="login-button" href="/login">LOG IN</a>
+            <a class="signin-button" href="/register">SIGN UP</a>
         </div>
         <div class="old-reddit-link">
             <a href="#"><i class="fas fa-external-link-alt"></i>Visit Old Reddit</a>
