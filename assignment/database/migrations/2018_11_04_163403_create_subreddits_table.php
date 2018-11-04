@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDownVoteTable extends Migration
+class CreateSubredditTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateDownVoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('down_vote', function (Blueprint $table) {
-            $table->unsignedInteger('user_id'); 
-            $table->unsignedInteger('post_id');
-            $table->primary(['user_id', 'post_id']);  
+        Schema::create('subreddits', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('handle');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateDownVoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('down_vote');
+        Schema::dropIfExists('subreddits');
     }
 }

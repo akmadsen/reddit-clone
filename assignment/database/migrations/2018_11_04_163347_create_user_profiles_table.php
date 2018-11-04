@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTable extends Migration
+class CreateUserProfileTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePostTable extends Migration
      */
     public function up()
     {
-        Schema::create('post', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('user_id'); 
-            $table->unsignedInteger('subreddit_id'); 
-            $table->string('title'); 
-            $table->text('content');
+        Schema::create('user_profiles', function (Blueprint $table) {
+            $table->unsignedInteger('user_id')->unique();
+            $table->string('handle'); 
+            $table->string('icon'); 
+            $table->string('profile_image'); 
+            $table->string('description'); 
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreatePostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('user_profiles');
     }
 }

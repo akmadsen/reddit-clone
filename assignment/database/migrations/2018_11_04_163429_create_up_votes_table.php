@@ -13,7 +13,7 @@ class CreateUpVoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('up_vote', function (Blueprint $table) {
+        Schema::create('up_votes', function (Blueprint $table) {
             $table->unsignedInteger('user_id'); 
             $table->unsignedInteger('post_id');
             $table->primary(['user_id', 'post_id']);  
@@ -27,6 +27,6 @@ class CreateUpVoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('up_vote');
+        Schema::dropIfExists('up_votes');
     }
 }

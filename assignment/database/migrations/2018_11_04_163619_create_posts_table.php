@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubredditTable extends Migration
+class CreatePostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateSubredditTable extends Migration
      */
     public function up()
     {
-        Schema::create('subreddit', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('handle');
-            $table->string('description');
+            $table->unsignedInteger('user_id'); 
+            $table->unsignedInteger('subreddit_id'); 
+            $table->string('title'); 
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSubredditTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subreddit');
+        Schema::dropIfExists('posts');
     }
 }
