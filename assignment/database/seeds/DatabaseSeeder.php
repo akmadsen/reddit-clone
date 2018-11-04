@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             ProfilesTableSeeder::class,
             SubredditsTableSeeder::class, 
             PostsTableSeeder::class, 
+            UpVotesTableSeeder::class,
         ]);
     }
 }
