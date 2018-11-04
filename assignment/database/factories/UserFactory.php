@@ -25,9 +25,17 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Models\Profile::class, function(Faker $faker) {
     return [
-        'handle' => $faker->word, 
         'icon' => 'https://picsum.photos/400/?random'.rand(0,500), 
         'profile_image' => 'https://picsum.photos/500/200/?random'.rand(0,500), 
         'description' => $faker->sentence, 
     ];
 });
+
+
+$factory->define(App\Models\Subreddit::class, function(Faker $faker) {
+    return [
+        'description' => $faker->sentence, 
+        'icon' => 'https://picsum.photos/400/?random'.rand(0,500), 
+        'banner' => 'https://picsum.photos/1500/400/?random'.rand(0,500), 
+    ];
+}); 
