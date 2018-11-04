@@ -39,3 +39,10 @@ $factory->define(App\Models\Subreddit::class, function(Faker $faker) {
         'banner' => 'https://picsum.photos/1500/400/?random'.rand(0,500), 
     ];
 }); 
+
+$factory->define(App\Models\Post::class, function(Faker $faker) {
+    return [
+        'title' => $faker->sentence,
+        'content' => $faker->paragraph,
+    ]; 
+}); 
