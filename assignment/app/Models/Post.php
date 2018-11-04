@@ -18,11 +18,11 @@ class Post extends Model
 
     public function upVotes() 
     {
-        return $this->belongsToMany('App\User'); 
+        return $this->belongsToMany('App\User' ,'up_votes'); 
     }
 
     public function downVotes() 
     { 
-        return $this->belongsToMany('App\User'); 
+        return $this->belongsToMany('App\User', 'down_votes'); 
     }
 }
