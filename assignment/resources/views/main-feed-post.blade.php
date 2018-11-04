@@ -11,7 +11,7 @@
             <span class="ph-middot">.</span>
             <div class="post-info">
                 <div class="post-credit">Posted by</div>
-                <a class="post-username" href="#">u/<?= $post->username ?></a>
+                <a class="post-username" href="#">u/{{ $post->user->profile->handle }}</a>
                 <a class="post-time" href="#"><?= $post->timepast ?></a>
             </div>
         </div>
