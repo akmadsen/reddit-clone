@@ -11102,6 +11102,15 @@ body {
 .company span {
   font-size: 20px;
   font-family: "Varela Round", sans-serif;
+  color: black;
+}
+
+.company:hover {
+  text-decoration: none;
+}
+
+.company:hover span {
+  color: black;
 }
 
 .logo {

@@ -25,9 +25,19 @@
     display: flex; 
     align-items: center; 
     width: 117px; 
+
     span { 
         font-size: 20px; 
         font-family: $font-family-logo; 
+        color: black; 
+    }
+
+    &:hover { 
+        text-decoration: none; 
+
+        span { 
+            color: black; 
+        }
     }
 }
 

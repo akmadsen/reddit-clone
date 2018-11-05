@@ -1,9 +1,9 @@
 <div class="top-header">
     <div class="th-left">
-        <div class="company">
+        <a href="/" class="company">
             <i class="fab fa-reddit logo"></i>
             <span>reddit</span>
-        </div>
+        </a>
         <div class="th-filter">
             <i class="fas fa-chart-line trend-line"></i>
             <span>Popular</span>
