@@ -20,7 +20,7 @@
 
 Route::get('/', 'FeedController@index');
 
-Route::get('/u/{handle}', 'ProfileController@pindex'); 
+Route::get('/u/{handle}', 'ProfileController@index'); 
 Route::get('/edit_profile', 'ProfileController@edit');
 Route::post('/edit_profile', 'ProfileController@update'); 
 
