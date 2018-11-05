@@ -1,4 +1,4 @@
-@extends('layout') 
+@extends('reddit_layouts.app') 
 
 @section('main-feed-content')    
     <?php if (!Auth::check()): ?>
