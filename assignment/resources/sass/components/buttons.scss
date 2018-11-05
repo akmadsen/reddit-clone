@@ -86,3 +86,16 @@
 
     width: 100px; 
 }
+
+.new-post-button { 
+    @extend %button-shared; 
+    
+    display: inline-block; 
+    width: 100%; 
+    text-align: center; 
+
+    &:hover { 
+        color: $bg-item; 
+        text-decoration: none; 
+    }
+}

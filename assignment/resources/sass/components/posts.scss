@@ -413,3 +413,77 @@
         }
     }
 }
+
+.user-card-post { 
+    @extend %post-base; 
+
+    padding: 12px; 
+
+    overflow: hidden; 
+    position: relative;
+}
+
+.user-hero, 
+.default-user-hero {
+    width: 100%;
+    height: 94px;
+
+
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0; 
+
+    z-index: 0; 
+}
+
+.default-user-hero { 
+    background-color: $brand-blue; 
+}
+
+.user-icon { 
+    height: 80px;
+    width: 80px; 
+
+    position: relative;
+    z-index: 4; 
+
+    margin-top: 16px; 
+    border-radius: 4px; 
+    border: 3px solid white; 
+}
+
+.handle { 
+    display: block; 
+    font-size: 12px; 
+    line-height: 16px; 
+    font-weight: bold;
+    margin-top: 4px; ;
+}
+
+.cake-day { 
+    .cd-title { 
+        display: block; 
+        font-size: 14px; 
+        line-height: 18px; 
+        font-weight: bold;
+        margin-top: 4px; ;
+        margin-bottom: 0; 
+    }
+
+    .cd-date { 
+        margin-bottom: 10px; 
+        margin-top: 2px; 
+
+        i { 
+            color: $brand-blue; 
+            font-size: 14px; 
+        }
+
+        span { 
+            font-size: 12px; 
+            line-height: 16px; 
+            margin-left: 4px; 
+        }
+    }
+}
