@@ -1,7 +1,10 @@
 @extends('layout') 
 
-@section('main-feed-content')
-    @include('sign-up-cta')
+@section('main-feed-content')    
+    <?php if (!Auth::check()): ?>
+        @include('sign-up-cta')
+    <?php endif; ?>
+
     <?php foreach($posts as $post): ?>
         @include('main-feed-post')
     <?php endforeach; ?>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User; 
 use App\Models\Profile; 
+use App\Models\Post; 
 
 class ProfileController extends Controller
 {
@@ -13,9 +14,11 @@ class ProfileController extends Controller
     { 
         // We can grab the first handle element, because we know 
         $user = Profile::where('handle', $handle)->firstOrFail()->user;
-        
+        $posts = Post::where('user_id', $user->id)->get(); 
+
         $viewData = [
             'user' => $user, 
+            'posts' => $posts, 
         ]; 
 
         return view('user-profile', $viewData); 
