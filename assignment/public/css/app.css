@@ -10576,6 +10576,7 @@ body {
 .reddit-premium-post,
 .trending-communities-post,
 .footer-post,
+.subreddit-card-post,
 .user-card-post {
   margin-bottom: 10px;
   width: 100%;
@@ -11003,12 +11004,15 @@ body {
   text-decoration: none;
 }
 
+.subreddit-card-post,
 .user-card-post {
   padding: 12px;
   overflow: hidden;
   position: relative;
 }
 
+.subreddit-hero,
+.default-subreddit-hero,
 .user-hero,
 .default-user-hero {
   width: 100%;
@@ -11020,10 +11024,12 @@ body {
   z-index: 0;
 }
 
+.default-subreddit-hero,
 .default-user-hero {
   background-color: #0079d3;
 }
 
+.subreddit-icon,
 .user-icon {
   height: 80px;
   width: 80px;

@@ -14,7 +14,7 @@ class ProfileController extends Controller
     { 
         // We can grab the first handle element, because we know 
         $user = Profile::where('handle', $handle)->firstOrFail()->user;
-        $posts = Post::where('user_id', $user->id)->get(); 
+        $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get(); 
 
         $viewData = [
             'user' => $user, 

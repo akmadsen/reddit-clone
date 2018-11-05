@@ -414,6 +414,7 @@
     }
 }
 
+.subreddit-card-post, 
 .user-card-post { 
     @extend %post-base; 
 
@@ -423,6 +424,8 @@
     position: relative;
 }
 
+.subreddit-hero, 
+.default-subreddit-hero, 
 .user-hero, 
 .default-user-hero {
     width: 100%;
@@ -437,10 +440,12 @@
     z-index: 0; 
 }
 
+.default-subreddit-hero, 
 .default-user-hero { 
     background-color: $brand-blue; 
 }
 
+.subreddit-icon, 
 .user-icon { 
     height: 80px;
     width: 80px; 
