@@ -7,11 +7,19 @@
     <div class="post-content">
         <div class="post-header">
             <img class="post-subreddit-icon" src="{{ $post->subreddit->icon }}" alt="" height="20px" width="20px">
-            <div class="subreddit-link"><a href="#">r/{{ $post->subreddit->handle }}</a></div>
+            <div class="subreddit-link">
+                <a href="/r/{{ $post->subreddit->handle }}">
+                    r/{{ $post->subreddit->handle }}
+                </a>
+            </div>
             <span class="ph-middot">.</span>
             <div class="post-info">
                 <div class="post-credit">Posted by</div>
-                <a class="post-username" href="#">u/{{ $post->user->profile->handle }}</a>
+                <a class="post-username" 
+                    href="/u/{{ $post->user->profile->handle }}"
+                >
+                    u/{{ $post->user->profile->handle }}
+                </a>
                 <a class="post-time" href="#">{{ $post->created_at->format('M d') }}</a>
             </div>
         </div>

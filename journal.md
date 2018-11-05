@@ -179,4 +179,8 @@ N/A - Forgot to Record during the day, Family Obligations in Evening
 
 ## Weekend 4 - November 4, 2018
 
-- UNDERWAY  
+- Worked on Assignment 4 primarily today 
+- Listened to Syntax podcast - 11 Habits of Highly Effective Developers 
+	- Expected coding techniques, but actually largely focussed on social aspects
+	- Reflecting on debugging techniques, as well as how I may be impacting my peers 
+		- Will further make sure I don't come off as condescending to friends and peers when attempting to help  

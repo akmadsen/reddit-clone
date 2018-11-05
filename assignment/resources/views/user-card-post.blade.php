@@ -1,6 +1,6 @@
 <div class="user-card-post">
-    <?php if($user->profile->hero_image): ?>
-        <img class="user-hero" src="#" alt="User hero image.">
+    <?php if($user->profile->profile_image): ?>
+        <img class="user-hero" src="{{ $user->profile->profile_image }}" alt="User hero image.">
     <?php else: ?>
         <div class="default-user-hero"></div>
     <?php endif; ?>
@@ -15,7 +15,7 @@
     <span class="handle">u/{{ $user->profile->handle }}</span>
     
     <?php if($user->profile->description): ?>
-        <p class="description">Description.</p>
+        <p class="description">{{ $user->profile->description }}</p>
     <?php endif; ?>
     
     <div class="cake-day">
