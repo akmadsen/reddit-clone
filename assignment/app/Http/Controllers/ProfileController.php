@@ -35,6 +35,24 @@ class ProfileController extends Controller
 
     public function update() 
     { 
-        return "PROFILE CONTROLLER -- UPDATE"; 
+        $user = request()->user(); 
+        $formData = request()->all();
+        
+        request()->validate([
+            'handle' => 'required|unique:user_profiles', 
+            'icon' => 'nullable|url', 
+            'profile_image' => 'nullable|url', 
+            'description' => 'nullable|max:255', 
+        ]); 
+
+        $profile = $user->profile; 
+
+        $profile->handle = $formData['handle']; 
+        $profile->icon = $formData['icon']; 
+        $profile->profile_image = $formData['profile_image']; 
+        $profile->description = $formData['description']; 
+        $profile->save(); 
+
+        return redirect("/u/{$user->profile->handle}"); 
     }
 }
