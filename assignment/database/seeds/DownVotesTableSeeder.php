@@ -18,7 +18,11 @@ class DownVotesTableSeeder extends Seeder
                 ->limit(25)
                 ->get()
                 ->each(function($post) use ($user) {
-                    $user->downVotes()->attach($post); 
+                    $upVote = $user->upVotes->whereIn('post_id', $post->id)->first(); 
+
+                    if (!$upVote) { 
+                        $user->downVotes()->attach($post); 
+                    }
             }); 
         });  
     }

@@ -17,7 +17,8 @@ class SubredditsTableSeeder extends Seeder
         'books', 
         'fantasy',
         'lovecraft', 
-        'BojackHorseman'
+        'BojackHorseman', 
+        'popular', 
     ]; 
 
     /**
