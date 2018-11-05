@@ -20,6 +20,12 @@
 
 Route::get('/', 'FeedController@index');
 
+Route::get('/u/{handle}', 'ProfileController@pindex'); 
+Route::get('/edit_profile', 'ProfileController@edit');
+Route::post('/edit_profile', 'ProfileController@update'); 
+
+Route::get('/r/{handle}', 'SubredditController@index'); 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

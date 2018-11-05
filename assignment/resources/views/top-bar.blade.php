@@ -25,7 +25,7 @@
         <?php if (!Auth::check()): ?> 
             @include('login-buttons')
         <?php else: ?>
-        <span>Welcome {{ request()->user()->name }}</span> 
+            <span>Welcome {{ request()->user()->name }}</span> 
         <?php endif; ?> 
     </div>
 </div>
