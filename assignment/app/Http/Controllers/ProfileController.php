@@ -11,12 +11,12 @@ class ProfileController extends Controller
         return "PROFILE CONTROLLER -- INDEX"; 
     }
 
-    public function edit($handle) 
+    public function edit() 
     { 
         return "PROFILE CONTROLLER -- EDIT";
     } 
 
-    public function update($handle) 
+    public function update() 
     { 
         return "PROFILE CONTROLLER -- UPDATE"; 
     }

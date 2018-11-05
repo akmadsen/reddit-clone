@@ -25,7 +25,10 @@
         <?php if (!Auth::check()): ?> 
             @include('login-buttons')
         <?php else: ?>
-            <span>Welcome {{ request()->user()->name }}</span> 
+            <a href="/edit_profile">Edit Profile</a>
+            <a href="/u/<?php echo request()->user()->profile->handle ?>">
+                <span>Welcome, {{ request()->user()->profile->handle }}</span> 
+            </a>
         <?php endif; ?> 
     </div>
 </div>
