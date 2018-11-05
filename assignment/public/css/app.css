@@ -10943,6 +10943,14 @@ body {
   font-weight: bold;
 }
 
+.tc-subreddit a {
+  color: #1c1c1c;
+}
+
+.tc-subreddit a:hover {
+  color: #1c1c1c;
+}
+
 .tc-subcount {
   font-size: 10px;
   line-height: 12px;

@@ -12,6 +12,7 @@
             'https://i.redd.it/130am13nj6201.png' }}" 
         alt="Subreddit icon image."
     />
+
     <span class="handle">r/{{ $subreddit->handle }}</span>
     
     <?php if($subreddit->description): ?>
