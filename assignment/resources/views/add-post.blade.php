@@ -21,10 +21,10 @@
             cols="30" 
             rows="10"
             required
-        ><?php echo old('content', request()->all()['content'] ?? '') ?></textarea>
+        >{{ old('content', request()->all()['content'] ?? '') }}</textarea>
         <?php if ($error = $errors->first('content')): ?>
             <p class="text-danger" role="alert">
-                <strong><?php echo $error ?></strong>
+                <strong>{{ $error }}</strong>
             </p>
         <?php endif; ?>
 
