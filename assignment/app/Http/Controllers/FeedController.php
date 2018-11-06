@@ -17,7 +17,7 @@ class FeedController extends Controller
 {
     public function index() 
     { 
-        $posts = Post::inRandomOrder(25)->get(); 
+        $posts = Post::orderBy('created_at', 'desc')->limit(25)->get(); 
         $suggestions = Subreddit::inRandomOrder()->limit(5)->get(); 
 
         $viewData = [
