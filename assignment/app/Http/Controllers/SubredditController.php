@@ -12,8 +12,7 @@ class SubredditController extends Controller
     public function index($handle) 
     {
         $subreddit = Subreddit::where('handle', $handle)->firstOrFail(); 
-
-        $posts = Post::where('subreddit_id', $subreddit->id)->orderBy('created_at', 'desc')->get();
+        $posts = Post::where('subreddit_id', $subreddit->id)->orderBy('created_at', 'desc')->limit(25)->get();
 
         $viewData = [
             'subreddit' => $subreddit, 
