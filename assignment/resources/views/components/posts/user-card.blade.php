@@ -5,13 +5,16 @@
         <div class="default-user-hero"></div>
     <?php endif; ?>
     
-    <img
+    <div class="profile-image">
+        <img
         class="user-icon" 
         src="{{ $user->profile->icon ? 
             $user->profile->icon : 
             'https://i.redd.it/130am13nj6201.png' }}" 
         alt="User icon image."
-    />
+        />
+        <span class="name">{{ $user->name }}</span>
+    </div>
     <span class="handle">u/{{ $user->profile->handle }}</span>
     
     <?php if($user->profile->description): ?>

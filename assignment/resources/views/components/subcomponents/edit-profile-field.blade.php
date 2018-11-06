@@ -7,16 +7,16 @@
     <input 
         id="{{ $field }}"
         type="text"
-        name="{{ $field }}1" 
+        name="{{ $field }}" 
         value="<?php echo old("$field", $default) ?>" 
         <?php if($isRequired): ?>
             required 
         <?php endif; ?> 
         autofocus>
 
-    @if ($errors->has('{{ $field }}'))
-        <span class="invalid-feedback" role="alert">
-            <strong><?php echo $errors->first("$field") ?></strong>
-        </span>
-    @endif
+    <?php if ($error = $errors->first("$field")): ?>
+        <p class="text-danger" role="alert">
+            <strong><?php echo $error ?></strong>
+        </p>
+    <?php endif; ?>
 </div>

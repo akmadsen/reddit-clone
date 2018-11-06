@@ -11037,6 +11037,21 @@ body {
   background-color: #0079d3;
 }
 
+/* For users */
+
+.profile-image img {
+  margin-right: 20px;
+}
+
+.profile-image .name {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+
 .subreddit-icon,
 .user-icon {
   height: 80px;
@@ -11086,6 +11101,7 @@ body {
   width: 100%;
   padding: 20px;
   font-family: "Open Sans", sans-serif;
+  border-radius: 4px;
 }
 
 .profile-form label {

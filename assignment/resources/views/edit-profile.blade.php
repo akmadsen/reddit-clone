@@ -40,7 +40,7 @@
             'isRequired' => false, 
             'default' => $user->profile->description, 
         ])
-        
+
         <input type="submit" value="Update Profile">
     </form>
 @endsection 
