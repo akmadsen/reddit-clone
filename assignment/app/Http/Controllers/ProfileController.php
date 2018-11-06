@@ -39,6 +39,7 @@ class ProfileController extends Controller
         $formData = request()->all();
         
         request()->validate([
+            'name' => 'required', 
             'handle' => 'required|unique:user_profiles', 
             'icon' => 'nullable|url', 
             'profile_image' => 'nullable|url', 
@@ -46,6 +47,8 @@ class ProfileController extends Controller
         ]); 
 
         $profile = $user->profile; 
+
+        $user->name = $formData['name']; 
 
         $profile->handle = $formData['handle']; 
         $profile->icon = $formData['icon']; 

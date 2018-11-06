@@ -6,26 +6,41 @@
         <p>Elements with <span class="required">*</span> are required.</p>
         @csrf 
 
-        <div class="form-field">
-            <label for="handle">Handle:<span class="required">*</span></label>
-            <input type="text" name="handle" id="handle">
-        </div>
+        @include('components.subcomponents.edit-profile-field', [
+            'field' => 'name', 
+            'label' => 'Name', 
+            'isRequired' => true, 
+            'default' => $user->name, 
+        ])
 
-        <div class="form-field">
-            <label for="icon">Icon:</label>
-            <input type="text" name="icon" id="icon">
-        </div>
+        @include('components.subcomponents.edit-profile-field', [
+            'field' => 'handle', 
+            'label' => 'Handle', 
+            'isRequired' => true, 
+            'default' => $user->profile->handle, 
+        ])
 
-        <div class="form-field">
-            <label for="profile_image">Profile Image:</label>
-            <input type="text" name="profile_image" id="profile_image">
-        </div>
+        @include('components.subcomponents.edit-profile-field', [
+            'field' => 'icon', 
+            'label' => 'Icon', 
+            'isRequired' => false, 
+            'default' => $user->profile->icon, 
+        ])
 
-        <div class="form-field">
-            <label for="description">Description:</label>
-            <input type="text" name="description" id="description">
-        </div>
+        @include('components.subcomponents.edit-profile-field', [
+            'field' => 'profile_image', 
+            'label' => 'Profile Image', 
+            'isRequired' => false, 
+            'default' => $user->profile->profile_image, 
+        ])
 
+        @include('components.subcomponents.edit-profile-field', [
+            'field' => 'description', 
+            'label' => 'Description', 
+            'isRequired' => false, 
+            'default' => $user->profile->description, 
+        ])
+        
         <input type="submit" value="Update Profile">
     </form>
 @endsection 
