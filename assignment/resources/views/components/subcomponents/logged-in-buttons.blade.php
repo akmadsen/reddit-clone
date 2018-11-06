@@ -1,3 +1,17 @@
+<a class="profile-button" href='/u/{{ request()->user()->profile->handle }}'>
+    <img 
+        src="{{
+            request()->user()->profile->icon ? 
+            request()->user()->profile->icon : 
+            'https://i.redd.it/130am13nj6201.png'
+            }}" 
+        alt="User profile image"
+    >
+    <div class="profile-button-text">
+        <span>Welcome, {{ request()->user()->name }}</span> 
+        <span>u/{{ request()->user()->profile->handle}}</span>
+    </div>
+</a>
 
 <a class="edit-button" href="/edit_profile">Edit Profile</a>
 
@@ -13,7 +27,3 @@
         @csrf
     </form>
 </div>
-
-<a class="profile-button" href="/u/<?php echo request()->user()->profile->handle ?>">
-    <span>Welcome, {{ request()->user()->profile->handle }}</span> 
-</a>
