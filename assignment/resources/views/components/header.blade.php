@@ -1,4 +1,4 @@
 <header>
-    @include('top-bar')
-    @include('bottom-bar')
+    @include('components.subcomponents.top-bar')
+    @include('components.subcomponents.bottom-bar')
 </header>
