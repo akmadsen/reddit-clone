@@ -14,7 +14,7 @@
             'default' => $requestContent['title'] ?? '', 
         ])
 
-        <label for="content">Content:</label>
+        <label for="content">Content:<span class="required">*</span></label>
         <textarea 
             name="content" 
             id="content" 
