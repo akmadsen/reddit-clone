@@ -10530,7 +10530,13 @@ body {
 }
 
 .cta-button {
+  display: inline-block;
   margin-top: 8px;
+}
+
+.cta-button:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .cta-close-button {
