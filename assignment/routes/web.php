@@ -29,6 +29,9 @@ Route::get('/r/{handle}', 'SubredditController@index');
 Route::get('/post/r/{handle}', 'PostController@index'); 
 Route::post('/post/r/{handle}', 'PostController@update'); 
 
+Route::post('/upvote/{id}', 'VotesController@upVote'); 
+Route::post('/downvote/{id}', 'VotesController@downVote'); 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
