@@ -3,7 +3,7 @@
 @section('main-feed-content') 
     <?php if(count($posts) !== 0): ?>
         <?php foreach($posts as $post): ?>
-            @include('posts.main-feed') 
+            @include('components.posts.main-feed') 
         <?php endforeach; ?>
     <?php else: ?>
         <span>No posts yet!</span>
@@ -11,6 +11,6 @@
 @endsection 
 
 @section('aux-feed-content') 
-    @include('posts.user-card') 
-    @include('posts.footer') 
+    @include('components.posts.user-card') 
+    @include('components.posts.footer') 
 @endsection
