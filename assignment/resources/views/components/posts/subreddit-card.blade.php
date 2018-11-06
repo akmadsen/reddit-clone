@@ -19,5 +19,15 @@
         <p class="description">{{ $subreddit->description }}</p>
     <?php endif; ?>
     
-    <a class="new-post-button" href="#">New Post</a>
+    <a 
+        class="new-post-button"
+
+        <?php if(Auth::check()): ?>
+            href="/post/r/{{ $subreddit->handle }}"
+        <?php else: ?>
+            href="/login" 
+        <?php endif; ?>
+    >
+        New Post
+    </a>
 </div>

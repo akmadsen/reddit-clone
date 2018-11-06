@@ -11096,6 +11096,7 @@ body {
   margin-left: 4px;
 }
 
+.post-form,
 .profile-form {
   background-color: #fff;
   width: 100%;
@@ -11104,26 +11105,31 @@ body {
   border-radius: 4px;
 }
 
+.post-form label,
 .profile-form label {
   width: 30%;
   display: inline-block;
   font-weight: bold;
 }
 
+.post-form input[type=text],
 .profile-form input[type=text] {
   width: 60%;
   margin-left: auto;
 }
 
+.post-form .required,
 .profile-form .required {
   font-weight: bold;
   color: red;
 }
 
+.post-form .form-field,
 .profile-form .form-field {
   margin-bottom: 15px;
 }
 
+.post-form input[type=submit],
 .profile-form input[type=submit] {
   /* Stolen from Buttons */
   display: inline-block;
@@ -11139,6 +11145,18 @@ body {
   line-height: 24px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+.post-form textarea,
+.profile-form textarea {
+  overflow: scroll;
+  resize: none;
+  width: 100%;
+  margin-left: auto;
+}
+
+.post-form label {
+  display: block;
 }
 
 .top-header {
