@@ -68,8 +68,20 @@
 
     background-color: $bg-vote;
 
-    .upvote-arrow,
-    .downvote-arrow {
+    button { 
+        background: none; 
+        border: none; 
+    }
+
+    .upvote-active { 
+        color: $brand-red !important; 
+    }
+
+    .downvote-active { 
+        color: $brand-blue !important; 
+    }
+
+    i {
         font-size: 16px;
         color: $search-text-dark;
     }
