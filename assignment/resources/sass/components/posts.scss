@@ -75,15 +75,27 @@
 
     .upvote-active { 
         color: $brand-red !important; 
+
+        &:hover { 
+            color: $brand-red-highlight !important; 
+        }
     }
 
     .downvote-active { 
         color: $brand-blue !important; 
+
+        &:hover {
+            color: $brand-blue-highlight !important; 
+        }
     }
 
     i {
         font-size: 16px;
         color: $search-text-dark;
+
+        &:hover { 
+            color: $background-color; 
+        }
     }
 
     span {

@@ -10520,6 +10520,10 @@ body {
   color: #0079d3;
 }
 
+.login-button:hover {
+  background-color: #f6f7f8;
+}
+
 .signin-button {
   margin-left: 16px;
   color: #fff;
@@ -10527,6 +10531,7 @@ body {
 
 .signin-button:hover {
   color: #fff;
+  background-color: #3293db;
 }
 
 .cta-button {
@@ -10565,6 +10570,7 @@ body {
 
 .sr-button:hover {
   color: #fff;
+  background-color: #3293db;
   text-decoration: none;
 }
 
@@ -10589,6 +10595,7 @@ body {
 .new-post-button:hover {
   color: #fff;
   text-decoration: none;
+  background-color: #3293db;
 }
 
 .profile-button {
@@ -10644,6 +10651,7 @@ body {
 
 .edit-button:hover {
   color: #fff;
+  background-color: #3293db;
   text-decoration: none;
 }
 
@@ -10656,6 +10664,7 @@ body {
 
 .logout-button:hover {
   color: #fc4823;
+  background-color: #f6f7f8;
   text-decoration: none;
 }
 
@@ -10739,13 +10748,25 @@ body {
   color: #fc4823 !important;
 }
 
+.post-votes .upvote-active:hover {
+  color: #ff6040 !important;
+}
+
 .post-votes .downvote-active {
   color: #0079d3 !important;
+}
+
+.post-votes .downvote-active:hover {
+  color: #3293db !important;
 }
 
 .post-votes i {
   font-size: 16px;
   color: #878a8c;
+}
+
+.post-votes i:hover {
+  color: #d9dfe5;
 }
 
 .post-votes span {
@@ -11247,6 +11268,11 @@ body {
   line-height: 24px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+.post-form input[type=submit]:hover,
+.profile-form input[type=submit]:hover {
+  background-color: #3293db;
 }
 
 .post-form textarea,
