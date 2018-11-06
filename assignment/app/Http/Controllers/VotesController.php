@@ -43,6 +43,28 @@ class VotesController extends Controller
      */
     public function downVote($id) 
     { 
-        return 'VOTES CONTROLLER -- DOWN VOTE'; 
+        // If there is no one logged in, ignore this request 
+        if(!(request()->user())) { 
+            return redirect()->back(); 
+        }
+        
+        $post = Post::where('id', $id)->firstOrFail(); 
+        $user = request()->user(); 
+
+        $upVote = $user->upVotes->contains($post);                 
+        $downVote = $user->downVotes->contains($post); 
+        
+        if ($upVote) { 
+            $user->upVotes()->detach($post); 
+        }
+
+        
+        if($upVote) { 
+            $user->downVotes()->detach($post); 
+        } else { 
+            $user->downVotes()->attach($post); 
+        }
+        
+        return redirect()->back(); 
     }
 }
