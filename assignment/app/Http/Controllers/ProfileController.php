@@ -1,12 +1,16 @@
 <?php
-
+/**
+ * @author Alex Madsen
+ * 
+ * @date November 6, 2018
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\User; 
-use App\Models\Profile; 
 use App\Models\Post; 
+use App\Models\Profile; 
 
 class ProfileController extends Controller
 {

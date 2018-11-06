@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Edited for Eloquent Relationships 
+ * 
+ * @author Alex Madsen
+ * 
+ * @date November 6, 2018
+ */
 namespace App;
 
 use Illuminate\Notifications\Notifiable;

@@ -1,11 +1,16 @@
 <?php
+/**
+ * @author Alex Madsen
+ * 
+ * @date November 6, 2018
+ */
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Subreddit; 
 use App\Models\Post; 
+use App\Models\Subreddit; 
 
 class PostController extends Controller
 {
