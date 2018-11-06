@@ -2,10 +2,12 @@
 
 @section('main-feed-content') 
     <form class="profile-form" action="/edit_profile" method="post">
+        <h1>Edit Your Profile</h1>
+        <p>Elements with <span class="required">*</span> are required.</p>
         @csrf 
 
         <div class="form-field">
-            <label for="handle">Handle:</label>
+            <label for="handle">Handle:<span class="required">*</span></label>
             <input type="text" name="handle" id="handle">
         </div>
 
