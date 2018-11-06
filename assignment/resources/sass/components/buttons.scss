@@ -34,6 +34,10 @@
     @extend %header-button-shared; 
     background-color: $bg-item; 
     color: $brand-blue; 
+
+    &:hover { 
+        background-color: $bg-search; 
+    }
 }
 
 .signin-button { 
@@ -43,6 +47,7 @@
 
     &:hover { 
         color: $bg-item; 
+        background-color: $brand-blue-highlight; 
     }
 }
 
@@ -81,6 +86,7 @@
 
     &:hover { 
         color: $bg-item; 
+        background-color: $brand-blue-highlight; 
         text-decoration: none; 
     }
 }
@@ -112,6 +118,7 @@
     &:hover { 
         color: $bg-item; 
         text-decoration: none; 
+        background-color: $brand-blue-highlight; 
     }
 }
 
@@ -165,6 +172,7 @@
 
     &:hover { 
         color: $bg-item; 
+        background-color: $brand-blue-highlight; 
         text-decoration: none; 
     }
 }
@@ -180,6 +188,7 @@
 
     &:hover { 
         color: $brand-red; 
+        background-color: $bg-search; 
         text-decoration: none; 
     }
 }
