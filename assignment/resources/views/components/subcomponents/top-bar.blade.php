@@ -23,7 +23,7 @@
     </div>
     <div class="th-right">
         <?php if (!Auth::check()): ?> 
-            @include('login-buttons')
+            @include('components.subcomponents.login-buttons')
         <?php else: ?>
             <a href="/edit_profile">Edit Profile</a>
             <div>

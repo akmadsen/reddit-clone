@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('reddit_layouts.app')
 
 @section('main-feed-content') 
     <form class="profile-form" action="/edit_profile" method="post">
@@ -29,6 +29,6 @@
 @endsection 
 
 @section('aux-feed-content') 
-    @include('user-card-post') 
-    @include('footer-post') 
+    @include('components.posts.user-card') 
+    @include('components.posts.footer') 
 @endsection

@@ -14,7 +14,7 @@
 
 <body>
     
-    @include('header')
+    @include('components.header')
 
     <main class="reddit-main">
         <div class="wrapper">
