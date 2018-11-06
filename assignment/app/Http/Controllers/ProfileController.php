@@ -26,6 +26,10 @@ class ProfileController extends Controller
 
     public function edit() 
     { 
+        if(!(request()->user())) { 
+            return redirect('/register'); 
+        }
+
         $viewData = [
             'user' => request()->user(), 
         ]; 
