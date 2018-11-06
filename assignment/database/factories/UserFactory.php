@@ -1,4 +1,11 @@
 <?php
+/**
+ * Added in Profile, Subreddit, and Post factories 
+ * 
+ * @author Alex Madsen
+ * 
+ * @date November 6, 2018
+ */
 
 use Faker\Generator as Faker;
 

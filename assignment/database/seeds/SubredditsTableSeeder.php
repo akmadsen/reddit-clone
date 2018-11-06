@@ -1,4 +1,9 @@
 <?php
+/**
+ * @author Alex Madsen
+ * 
+ * @date November 6, 2018
+ */
 
 use Illuminate\Database\Seeder;
 

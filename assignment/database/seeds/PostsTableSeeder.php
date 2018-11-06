@@ -1,9 +1,15 @@
 <?php
+/**
+ * @author Alex Madsen
+ * 
+ * @date November 6, 2018
+ */
 
 use Illuminate\Database\Seeder;
-use App\Models\Subreddit; 
-use App\Models\Post; 
+
 use App\User; 
+use App\Models\Post; 
+use App\Models\Subreddit; 
 
 class PostsTableSeeder extends Seeder
 {
