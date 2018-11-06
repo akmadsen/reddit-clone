@@ -27,7 +27,6 @@ class VotesController extends Controller
         if ($downVote) { 
             $user->downVotes()->detach($post); 
         }
-
         
         if($upVote) { 
             $user->upVotes()->detach($post); 
@@ -57,9 +56,8 @@ class VotesController extends Controller
         if ($upVote) { 
             $user->upVotes()->detach($post); 
         }
-
         
-        if($upVote) { 
+        if($downVote) { 
             $user->downVotes()->detach($post); 
         } else { 
             $user->downVotes()->attach($post); 

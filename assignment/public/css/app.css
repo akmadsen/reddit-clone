@@ -10640,8 +10640,20 @@ body {
   background-color: #f8f9fa;
 }
 
-.post-votes .upvote-arrow,
-.post-votes .downvote-arrow {
+.post-votes button {
+  background: none;
+  border: none;
+}
+
+.post-votes .upvote-active {
+  color: #fc4823 !important;
+}
+
+.post-votes .downvote-active {
+  color: #0079d3 !important;
+}
+
+.post-votes i {
   font-size: 16px;
   color: #878a8c;
 }

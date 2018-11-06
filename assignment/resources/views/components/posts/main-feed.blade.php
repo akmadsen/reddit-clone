@@ -1,12 +1,18 @@
 <div class="post">
     <div class="post-votes">
 
+        <?php $user = request()->user() ?>
+        
         <form action="/upvote/{{ $post->id }}" method="post">
             @csrf
-            <button
-                 type="submit"
-            >        
-                <i class="fas fa-arrow-up upvote-arrow"></i>
+            <button type="submit">        
+            <i            
+                <?php if($user && $user->upVotes->contains($post)): ?>
+                    class="fas fa-arrow-up upvote-active" 
+                <?php else: ?>
+                    class="fas fa-arrow-up"    
+                <?php endif; ?>
+            ></i>
             </button>
         </form>
     
@@ -14,13 +20,16 @@
     
         <form action="/downvote/{{ $post->id }}" method="post">
             @csrf
-            <button 
-                type="submit"
-            >
-                <i class="fas fa-arrow-down downvote-arrow"></i>
+            <button type="submit">
+                <i            
+                <?php if($user && $user->downVotes->contains($post)): ?>
+                    class="fas fa-arrow-down downvote-active" 
+                <?php else: ?>
+                    class="fas fa-arrow-down"    
+                <?php endif; ?>
+            ></i>
             </button>
         </form>
-    
     </div>
 
 
