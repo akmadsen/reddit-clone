@@ -4,7 +4,7 @@
  * Edited this file for routes
  * 
  * @author Alex Madsen
- * @date October 30, 2018
+ * @date November 5, 2018
  */
 
 /*
@@ -25,6 +25,9 @@ Route::get('/edit_profile', 'ProfileController@edit');
 Route::post('/edit_profile', 'ProfileController@update'); 
 
 Route::get('/r/{handle}', 'SubredditController@index'); 
+
+Route::get('/post/r/{handle}', 'PostController@index'); 
+Route::post('/post/r/{handle}', 'PostController@update'); 
 
 Auth::routes();
 
