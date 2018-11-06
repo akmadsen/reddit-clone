@@ -8,8 +8,8 @@
         alt="User profile image"
     >
     <div class="profile-button-text">
-        <span>Welcome, {{ request()->user()->name }}</span> 
-        <span>u/{{ request()->user()->profile->handle}}</span>
+        <span class="welcome-text">Welcome, {{ request()->user()->name }}</span> 
+        <span class="handle-text">u/{{ request()->user()->profile->handle}}</span>
     </div>
 </a>
 
