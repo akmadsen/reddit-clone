@@ -29,6 +29,6 @@
 @endsection 
 
 @section('aux-feed-content') 
-    @include('posts.user-card') 
-    @include('posts.footer') 
+    @include('components.posts.user-card') 
+    @include('components.posts.footer') 
 @endsection
