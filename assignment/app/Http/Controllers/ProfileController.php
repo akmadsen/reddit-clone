@@ -38,14 +38,25 @@ class ProfileController extends Controller
         $user = request()->user(); 
         $formData = request()->all();
         
-        request()->validate([
-            'handle' => 'required|unique:user_profiles', 
+        $validationList = [
+            'name' => "required|regex:/^[a-z ,.'-]+$/i", 
             'icon' => 'nullable|url', 
             'profile_image' => 'nullable|url', 
             'description' => 'nullable|max:255', 
-        ]); 
+        ]; 
+
+        // Don't validate the handle if it hasn't changed. 
+        // Validating if it hasn't changed results in a false-positive 
+        if($user->profile->handle !== $formData['handle']) { 
+            $validationList['handle'] = 'required|unique:user_profiles'; 
+        }
+
+        request()->validate($validationList); 
 
         $profile = $user->profile; 
+
+        $user->name = $formData['name']; 
+        $user->save(); 
 
         $profile->handle = $formData['handle']; 
         $profile->icon = $formData['icon']; 
