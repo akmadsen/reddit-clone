@@ -183,4 +183,36 @@ N/A - Forgot to Record during the day, Family Obligations in Evening
 - Listened to Syntax podcast - 11 Habits of Highly Effective Developers 
 	- Expected coding techniques, but actually largely focussed on social aspects
 	- Reflecting on debugging techniques, as well as how I may be impacting my peers 
-		- Will further make sure I don't come off as condescending to friends and peers when attempting to help  
+		- Will further make sure I don't come off as condescending to friends and peers when attempting to help 
+
+## Final Day - November 6, 2018 
+
+1) Obstacles & Overcoming 
+
+Deployment was difficult, but with Cameron's help (and guide), it became a smooth process. 
+
+Most of my challenges were putting in the hours to get the assignment overall done. 
+
+2) Pushing yourself 
+
+I tried (and failed) to figure out the AJAX route for the bonus mark on my own. 
+
+With the functionality of the project taken care of (by my checklist), a lot of my time was spent working with our peers
+and trying to help them get off the ground. 
+
+3) Outside Class 
+
+Design is a weakspot for me. I'm pretty much a one-trick pony for the top-heaver nav-bar. 
+
+I reviewed an article on WebFX(https://www.webfx.com/blog/web-design/choose-navigation-setup/) regarding good nav-bar design
+and when / how to use each. Now I need to practice. 
+
+One thing that really struck home was Cameron's speech on finding something to be passionate about. I need to work on this, a lot. 
+
+Going to a game design meetup tonight to discuss modern adventure gaming, though. Maybe something there? 
+
+## Final Notes to Cameron 
+
+Thank you for this class with PHP, and living life as a programmer. Hopefully we can chat over coffee sometime. 
+
+Take care. 
