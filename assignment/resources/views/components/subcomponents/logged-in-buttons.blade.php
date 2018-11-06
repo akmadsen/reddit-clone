@@ -15,9 +15,9 @@
 
 <a class="edit-button" href="/edit_profile">Edit Profile</a>
 
-{{-- Ripped from Laravel layouts.app.blade.php --}}
-<div class="logout-button">
-    <a class="dropdown-item" href="{{ route('logout') }}"
+{{-- Adapted from Laravel layouts.app.blade.php --}}
+<div>
+    <a class="logout-button" href="{{ route('logout') }}"
         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
         {{ __('Logout') }}

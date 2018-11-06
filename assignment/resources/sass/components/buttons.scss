@@ -112,7 +112,7 @@
     color: $post-title-black;  
 
     margin-right: 8px; 
-    
+
     img { 
         height: 20px;
         width: 20px; 
@@ -140,4 +140,31 @@
 
 .welcome-text { 
     font-weight: bold; 
+}
+
+.edit-button 
+{ 
+    @extend %button-shared; 
+    display: inline-block; 
+    margin-right: 8px; 
+
+    &:hover { 
+        color: $bg-item; 
+        text-decoration: none; 
+    }
+}
+
+.logout-button 
+{ 
+    @extend %button-shared; 
+    display: inline-block; 
+
+    border-color: $brand-red; 
+    background-color: $bg-item; 
+    color: $brand-red; 
+
+    &:hover { 
+        color: $brand-red; 
+        text-decoration: none; 
+    }
 }
