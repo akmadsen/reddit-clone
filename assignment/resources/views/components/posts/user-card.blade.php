@@ -8,9 +8,7 @@
     <div class="profile-image">
         <img
         class="user-icon" 
-        src="{{ $user->profile->icon ? 
-            $user->profile->icon : 
-            'https://i.redd.it/130am13nj6201.png' }}" 
+        src="{{ $user->profile->icon }}" 
         alt="User icon image."
         />
         <span class="name">{{ $user->name }}</span>
