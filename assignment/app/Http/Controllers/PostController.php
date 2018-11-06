@@ -14,9 +14,9 @@ class PostController extends Controller
      */
     public function index($handle) 
     { 
-        // if(!Auth::check()) { 
-        //     return redirect("/r/$handle"); 
-        // }
+        if(!(request()->user())) { 
+            return redirect()->back(); 
+        }
 
         $subreddit = Subreddit::where('handle', $handle)->firstOrFail(); 
 
@@ -32,9 +32,9 @@ class PostController extends Controller
      */
     public function update($handle) 
     { 
-        // if(!Auth::check()) { 
-        //     return redirect("/r/$handle"); 
-        // }
+        if(!(request()->user())) { 
+            return redirect()->back(); 
+        }
 
         request()->validate([
             'title' => 'required|max:255|min:10',
@@ -52,6 +52,9 @@ class PostController extends Controller
         $post->title = $formData['title']; 
         $post->content = $formData['content']; 
         $post->save(); 
+
+        // Start out upvoting your own post 
+        $user->upVotes()->attach($post);
 
         return redirect("/r/{$handle}"); 
     }

@@ -28,5 +28,4 @@
             <span>{{ $user->created_at->format('F d, Y')}}</span>
         </p>
     </div>
-    <a class="new-post-button" href="#">New Post</a>
 </div>
