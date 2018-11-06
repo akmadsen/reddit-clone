@@ -15,7 +15,7 @@ class VotesController extends Controller
     {
         // If there is no one logged in, ignore this request 
         if(!(request()->user())) { 
-            return redirect()->back(); 
+            return redirect('/register'); 
         }
         
         $post = Post::where('id', $id)->firstOrFail(); 
@@ -44,7 +44,7 @@ class VotesController extends Controller
     { 
         // If there is no one logged in, ignore this request 
         if(!(request()->user())) { 
-            return redirect()->back(); 
+            return redirect('/register'); 
         }
         
         $post = Post::where('id', $id)->firstOrFail(); 
