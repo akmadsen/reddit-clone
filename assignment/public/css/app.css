@@ -10486,7 +10486,9 @@ body {
 .sr-button,
 .rp-button,
 .tc-subs-button,
-.new-post-button {
+.new-post-button,
+.edit-button,
+.logout-button {
   display: inline-block;
   border: 1px solid #0079d3;
   background-color: #0079d3;
@@ -10566,6 +10568,74 @@ body {
 
 .new-post-button:hover {
   color: #fff;
+  text-decoration: none;
+}
+
+.profile-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #edeff1;
+  border-radius: 4px;
+  padding: 2px 5px;
+  color: #222222;
+  margin-right: 8px;
+}
+
+.profile-button img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.profile-button:hover {
+  text-decoration: none;
+  color: #1a1a1b;
+  background-color: #f6f7f8;
+}
+
+.profile-button-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.welcome-text,
+.handle-text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.welcome-text {
+  font-weight: bold;
+}
+
+.edit-button {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.edit-button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logout-button {
+  display: inline-block;
+  border-color: #fc4823;
+  background-color: #fff;
+  color: #fc4823;
+}
+
+.logout-button:hover {
+  color: #fc4823;
   text-decoration: none;
 }
 
