@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Post; 
+
 class VotesController extends Controller
 {
     /**
@@ -11,7 +13,29 @@ class VotesController extends Controller
      */
     public function upVote($id) 
     {
-        return 'VOTES CONTROLLER -- UP VOTE'; 
+        // If there is no one logged in, ignore this request 
+        if(!(request()->user())) { 
+            return redirect()->back(); 
+        }
+        
+        $post = Post::where('id', $id)->firstOrFail(); 
+        $user = request()->user(); 
+
+        $upVote = $user->upVotes->contains($post);                 
+        $downVote = $user->downVotes->contains($post); 
+        
+        if ($downVote) { 
+            $user->downVotes()->detach($post); 
+        }
+
+        
+        if($upVote) { 
+            $user->upVotes()->detach($post); 
+        } else { 
+            $user->upVotes()->attach($post); 
+        }
+        
+        return redirect()->back(); 
     }
 
     /**
