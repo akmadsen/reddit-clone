@@ -72,8 +72,17 @@
 .sr-button { 
     @extend %button-shared; 
 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+
     margin-top: 12px;
     height: 34px;
+
+    &:hover { 
+        color: $bg-item; 
+        text-decoration: none; 
+    }
 }
 
 .rp-button { 
