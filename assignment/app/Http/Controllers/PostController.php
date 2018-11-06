@@ -20,7 +20,7 @@ class PostController extends Controller
     public function index($handle) 
     { 
         if(!(request()->user())) { 
-            return redirect('/register'); 
+            return redirect('/login'); 
         }
 
         $subreddit = Subreddit::where('handle', $handle)->firstOrFail(); 

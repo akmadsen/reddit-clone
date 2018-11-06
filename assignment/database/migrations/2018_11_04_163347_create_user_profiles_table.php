@@ -21,7 +21,7 @@ class CreateUserProfilesTable extends Migration
         Schema::create('user_profiles', function (Blueprint $table) {
             $table->unsignedInteger('user_id')->unique();
             $table->string('handle')->unique(); 
-            $table->string('icon')->nullable(); 
+            $table->string('icon')->default('https://i.redd.it/130am13nj6201.png'); 
             $table->string('profile_image')->nullable(); 
             $table->string('description')->nullable(); 
             $table->timestamps();

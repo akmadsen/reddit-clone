@@ -21,12 +21,7 @@
     
     <a 
         class="new-post-button"
-
-        <?php if(Auth::check()): ?>
-            href="/post/r/{{ $subreddit->handle }}"
-        <?php else: ?>
-            href="/login" 
-        <?php endif; ?>
+        href="/post/r/{{ $subreddit->handle }}"
     >
         New Post
     </a>
